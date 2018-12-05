@@ -9,7 +9,7 @@ import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import Link from 'gatsby-link';
 import AppDrawerNavItem from './AppDrawerNavItem';
-import Logo from '../../docs/defi-logo.png';
+import Logo from '../../docs/logo-transparent.png';
 
 const styles = theme => {
   
