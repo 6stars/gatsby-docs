@@ -52,7 +52,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
     {
-      resolve: "@defi/gatsby-plugin-page-tree",
+      resolve: "@m00n/gatsby-plugin-nav-tree",
       options: {
         ignorePaths: ["/categories", "/tags",  "/404", "/offline-plugin-app-shell-fallback",
         "/dev-404-page"]
