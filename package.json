@@ -9,7 +9,7 @@
       "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
       "build": "lerna exec --scope @m00n/* -- yarn build",
       "build:docs": "lerna exec --scope @m00n/gatsby-starter-docs-materiual-ui -- yarn build:pp",
-      "publish": "lerna publish --scope @m00n/gatsby-plugin-nav-tree -- yarn build:pp"
+      "pub": "lerna publish"
 
     },
     "repository": {
