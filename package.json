@@ -1,0 +1,29 @@
+{
+    "name": "@m00n/gatsby-docs",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+      "packages/*"
+    ],
+    "scripts": {      
+      "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
+      "build": "lerna exec --scope @m00n/* -- yarn build",
+      "build:docs": "lerna exec --scope @m00n/gatsby-starter-docs-materiual-ui -- yarn build:pp",
+      "publish": "lerna publish --scope @m00n/gatsby-plugin-nav-tree -- yarn build:pp"
+
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/6stars/gatsby-docs.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/6stars/gatsby-docs.git/issues"
+    },
+    "homepage": "https://github.com/6stars/gatsby-docs.git#readme",
+    "devDependencies": {
+      "lerna": "3.5.1",
+      "lerna-changelog": "^0.8.2"
+    }
+}

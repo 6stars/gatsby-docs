@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway  
+  branch: master
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: "doc"
+    label: "Doc"
+    folder: "content"
+    create: true
+    slug: "{{slug}}.md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Path Root", name: "pathRoot", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
