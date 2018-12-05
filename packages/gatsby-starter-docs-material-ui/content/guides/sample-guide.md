@@ -7,6 +7,9 @@ tags:
     - sample
 ---
 
+Sample Guide
+===
+
 <a name="headers"/>
 
 ## Headers

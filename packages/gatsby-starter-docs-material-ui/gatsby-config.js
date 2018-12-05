@@ -47,7 +47,7 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    title: 'defi DOCS'
+    title: '****** DOCS'
   },
   plugins: [
     'gatsby-plugin-typescript',
