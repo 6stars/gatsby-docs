@@ -103,67 +103,7 @@ const icons = [
       "src": "/logos/ios-launchimage-1024-768.png",
       "sizes": "1024x768",
       "type": "image/png"
-    },
-    {
-      "src": "/logos/chrome-extensionmanagementpage-48-48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/chrome-favicon-16-16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/chrome-installprocess-128-128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-marketplace-512-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-marketplace-128-128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-256-256.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-128-128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-90-90.png",
-      "sizes": "90x90",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-64-64.png",
-      "sizes": "64x64",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-48-48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-32-32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/logos/firefox-general-16-16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    }
+    }    
   ];
 
   module.exports = icons;
