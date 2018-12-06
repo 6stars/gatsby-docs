@@ -8,7 +8,7 @@
     "scripts": {      
       "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
       "build": "lerna exec --scope @m00n/* -- yarn build",
-      "build:docs": "lerna exec --scope @m00n/gatsby-starter-docs-materiual-ui -- yarn build:pp",
+      "build:docs": "lerna exec --scope @m00n/gatsby-starter-docs-material-ui -- yarn build:pp",
       "pub": "lerna publish"
 
     },
