@@ -1,7 +1,7 @@
 {
   "name": "@m00n/gatsby-starter-docs-material-ui",
   "description": "Gatsby Starter Documentation Site with Material UI",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "author": "Adam Moon <moon.6stars@yandex.com>",
   "license": "MIT",
   "publishConfig": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/core": "7.0.0",
-    "@m00n/gatsby-plugin-nav-tree": "^2.0.3",
+    "@m00n/gatsby-plugin-nav-tree": "^2.0.4",
     "@material-ui/core": "^3.5.1",
     "@material-ui/docs": "^3.0.0-alpha.6",
     "@material-ui/icons": "^3.0.1",
