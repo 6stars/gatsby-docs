@@ -34,7 +34,7 @@ const sheetsRegistryMap = new Map();
 
 export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents, ...other }) => {
   // Get the context of the page to collected side effects.
-  console.log(2);
+  // console.log(2);
   
   const muiPageContext = getPageContext();
 
@@ -46,7 +46,7 @@ export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadC
     </Provider>
   );
   sheetsRegistryMap.set(other.pathname, muiPageContext.sheetsRegistry);
-  console.log(muiPageContext.sheetsRegistry.toString())
+  // console.log(muiPageContext.sheetsRegistry.toString())
   replaceBodyHTMLString(bodyHTML);
   setHeadComponents([
     <style
