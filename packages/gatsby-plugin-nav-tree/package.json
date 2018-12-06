@@ -26,5 +26,6 @@
         "build": "tsc -p ./tsconfig.json -d",
         "prepare": "cross-env NODE_ENV=production npm run build",
         "dev": "tsc -p ./tsconfig.json -d -w"
-    }
+    },
+    "gitHead": "cf3b82c807100b58d23d0a7710ee83437f1abcf0"
 }
