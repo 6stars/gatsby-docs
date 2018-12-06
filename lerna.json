@@ -1,25 +1,32 @@
-{
-    "lerna": "3.5.1",
-    "version": "independent",
-    "changelog": {
-      "repo": "6stars/gatsby-docs",
-      "labels": {
-        "tag: feat": ":rocket: New Feature",
-        "tag: breaking change": ":boom: Breaking Change",
-        "tag: fix": ":bug: Bug Fix",
-        "tag: enhance": ":nail_care: Enhancement",
-        "tag: doc": ":memo: Documentation",
-        "tag: internal": ":house: Internal"
-      },
-      "cacheDir": ".changelog"
+{  
+  "command": {
+    "create": {
+      "license": "MIT"
     },
-    "command": {
-      "publish": {
-        "allowBranch": "master",
-        "conventionalCommits": true,
-        "message": "chore(release): publish %s"
-      }
+    "publish": {
+      "allowBranch": "master",
+      "bump": "patch",
+      "conventionalCommits": true,
+      "message": "chore(release): Publish",
+      "ignoreChanges": ["CHANGELOG.md"]
+    }
+  },
+  "loglevel": "success",  
+  "npmClient": "yarn",
+  "packages": ["packages/*"],
+  "version": "independent",
+  "registry": "https://registry.npmjs.org/",  
+  "changelog": {
+    "repo": "6stars/gatsby-docs",
+    "labels": {
+      "tag: feat": ":rocket: New Feature",
+      "tag: breaking change": ":boom: Breaking Change",
+      "tag: fix": ":bug: Bug Fix",
+      "tag: enhance": ":nail_care: Enhancement",
+      "tag: doc": ":memo: Documentation",
+      "tag: internal": ":house: Internal"
     },
-    "npmClient": "yarn",
-    "useWorkspaces": true
-  }
+    "cacheDir": ".changelog"
+  },   
+  "useWorkspaces": true
+}

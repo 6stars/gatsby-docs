@@ -9,7 +9,10 @@
       "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
       "build": "lerna exec --scope @m00n/* -- yarn build",
       "build:docs": "lerna exec --scope @m00n/gatsby-starter-docs-material-ui -- yarn build:pp",
-      "pub": "lerna publish from-git"
+      "publish": "lerna publish",
+      "publish-canary": "lerna publish --canary --yes",
+      "publish-next": "lerna publish --npm-tag=next --bump prerelease",
+      "lerna-prepare": "lerna run prepare"
     },
     "repository": {
       "type": "git",
