@@ -46,7 +46,7 @@ const jss = create({
 });
 
 function createPageContext() {
-  //console.log("createPageContext():")
+  console.log("createPageContext():")
   return {
     jss,
     theme,
@@ -61,8 +61,8 @@ function createPageContext() {
 }
 
 export function updatePageContext(uiTheme) {
-  // console.log("UpdatePageContext():")
-  console.log(uiTheme)
+  console.log("UpdatePageContext():")
+  
   const pageContext = {
     ...global.__MUI_PAGE_CONTEXT__,
     theme: getTheme(uiTheme),
