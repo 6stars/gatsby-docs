@@ -1,6 +1,6 @@
 [build]
   publish = "/packages/gatsby-starter-docs-material-ui/public"
-  command = "npm config set package-lock false && yarn build"
+  command = "npm config set package-lock false && yarn build:pp"
 [build.environment]
   YARN_VERSION = "1.12.3"
   NODE_VERSION = "11.1.0"
