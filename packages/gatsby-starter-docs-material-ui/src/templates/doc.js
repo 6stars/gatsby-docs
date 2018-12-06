@@ -35,7 +35,7 @@ const styles = theme => ({
       fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
       padding: '3px 6px',
       color: theme.palette.text.primary,
-      // backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.background.paper,
       fontSize: 14,
     },
     '& p code, & ul code, & pre code': {
@@ -205,12 +205,7 @@ export class DocTemplate extends React.Component {
   }
 
   render() {
-    // console.log("DOCS:")
-    // console.log(this.props);
-    // const { mobile } = this.state;
     const { slug } = this.props.pageContext;
-    // const expanded = !mobile;
-    // const docOverlapClass = mobile ? "doc-overlap-mobile" : "doc-overlap";
     const docNode = this.props.data.markdownRemark;
     const doc = docNode.frontmatter;
     if (!doc.id) {
