@@ -1,8 +1,7 @@
 ---
 title: Test Api
 date: 2018-12-06T05:13:47.963Z
-pathRoot: /api/
-slug: test-api
+slug: /api/test-api
 category: api
 tags:
   - test
