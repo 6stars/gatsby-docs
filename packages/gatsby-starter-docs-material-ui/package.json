@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/core": "7.0.0",
-    "@m00n/gatsby-plugin-nav-tree": "^2.0.4",
+    "@m00n/gatsby-plugin-nav-tree": "^0.0.5",
     "@material-ui/core": "^3.5.1",
     "@material-ui/docs": "^3.0.0-alpha.6",
     "@material-ui/icons": "^3.0.1",
