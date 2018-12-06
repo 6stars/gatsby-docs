@@ -72,8 +72,8 @@ class AppWrapper extends React.Component {
   render() {
     const { children } = this.props;
     const { muiPageContext } = this.state;
-    console.log("APPWRAPPER:")
-    console.log(muiPageContext)
+    // console.log("APPWRAPPER:")
+    // console.log(muiPageContext)
     return (
       <JssProvider
         jss={muiPageContext.jss}
