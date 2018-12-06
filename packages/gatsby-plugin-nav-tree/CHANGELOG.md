@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-plugin-nav-tree@0.0.6...@m00n/gatsby-plugin-nav-tree@0.0.7) (2018-12-06)
+
+**Note:** Version bump only for package @m00n/gatsby-plugin-nav-tree
+
+
+
+
+
 ## [0.0.6](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-plugin-nav-tree@0.0.5...@m00n/gatsby-plugin-nav-tree@0.0.6) (2018-12-06)
 
 **Note:** Version bump only for package @m00n/gatsby-plugin-nav-tree
