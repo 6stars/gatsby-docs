@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.2](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-starter-docs-material-ui@1.1.3...@m00n/gatsby-starter-docs-material-ui@0.0.2) (2018-12-06)
+
+**Note:** Version bump only for package @m00n/gatsby-starter-docs-material-ui
+
+
+
+
+
 ## [1.1.3](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-starter-docs-material-ui@1.0.1...@m00n/gatsby-starter-docs-material-ui@1.1.3) (2018-12-06)
 
 
