@@ -31,16 +31,16 @@ const styles = theme => ({
     },
     '& code': {
       display: 'inline-block',
-      lineHeight: 1.6,
+      lineHeight: 1.4,
       fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
       padding: '3px 6px',
-      color: theme.palette.text.primary,
-      backgroundColor: theme.palette.background.paper,
-      fontSize: 14,
+      // color: theme.palette.text.primary,
+      // backgroundColor: theme.palette.background.paper,
+      fontSize: 12,
     },
     '& p code, & ul code, & pre code': {
-      fontSize: 14,
-      lineHeight: 1.6,
+      fontSize: 12,
+      lineHeight: 1.4,
     },
     '& h1': {
       ...theme.typography.h4,
@@ -264,4 +264,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withRoot(withStyles(styles)(DocTemplate));
+export default withStyles(styles)(DocTemplate);

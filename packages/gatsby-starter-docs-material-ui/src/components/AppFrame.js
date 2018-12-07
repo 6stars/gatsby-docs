@@ -83,15 +83,6 @@ class AppFrame extends React.Component {
     });
   };
 
-  handleToggleDirection = () => {
-    this.props.dispatch({
-      type: actionTypes.THEME_CHANGE_DIRECTION,
-      payload: {
-        direction: this.props.uiTheme.direction === 'ltr' ? 'rtl' : 'ltr',
-      },
-    });
-  };
-
   render() {
     const { children, classes, uiTheme } = this.props;
     // console.log("APPFRAME:")

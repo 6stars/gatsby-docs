@@ -65,4 +65,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withRoot(CategoryTemplate);
+export default CategoryTemplate;

@@ -60,4 +60,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default withRoot(TagTemplate);
+export default TagTemplate;

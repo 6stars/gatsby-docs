@@ -25,7 +25,7 @@ class Index extends React.Component {
   }  
 }
 
-export default withRoot(Index);
+export default Index;
 
 export const pageQuery = graphql`	
   query IndexQuery($slug: String) {

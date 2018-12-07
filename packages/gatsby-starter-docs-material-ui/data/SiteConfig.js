@@ -4,7 +4,7 @@ module.exports = {
   siteTitleAlt: '****** DOCS', // Alternative site title for SEO.
   siteDescription: "for ******",
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
-  siteUrl: 'https://nifty-jepsen-a1a20b.netlify.com', // Domain of your website without pathPrefix.
+  siteUrl: 'https://6stars.netlify.com', // Domain of your website without pathPrefix.
   siteRss: '/rss.xml', // Path to the RSS file.
   pathPrefix: '/docs', // Prefixes all links.
   siteGATrackingID: '', // Tracking code ID for google analytics.

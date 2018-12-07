@@ -38,7 +38,7 @@ const queries = [
   {
     query: allDocsPageQuery,
     transformer: ({ data }) => data.allMarkdownRemark.edges.map(({ node }) => node), // optional    
-    indexName: 'defi-docs', // overrides main index name, optional
+    indexName: '6stars-docs', // overrides main index name, optional
   },
 ];
 
@@ -158,16 +158,9 @@ module.exports = {
           "gatsby-remark-autolink-headers"
         ]
       }
-    },
-    {
-      resolve: "gatsby-plugin-nprogress",
-      options: {
-        color: "#c62828"
-      }
-    },
+    },   
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-catch-links",
+    "gatsby-plugin-sharp",   
     "gatsby-plugin-netlify-cms",
     {
       resolve: "gatsby-plugin-sitemap",
@@ -209,20 +202,20 @@ module.exports = {
         display: "standalone",
         icons: icons
       }
+    },  
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+      },
     },
-    'gatsby-plugin-offline',
-     // make sure to put last in the array
-  {
-    resolve: `gatsby-plugin-netlify`,
-    options: {
-      headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
-      allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-      mergeSecurityHeaders: true, // boolean to turn off the default security headers
-      mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
-      mergeCachingHeaders: true, // boolean to turn off the default caching headers
-      transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-      generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
-    },
-  },
+    // 'gatsby-plugin-offline',
+    // make sure to put last in the array
   ]
 };

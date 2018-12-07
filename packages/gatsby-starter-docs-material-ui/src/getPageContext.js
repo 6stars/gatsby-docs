@@ -2,40 +2,9 @@
 
 import { create, SheetsRegistry } from 'jss';
 import rtl from 'jss-rtl';
-import { createMuiTheme, createGenerateClassName, jssPreset } from '@material-ui/core/styles';
+import { createGenerateClassName, jssPreset } from '@material-ui/core/styles';
 import light from './styles/light';
-
-function getTheme(uiTheme) {
-  
-  let themeOptions = {
-    typography: {
-      useNextVariants: true,
-    },
-    direction: uiTheme.direction,
-    nprogress: {
-      color: uiTheme.paletteType === 'light' ? '#000' : '#fff',
-    },
-    palette: { ...uiTheme.paletteColors, type: uiTheme.paletteType },
-  }
-  
-  // set paper color based on paletteType
-  themeOptions.palette.background = uiTheme.paletteType === 'dark' ? {
-    paper: "#1c2022",
-    default: "#000"
-  } :  {
-    paper: themeOptions.palette.main,
-    default: "#fff"
-  };
-
-  const theme = createMuiTheme(themeOptions);
-
-  // Expose the theme as a global variable so people can play with it.
-  if (process.browser && window) {
-    window.theme = theme;
-  }
-
-  return theme;
-}
+import getTheme from './styles/getTheme';
 
 const theme = getTheme(light);
 
@@ -45,8 +14,8 @@ const jss = create({
   plugins: [...jssPreset().plugins, rtl()],
 });
 
-function createPageContext() {
-  console.log("createPageContext():")
+export function createPageContext() {
+  //console.log("createPageContext():")
   return {
     jss,
     theme,
