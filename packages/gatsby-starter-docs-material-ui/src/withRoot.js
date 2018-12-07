@@ -10,17 +10,15 @@ const withRoot = (Component) => {
     componentDidMount() {
       //Remove the server-side injected CSS.
       const jssStyles = document.querySelector('#server-side-jss');
-      // if (jssStyles && jssStyles.parentNode) {
-      //    jssStyles.parentNode.removeChild(jssStyles);
-      // }
+      if (jssStyles && jssStyles.parentNode) {
+         jssStyles.parentNode.removeChild(jssStyles);
+      }
     }
 
     render( ) {
-      // console.log("ROOT:")
-      // console.log(this.props.store)
       const { store } = this.props;
       // MuiThemeProvider makes the theme available down the React tree thanks to React context.
-      console.log(this.props);
+      
       return (
         <Provider store={store}>
           <AppWrapper {...this.props}>
