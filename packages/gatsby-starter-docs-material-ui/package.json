@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.0.0",
-    "@m00n/gatsby-plugin-nav-tree": "*",
+    "@m00n/gatsby-plugin-nav-tree": "",
     "@material-ui/core": "^3.5.1",
     "@material-ui/docs": "^3.0.0-alpha.6",
     "@material-ui/icons": "^3.0.1",
