@@ -6,7 +6,7 @@ module.exports = {
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteUrl: 'https://6stars.netlify.com', // Domain of your website without pathPrefix.
   siteRss: '/rss.xml', // Path to the RSS file.
-  pathPrefix: '/docs', // Prefixes all links.
+  pathPrefix: '/', // Prefixes all links.
   siteGATrackingID: '', // Tracking code ID for google analytics.
   postDefaultCategoryID: 'api', // Default category for docs.
   dateFromFormat: 'MM-DD-YYYY', // Date format used in the frontmatter.
