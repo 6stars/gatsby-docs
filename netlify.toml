@@ -3,4 +3,4 @@
   command = "npm config set package-lock false && yarn build"
 [build.environment]
   YARN_VERSION = "1.12.3"
-  NODE_VERSION = "11.1.0"
+  NODE_VERSION = "10.14.1"
