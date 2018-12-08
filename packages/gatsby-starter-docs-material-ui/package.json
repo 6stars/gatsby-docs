@@ -87,10 +87,10 @@
     "dev": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build --prefix-paths",
-    "prepare": "cross-env NODE_ENV=production npm run build:pp",
+    "prepare": "cross-env NODE_ENV=production npm run build",
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
-    "lint:md": "remark content/posts/",
+    "lint:md": "remark content/",
     "write-good": "write-good $(glob 'content/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write"
   },
