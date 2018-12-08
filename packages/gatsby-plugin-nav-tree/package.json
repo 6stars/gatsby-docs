@@ -11,12 +11,11 @@
     },
     "keywords": [
         "gatsby",
-        "gatsby-plugin",
+        "plugin",
         "page",
         "nav",
         "tree"
     ],
-    "main": "index.js",
     "scripts": {
         "build": "tsc -p ./tsconfig.json -d",
         "prepare": "cross-env NODE_ENV=production npm run build",
