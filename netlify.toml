@@ -4,3 +4,7 @@
 [build.environment]
   YARN_VERSION = "1.12.3"
   NODE_VERSION = "10.13.0"
+# A redirect rule with all the supported properties
+[[redirects]]
+  from = "/"
+  to = "/docs/"
