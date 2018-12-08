@@ -5,11 +5,22 @@
       "publish": "lerna publish",
       "publish-canary": "lerna publish --canary --yes",
       "publish-next": "lerna publish --npm-tag=next --bump prerelease",
-      "lerna-prepare": "lerna run prepare"
+      "lerna-prepare": "lerna run prepare",
+      "purge": "rm -Rf node_modules /**/node_modules packages/**/node_modules && rm -Rf yarn.lock /**/yarn.lock packages/**/yarn.lock && rm -Rf *-error.log /**/*-error.log packages/**/*-error.log && rm -Rf *-debug.log /**/*-debug.log packages/**/*-debug.log && rm -Rf package-lock.json /**/package-lock.json packages/**/package-lock.json"
     },    
     "devDependencies": {
       "lerna": "3.5.1",
-      "lerna-changelog": "^0.8.2"
+      "lerna-changelog": "^0.8.2",
+      "prettier": "1.15.2"
+    },
+    "lint-staged": {
+        "*.{js,md,css,html}": [
+          "prettier --trailing-comma es5 --single-quote --write",
+          "git add"
+        ],
+        "yarn.lock": [
+          "git rm --cached"
+        ]
     },
     "private": true,
     "workspaces": [

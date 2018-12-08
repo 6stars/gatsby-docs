@@ -13,7 +13,6 @@
   },
   "loglevel": "success",  
   "npmClient": "yarn",
-  "packages": ["packages/*"],
   "version": "independent",
   "registry": "https://registry.npmjs.org/",  
   "changelog": {

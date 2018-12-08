@@ -15,7 +15,7 @@
     "core-js": "^2.5.7",
     "downshift": "^3.1.5",
     "fg-loadcss": "^2.0.1",
-    "gatsby": "^2.0.61",
+    "gatsby": "2.0.61",
     "gatsby-cli": "^2.4.5",
     "gatsby-image": "2.0.17",
     "gatsby-plugin-algolia": "0.3.0",
@@ -64,7 +64,8 @@
     "react-share": "^2.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "url-join": "^4.0.0"
+    "url-join": "^4.0.0",
+    "uglifyjs-webpack-plugin": "2.0.1"
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",
