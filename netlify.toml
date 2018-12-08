@@ -1,6 +1,5 @@
 [build]
   publish = "/packages/gatsby-starter-docs-material-ui/public"
-  command = "yarn && yarn build"
+  command = "yarn build"
 [build.environment]
   YARN_VERSION = "1.12.3"
-  NODE_VERSION = "10.14.1"
