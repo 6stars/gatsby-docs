@@ -14,7 +14,6 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Path Root", name: "pathRoot", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
