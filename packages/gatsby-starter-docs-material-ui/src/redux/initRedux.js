@@ -32,7 +32,6 @@ function create(initialState) {
       theme: themeReducer,
     }),
     initialState, // Hydrate the store with server-side data
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     compose(
       applyMiddleware(...middlewares),
       devtools,
