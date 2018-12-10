@@ -1,12 +1,11 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const getTheme = (uiTheme) => {
-  
+    //console.log(...uiTheme.paletteColors)
     let themeOptions = {
       typography: {
         useNextVariants: true,
-      },
-      direction: uiTheme.direction,
+      },      
       nprogress: {
         color: uiTheme.paletteType === 'light' ? '#000' : '#fff',
       },

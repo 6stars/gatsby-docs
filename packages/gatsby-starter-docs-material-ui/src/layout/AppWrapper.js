@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
-import { lightTheme, darkTheme, setPrismTheme } from '../styles/prism';
+import { setPrismTheme } from '../styles/prism';
+import { updatePageContext } from '../getPageContext';
 
 
 // Inject the insertion-point-jss after docssearch
@@ -21,13 +22,15 @@ if (process.browser && !global.__INSERTION_POINT__) {
 }
 
 function uiThemeSideEffect(uiTheme) {
-  setPrismTheme(uiTheme.paletteType === 'light' ? lightTheme : darkTheme);  
+  //console.log("uiThemeSideEffect:");
+  //console.log(uiTheme);
+  setPrismTheme(uiTheme.paletteType);  
 }
 
 class AppWrapper extends React.Component {
   state = {};
 
-  constructor(props) {
+  constructor() {
     super();  
   }
 
@@ -39,36 +42,38 @@ class AppWrapper extends React.Component {
     uiThemeSideEffect(this.props.uiTheme);
   }
 
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   //console.log("nextprops:"); 
-  //   // console.log(nextProps);
-  //   if (typeof prevState.muiPageContext === 'undefined') {
-  //     return {
-  //       prevProps: nextProps,
-  //       muiPageContext: getPageContext(),
-  //     };
-  //   }
+  static getDerivedStateFromProps(nextProps, prevState) {
+    //console.log("preveState:");
+    //console.log(prevState);
+    //console.log("nextProps:");
+    //console.log(nextProps);
+    if (typeof prevState.muiPageContext === 'undefined') {
+      return {
+        prevProps: nextProps,
+        muiPageContext: nextProps.muiPageContext,
+      };
+    }
 
-  //   const { prevProps } = prevState;
+    const { prevProps } = prevState;
+    
+    if (
+      nextProps.uiTheme.paletteType !== prevProps.uiTheme.paletteType
+    ) {
+     
+       return {
+        prevProps: nextProps,
+        muiPageContext: updatePageContext(nextProps.uiTheme),
+      };
+    }
 
-  //   if (
-  //     nextProps.uiTheme.paletteType !== prevProps.uiTheme.paletteType ||
-  //     nextProps.uiTheme.paletteColors !== prevProps.uiTheme.paletteColors ||
-  //     nextProps.uiTheme.direction !== prevProps.uiTheme.direction
-  //   ) {
-  //     return {
-  //       prevProps: nextProps,
-  //       muiPageContext: updatePageContext(nextProps.uiTheme),
-  //     };
-  //   }
-
-  //   return null;
-  // }
+    return null;
+  }
 
   render() {
-    const { children, muiPageContext } = this.props;
-    // console.log("APPWRAPPER:")
-    // console.log(this.props);
+    const { children } = this.props;
+    const { muiPageContext } = this.state;
+    //console.log("AppWrapper:")
+    //console.log(muiPageContext.theme)
     return (
       <JssProvider
         jss={muiPageContext.jss}
@@ -76,7 +81,7 @@ class AppWrapper extends React.Component {
         generateClassName={muiPageContext.generateClassName}
         >      
         <MuiThemeProvider theme={muiPageContext.theme} sheetsManager={muiPageContext.sheetsManager}>
-          <CssBaseline />
+        <CssBaseline />          
           {children}
         </MuiThemeProvider>
       </JssProvider>

@@ -39,8 +39,7 @@ export default class HTML extends React.Component {
             is actually sent to the server.
             This includes DNS lookups, TLS negotiations, TCP handshakes.
           */}
-          <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="anonymous" />
-         
+          <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="anonymous" />          
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>

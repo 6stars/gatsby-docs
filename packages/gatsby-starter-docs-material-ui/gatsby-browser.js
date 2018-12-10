@@ -1,20 +1,20 @@
 import React from 'react';
 import withRoot from './src/withRoot';
-import createPageContext from './src/getPageContext';
+import getPageContext from './src/getPageContext';
 import initRedux from './src/redux/initRedux';
+import light from './src/styles/light';
 
 const sheetsRegistryMap = new Map();
 
 export const wrapRootElement = ({ element, pathname }) => {
   
-  let muiPageContext = createPageContext();
-  
-  const store = initRedux( { paletteType: 'light' } );
+  let muiPageContext = getPageContext();
+  let store = initRedux( { theme: light } );
  
   let WithRoot = withRoot(props => { 
     return props.children;
   });
-  console.log(pathname);
+  
   sheetsRegistryMap.set(pathname, muiPageContext.sheetsRegistry);
   
   return (

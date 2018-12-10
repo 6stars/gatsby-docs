@@ -2,6 +2,7 @@
     "scripts": {      
       "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
       "build": "lerna exec --scope @m00n/* -- yarn build",
+      "build:docs": "lerna exec --scope @defi/docs -- yarn build:pp",
       "publish": "lerna publish",
       "publish-canary": "lerna publish --canary --yes",
       "publish-next": "lerna publish --npm-tag=next --bump prerelease",

@@ -4,14 +4,13 @@ import { graphql } from "gatsby";
 import Layout from "../layout";
 import DocListing from "../components/DocListing";
 import config from "../../data/SiteConfig";
-import withRoot from '../withRoot';
 import { PageContext } from '../templates/pageContext';
 
 class Index extends React.Component {
   render() {
     const { data } = this.props;
     const docEdges = data.allMarkdownRemark.edges;
-   //console.log(docEdges)
+   
     return (
       <PageContext.Provider value={{data}}>
         <Layout location={this.props.location}>

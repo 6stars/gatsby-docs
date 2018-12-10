@@ -1,5 +1,4 @@
-const light = {
-    direction: 'ltr',
+const light = {    
     paletteType: 'light',
     paletteColors: {
         primary: {

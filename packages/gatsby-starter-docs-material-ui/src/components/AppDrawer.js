@@ -103,9 +103,6 @@ const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 function AppDrawer(props) {
   const { classes, className, disablePermanent, mobileOpen, onClose, onOpen, currentPage } = props;
   
-  // let menuItems = items ? items : [];
-  //console.log("AppDrawer:")
-  //console.log(currentPage);
   const renderLogo = () => {
     return <img src={Logo} alt="logo" width="170" className={classes.img} />;
   };

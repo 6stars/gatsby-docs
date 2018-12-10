@@ -7,7 +7,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import MenuIcon from '@material-ui/icons/Menu';
 import LightbulbOutlineIcon from '../svgIcons/LightbulbOutline';
 import LightbulbFullIcon from '../svgIcons/LightbulbFull';
@@ -75,6 +75,7 @@ class AppFrame extends React.Component {
   };
 
   handleTogglePaletteType = () => {
+    //console.log(this.props.uiTheme.paletteType);
     this.props.dispatch({
       type: actionTypes.THEME_CHANGE_PALETTE_TYPE,
       payload: {
@@ -85,9 +86,8 @@ class AppFrame extends React.Component {
 
   render() {
     const { children, classes, uiTheme } = this.props;
-    // console.log("APPFRAME:")
-    // console.log(this.props);
-
+    //console.log("AppFrame:")
+    //console.log(uiTheme)
     const title = '';
     let disablePermanent = false;
     let navIconClassName = '';
@@ -106,7 +106,7 @@ class AppFrame extends React.Component {
       <PageContext.Consumer>
         {({data}) => (
          <div className={classes.root}>
-        <CssBaseline />
+        
         <AppBar className={appBarClassName}>
           <Toolbar>
             <IconButton

@@ -53,7 +53,7 @@ function RawAutoComplete({ refine, hits }) {
   return (    
       <Autocomplete
         itemToString={i => (i ? i.name : i)}
-        onChange={item => console.log(JSON.stringify(item))}
+        onChange={item => //console.log(JSON.stringify(item))}
       >
         {({
           getInputProps,

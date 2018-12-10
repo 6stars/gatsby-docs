@@ -1,7 +1,6 @@
 import actionTypes from './actionTypes';
-import light from '../styles/light';
 
-const initialState = light;
+const initialState = { theme: { paletteType: 'light' } };
 
 const mapping = {
   [actionTypes.THEME_CHANGE_PALETTE_TYPE]: (state, action) => (
@@ -9,20 +8,14 @@ const mapping = {
     ...state,
     paletteType: action.payload.paletteType,
   }),
-  [actionTypes.THEME_CHANGE_DIRECTION]: (state, action) => ({
-    ...state,
-    direction: action.payload.direction,
-  }),
-  [actionTypes.THEME_CHANGE_PALETTE_COLORS]: (state, action) => ({
-    ...state,
-    paletteColors: action.payload.paletteColors,
-  }),
 };
 
 function themeReducer(state = initialState, action) {
   let newState = state;
 
   if (mapping[action.type]) {
+    //console.log(action.type);
+    //console.log(action);
     newState = mapping[action.type](state, action);
   }
 

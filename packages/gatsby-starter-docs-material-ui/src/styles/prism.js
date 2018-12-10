@@ -8,8 +8,6 @@ import 'prismjs/components/prism-typescript';
 import lightTheme from 'prism-themes/themes/prism-vs.css';
 import darkTheme from 'prism-themes/themes/prism-a11y-dark.css';
 
-export { lightTheme, darkTheme };
-
 let styleNode;
 
 if (process.browser) {
@@ -21,7 +19,13 @@ if (process.browser) {
 }
 
 export function setPrismTheme(theme) {
-  styleNode.textContent = theme;
+  if(theme === 'light'){
+    styleNode.textContent = lightTheme;
+  }
+  else {
+    styleNode.textContent = darkTheme;
+  }
+  
 }
 
 export default prism;

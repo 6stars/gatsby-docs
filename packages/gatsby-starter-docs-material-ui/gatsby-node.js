@@ -102,7 +102,7 @@ GatsbyNode.createPages = async ({ actions, graphql }) => {
   let result = await createMarkdownPages({actions, graphql});
         if (result.errors) {
           /* eslint no-console: "off" */
-          console.log(result.errors);
+          //console.log(result.errors);
           //reject(result.errors);
         }
 
