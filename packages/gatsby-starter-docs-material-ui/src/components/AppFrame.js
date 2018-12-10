@@ -130,7 +130,7 @@ class AppFrame extends React.Component {
                 onClick={this.handleTogglePaletteType}
                 aria-label="Toggle light/dark theme"
               >
-                {uiTheme.paletteType === 'light' ? <LightbulbOutlineIcon /> : <LightbulbFullIcon />}
+                {uiTheme.paletteType === 'light' ? <LightbulbFullIcon /> : <LightbulbOutlineIcon /> }
               </IconButton>
             </Tooltip>    
           </Toolbar>
