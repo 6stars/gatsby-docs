@@ -86,7 +86,7 @@ Edit the export object in `data/SiteConfig`:
   siteRss: '/rss.xml', // Path to the RSS file.
   pathPrefix: '/', // Prefixes all links.
   siteGATrackingID: '', // Tracking code ID for google analytics.
-  postDefaultCategoryID: 'api', // Default category for docs.
+  defaultCategoryID: 'api', // Default category for docs.
   dateFromFormat: 'MM-DD-YYYY', // Date format used in the frontmatter.
   dateFormat: 'MM/DD/YYYY', // Date format for display.
   userName: '******-user', // Username to display in the author segment.
@@ -99,7 +99,7 @@ You can also optionally set `pathPrefix`:
 ```js
 module.exports = {
   // Note: it must *not* have a trailing slash.
-  pathPrefix: "/gatsby-material-starter" // Prefixes all links. For cases when deployed to example.github.io/gatsby-material-starter/.
+  pathPrefix: "/docs" // Prefixes all links. For cases when deployed to example.github.io/docs/.
 };
 ```
 
@@ -121,15 +121,3 @@ backend:
 You can visit `/admin/` after and will be greeted by a login dialog (depending on the auth provider you ave chosen above).
 
 For NetlifyCMS specific issues visit the [official documentation](https://www.netlifycms.org/docs/intro/).
-
-## Theming
-
-Edit `src/layout/theme.scss` to suit your needs.
-You can use [Material color palette](https://react-md.mlaursen.com/customization/colors) provided by React-MD.
-
-```css
-@import "~react-md/src/scss/react-md";
-$md-primary-color: $md-grey-400;
-$md-secondary-color: $md-red-800;
-$md-tertiary-color: $md-grey-300;
-```
