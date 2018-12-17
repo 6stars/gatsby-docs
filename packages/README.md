@@ -31,7 +31,7 @@ This starter is based on GatsbyJS V2, which brings progressive web app features 
 - Posts in Markdown
   - Code syntax highlighting
   - Embedded YouTube videos
-  - Embedded Tweets
+  - Embedded Sequence Diagrams
 - Tags
   - Separate page for docs under each tag
 - Categories
