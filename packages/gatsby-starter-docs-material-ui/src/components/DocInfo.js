@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Link } from "gatsby";
 import moment from "moment";
 import _ from "lodash";
-import config from "../../../data/SiteConfig";
+import config from "../../data/SiteConfig";
 import Typography from '@material-ui/core/Typography';
 
 class DocInfo extends Component {

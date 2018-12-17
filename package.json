@@ -6,7 +6,18 @@
       "publish": "lerna publish",
       "publish-canary": "lerna publish --canary --yes",
       "publish-next": "lerna publish --npm-tag=next --bump prerelease",
+      "bootstrap": "npm-run-all -s check-versions lerna-prepare",
+      "prebootstrap": "yarn",
       "lerna-prepare": "lerna run prepare",
+      "lint": "npm-run-all --continue-on-error -p lint:code lint:other",
+      "lint:code": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ext .js,.jsx .",
+      "lint:other": "npm run prettier -- --list-different",
+      "test": "npm-run-all -s lint jest",
+      "test:coverage": "jest --coverage",
+      "test:update": "jest --updateSnapshot",
+      "test:watch": "jest --watch",
+      "test:integration": "jest --config=integration-tests/jest.config.js",
+      "version": "prettier --write \"**/CHANGELOG.md\"",
       "purge": "rm -Rf node_modules /**/node_modules packages/**/node_modules && rm -Rf yarn.lock /**/yarn.lock packages/**/yarn.lock && rm -Rf *-error.log /**/*-error.log packages/**/*-error.log && rm -Rf *-debug.log /**/*-debug.log packages/**/*-debug.log && rm -Rf package-lock.json /**/package-lock.json packages/**/package-lock.json"
     },    
     "devDependencies": {

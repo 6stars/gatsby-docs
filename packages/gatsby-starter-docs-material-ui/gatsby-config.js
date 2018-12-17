@@ -1,5 +1,5 @@
 const config = require("./data/SiteConfig");
-const icons = require("./icons");
+const iconsConfig = require("./static/icons.json");
 const urljoin = require("url-join");
 
 const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/;
@@ -200,7 +200,7 @@ module.exports = {
         background_color: "#334058",
         theme_color: "#6ec5ff",
         display: "standalone",
-        icons: icons
+        icons: iconsConfig.icons
       }
     },  
     {

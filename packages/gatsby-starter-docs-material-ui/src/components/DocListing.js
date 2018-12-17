@@ -1,5 +1,5 @@
 import React from 'react';
-import DocPreview from '../DocPreview';
+import DocPreview from './DocPreview';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from "@material-ui/core/styles";
 

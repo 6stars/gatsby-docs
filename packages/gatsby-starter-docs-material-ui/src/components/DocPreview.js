@@ -12,8 +12,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Launch from '@material-ui/icons/Launch';
 import { Link } from "gatsby";
 import moment from "moment";
-import DocTags from "../DocTags";
-import config from "../../../data/SiteConfig";
+import DocTags from "./DocTags";
+import config from "../../data/SiteConfig";
 
 const styles = theme => ({
   card: {
