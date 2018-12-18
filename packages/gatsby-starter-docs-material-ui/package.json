@@ -1,13 +1,13 @@
 {
   "name": "@m00n/gatsby-starter-docs-material-ui",
   "description": "Gatsby Starter Documentation Site with Material UI",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "author": "Adam Moon <moon.6stars@yandex.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
-    "@m00n/gatsby-plugin-nav-tree": "^0.0.7",
+    "@m00n/gatsby-plugin-nav-tree": "^0.1.0",
     "@material-ui/core": "^3.7.0",
     "@material-ui/docs": "^3.0.0-alpha.8",
     "@material-ui/icons": "^3.0.1",
@@ -64,8 +64,8 @@
     "react-share": "^2.3.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "url-join": "^4.0.0",
-    "uglifyjs-webpack-plugin": "2.0.1"
+    "uglifyjs-webpack-plugin": "2.0.1",
+    "url-join": "^4.0.0"
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",
