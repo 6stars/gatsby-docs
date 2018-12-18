@@ -65,7 +65,12 @@ export default class HTML extends React.Component {
           />
           {this.props.postBodyComponents}       
           <script async src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js" />
-          <script type="text/javascript" src="https://cdn.jsdelivr.net/algoliasearch/3.10.2/algoliasearch.min.js"></script> 
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/algoliasearch/3.10.2/algoliasearch.min.js"></script>
+          <noscript>
+      <div>
+        <p>Please enable javascript to access ****** DOCS</p>
+      </div>
+    </noscript>
         </body>
       </html>
     )
