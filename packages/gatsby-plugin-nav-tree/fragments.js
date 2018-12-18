@@ -5,7 +5,7 @@ export const pageTreeFragement = graphql`
     currentPage: allSitePage(filter: {path: {eq:$slug}}) {
         edges {
           node {
-            menu
+            tree
             path
             context {
               title

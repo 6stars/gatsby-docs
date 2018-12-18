@@ -1,14 +1,13 @@
 import { GraphQLScalarType, GraphQLInt } from 'graphql';
-import * as util from 'util'
-import * as fs from 'fs'
-import * as path from 'path'
-import MenuItem from './menu-item'
-import { buildMenuFromNodes } from './menu-builder'
+import * as util from 'util';
+import * as fs from 'fs';
+import * as path from 'path';
+import { buildTreeFromNodes } from './tree-builder';
 
 const copyFile = util.promisify(fs.copyFile);
 
 const buildTreeForPath = async(pagePath: string, getNodes: GetNodes, ignorePaths: string[]) => {
-    return buildMenuFromNodes(getNodes(), pagePath, ignorePaths);
+    return buildTreeFromNodes(getNodes(), pagePath, ignorePaths);
 };
 
 export const setFieldsOnGraphQLNodeType = async({ type, getNodes }: {type: any, getNodes: GetNodes}, pluginOptions: PluginOptions) => {
@@ -21,9 +20,9 @@ export const setFieldsOnGraphQLNodeType = async({ type, getNodes }: {type: any, 
     
     if (type.name === 'SitePage') {
         return {
-            menu: {
+            tree: {
                 type: new GraphQLScalarType({
-                    name: 'Menu',
+                    name: 'Tree',
                     serialize(value) {
                         return value;
                     }
@@ -52,7 +51,7 @@ export const onPreExtractQueries = async ({
     getNodes,
     boundActionCreators,
   }) => {
-    // Copy the helper fragment used to query the current page and it's menu items.
+    // Copy the helper fragment used to query the current page and it's tree items.
     const program = store.getState().program;
     await copyFile(path.join(__dirname, "fragments.js"),
         `${program.directory}/.cache/fragments/page-tree.js`);

@@ -1,4 +1,4 @@
-export default class MenuItem {
+export default class TreeItem {
     constructor() {
         this.order = 0;
         this.path = "";
@@ -14,5 +14,5 @@ export default class MenuItem {
     selected: boolean
     active: boolean
     isEmptyParent: boolean
-    children: Array<MenuItem>
+    children: Array<TreeItem>
 }

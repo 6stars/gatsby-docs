@@ -17,6 +17,6 @@
     "compileOnSave": true,
     "allowJS": true,
     "include": [
-        "src/**/*"
+        "src/**/*", "../gatsby-plugin-nav-tree/src/tree-item.ts"
     ]
 }

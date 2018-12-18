@@ -1,5 +1,5 @@
 import treeify from 'treeify-paths'
-import MenuItem from './menu-item'
+import TreeItem from './tree-item'
 
 class TreeNode {
     path: string
@@ -17,7 +17,7 @@ const normalizePath = (p: string) => {
     return p;
 }
 
-export function buildMenuFromNodes(nodes: Array<GatsbyNode>, selectedPath: string, ignorePaths: string[]): Array<MenuItem> {
+export function buildTreeFromNodes(nodes: Array<GatsbyNode>, selectedPath: string, ignorePaths: string[]): Array<TreeItem> {
     selectedPath = normalizePath(selectedPath);
     let pages = nodes.filter(x => x.internal.type == 'SitePage');
     if (!ignorePaths) {
@@ -34,22 +34,22 @@ export function buildMenuFromNodes(nodes: Array<GatsbyNode>, selectedPath: strin
          
     let rootNode = tree.children[0];
   
-    let result: Array<MenuItem> = [];
+    let result: Array<TreeItem> = [];
     
-    const walkTreeNode = (node: TreeNode, parents: MenuItem[]): MenuItem => {
+    const walkTreeNode = (node: TreeNode, parents: TreeItem[]): TreeItem => {
         let normalizedPath = normalizePath(node.path);
-        let menuItem = new MenuItem();
-        menuItem.path = normalizedPath;
+        let treeItem = new TreeItem();
+        treeItem.path = normalizedPath;
 
         let page = pages.find(x => normalizePath(x.path) == normalizedPath);
         if (page) {
             
-            menuItem.title = page.context.title ? page.context.title : '';
+            treeItem.title = page.context.title ? page.context.title : '';
             
             if(page.fields && page.fields.order) {
-                menuItem.order = page.fields.order;
+                treeItem.order = page.fields.order;
             } else {
-                menuItem.order = 0;
+                treeItem.order = 0;
             }
         } else {
            
@@ -59,13 +59,13 @@ export function buildMenuFromNodes(nodes: Array<GatsbyNode>, selectedPath: strin
             } else {
                 title = node.path.toUpperCase();  
             }
-            menuItem.title = title;
-            menuItem.isEmptyParent = true;
-            menuItem.order = 0;
+            treeItem.title = title;
+            treeItem.isEmptyParent = true;
+            treeItem.order = 0;
         }
 
         if(normalizedPath == selectedPath) {
-            menuItem.selected = true;
+            treeItem.selected = true;
             for(let parent of parents) {
                 parent.active = true;
             }
@@ -74,20 +74,20 @@ export function buildMenuFromNodes(nodes: Array<GatsbyNode>, selectedPath: strin
         if (node.children && node.children.length > 0) {
             let newParents = [
                 ...parents,
-                menuItem
+                treeItem
             ];
-            menuItem.children = node.children.map(child => {
+            treeItem.children = node.children.map(child => {
                 return walkTreeNode(child, newParents)
             })
         }
-        return menuItem;
+        return treeItem;
     };
 
     for(let child of rootNode.children) {
         result.push(walkTreeNode(child, []));
     }
 
-    const sortChildren = (items: MenuItem[]): MenuItem[] => {
+    const sortChildren = (items: TreeItem[]): TreeItem[] => {
         for(let item of items) {
             item.children = sortChildren(item.children);
         }
@@ -100,7 +100,7 @@ export function buildMenuFromNodes(nodes: Array<GatsbyNode>, selectedPath: strin
     }
 
     // Now that we built the entire tree, let's remove the nodes that don't matter.
-    const collapseChildren = (item: MenuItem) => {
+    const collapseChildren = (item: TreeItem) => {
         // We only want to consider collapsing children if this current node can be selected.
         // If it isn't a valid page, then the user can't navigate to it to see it's children.
         if(!item.isEmptyParent) {

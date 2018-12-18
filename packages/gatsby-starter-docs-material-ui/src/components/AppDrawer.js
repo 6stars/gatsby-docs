@@ -116,7 +116,7 @@ function AppDrawer(props) {
         </div>
       </div>
       <Divider />
-      {renderNavItems({ props, pages: currentPage && currentPage.menu ? currentPage.menu : [], activePage: currentPage ? currentPage.path : '', depth: 0 })}
+      {renderNavItems({ props, pages: currentPage && currentPage.tree ? currentPage.tree : [], activePage: currentPage ? currentPage.path : '', depth: 0 })}
     </div>
   );
 
