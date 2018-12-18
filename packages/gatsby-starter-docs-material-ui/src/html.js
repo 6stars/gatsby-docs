@@ -34,7 +34,7 @@ export default class HTML extends React.Component {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
-          <link rel="apple-ios-appicon" href="ios-appicon-iphone.png" />
+          <link rel="apple-ios-appicon" href="ios/ios-appicon-iphone.png" />
           <link rel="apple-ios-appicon" sizes="152x152" href="ios/ios-appicon-ipad.png" />
           <link rel="apple-ios-appicon" sizes="180x180" href="ios/ios-appicon-iphone-retina.png" />
           <link rel="apple-ios-appicon" sizes="167x167" href="ios/ios-appicon-ipad-retina.png" />          
