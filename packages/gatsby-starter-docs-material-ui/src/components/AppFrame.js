@@ -27,6 +27,9 @@ const styles = theme => ({
     flex: '1 1 auto',
   },
   title: {
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 16,
+    },
     marginLeft: 12,
     flex: '0 1 auto',
     fontWeight: theme.typography.fontWeightMedium,
@@ -75,7 +78,7 @@ class AppFrame extends React.Component {
   };
 
   handleTogglePaletteType = () => {
-    //console.log(this.props.uiTheme.paletteType);
+    
     this.props.dispatch({
       type: actionTypes.THEME_CHANGE_PALETTE_TYPE,
       payload: {
