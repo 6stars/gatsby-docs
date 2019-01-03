@@ -240,7 +240,7 @@ export class DocTemplate extends React.Component {
 
 export const pageQuery = graphql`
   query DocBySlug($slug: String!) {
-    ...pageTree
+    ...navTree
     site {
       siteMetadata {
         title

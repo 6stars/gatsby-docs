@@ -34,7 +34,7 @@ export class TagTemplate extends React.Component {
 
 export const pageQuery = graphql`
   query TagPage($slug: String!, $tag: String) {
-    ...pageTree
+    ...navTree
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }

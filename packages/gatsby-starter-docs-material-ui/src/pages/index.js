@@ -28,7 +28,7 @@ export default Index;
 
 export const pageQuery = graphql`	
   query IndexQuery($slug: String) {
-    ...pageTree
+    ...navTree
     allMarkdownRemark(	
       limit: 2000	
       sort: { fields: [fields___date], order: DESC }	

@@ -39,7 +39,7 @@ export class CategoryTemplate extends React.Component {
 
 export const pageQuery = graphql`
   query CategoryPage($slug: String!, $category: String) {
-    ...pageTree,
+    ...navTree,
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
