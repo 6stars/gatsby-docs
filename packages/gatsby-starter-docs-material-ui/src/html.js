@@ -35,9 +35,10 @@ export default class HTML extends React.Component {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
-          <link rel="apple-ios-appicon" href="/ios/ios-appicon-iphone.png" />
-          <link rel="apple-ios-appicon" sizes="152x152" href="/ios/ios-launchimage-152-152.png" />
-          <link rel="apple-ios-appicon" sizes="180x180" href="/ios/ios-launchimage-180-180.png" />
+          <link rel="apple-ios-appicon" href="/ios/ios-appicon-76-76.png" />
+          <link rel="apple-touch-icon" href="/ios/ios-appicon-76-76.png" />      
+          <link rel="apple-ios-appicon" sizes="152x152" href="/ios/ios-appicon-152-152.png" />
+          <link rel="apple-ios-appicon" sizes="180x180" href="/ios/ios-appicon-180-180.png" />
           <link rel="apple-ios-appicon" sizes="167x167" href="/ios/ios-launchimage-167-167.png" />          
           <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242-2208.png" />
           <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-750-1334.png" />          
