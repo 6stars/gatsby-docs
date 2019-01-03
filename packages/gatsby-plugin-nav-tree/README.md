@@ -1,7 +1,6 @@
 # gatsby-plugin-nav-tree
 
-Provide drop-in support for using the css-in-js library
-[JSS](https://github.com/cssinjs/react-jss) including server rendering.
+Provide drop-in support for automated generation of a nested Page Navigation Tree for each page. Automatically discovers your nested path stucture to provide the data needed to generate a proper nested Nagivation Tree Component
 
 ## Install
 
