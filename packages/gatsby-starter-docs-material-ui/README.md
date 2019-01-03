@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://6star.pw/ios/ios-appicon-76-76.png" alt="logo" width="170" class="j121">
+    <img src="https://6star.pw/ios/ios-appicon-76-76.png" alt="logo" width="76" class="j121">
 </div>
 
 # Gatsby Documentation Site Starter with Material-UI
