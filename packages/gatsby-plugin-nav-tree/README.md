@@ -4,7 +4,7 @@ Provide drop-in support for automated generation of a nested Page Navigation Tre
 
 ## Install
 
-`npm install --save gatsby-plugin-nav-tree`
+`npm install --save @m00n/gatsby-plugin-nav-tree`
 
 ## How to use
 
