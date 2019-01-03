@@ -1,4 +1,4 @@
-# gatsby-plugin-nav-tree
+# @m00n/gatsby-plugin-nav-tree
 
 Provide drop-in support for automated generation of a nested Page Navigation Tree for each page. Automatically discovers your nested path stucture to provide the data needed to generate a proper nested Nagivation Tree Component
 
