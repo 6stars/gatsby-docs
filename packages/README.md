@@ -18,17 +18,7 @@ This starter is based on GatsbyJS V2, which brings progressive web app features 
 - [material-ui](https://material-ui.com) for Material design
 - [NetlifyCMS](https://www.netlifycms.org/docs/intro/) support for creating/editing posts via admin panel
 
-- High configurability:
-  - User information
-  - User social profiles
-  - Copyright information
-  - More!
-- Author segment
-  - Name
-  - Location
-  - Description
-  - Links
-- Posts in Markdown
+- Docs in Markdown
   - Code syntax highlighting
   - Embedded YouTube videos
   - Embedded Sequence Diagrams
