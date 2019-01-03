@@ -27,6 +27,8 @@ plugins: [
 
 ### Including `navTree` graphQL Fragment into a Page Component
 
+###### Notice the ...pageTree fragment reference in the the Page graphql query
+
 ```javascript
 import React from "react";
 import Helmet from "react-helmet";
