@@ -36,18 +36,16 @@ export default class HTML extends React.Component {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
           <link rel="apple-ios-appicon" href="/ios/ios-appicon-iphone.png" />
-          <link rel="apple-ios-appicon" sizes="152x152" href="/ios/ios-appicon-ipad.png" />
-          <link rel="apple-ios-appicon" sizes="180x180" href="/ios/ios-appicon-iphone-retina.png" />
-          <link rel="apple-ios-appicon" sizes="167x167" href="/ios/ios-appicon-ipad-retina.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242x2688.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-828x1792.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1125x2436.png" />
-          <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242x2208.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-750x1334.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-2048x2732.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-1668x2388.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-1668x2224.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-1536x2048.png" />       
+          <link rel="apple-ios-appicon" sizes="152x152" href="/ios/ios-launchimage-152-152.png" />
+          <link rel="apple-ios-appicon" sizes="180x180" href="/ios/ios-launchimage-180-180.png" />
+          <link rel="apple-ios-appicon" sizes="167x167" href="/ios/ios-launchimage-167-167.png" />          
+          <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242-2208.png" />
+          <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-750-1334.png" />          
+          <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1125-2436.png" />
+          <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242-2208.png" />          
+          <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-750-1334.png" />          
+          <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-2048-1536.png" />      
+          <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-1536-2048.png" />       
           {/*
             Preconnect allows the browser to setup early connections before an HTTP request
             is actually sent to the server.
