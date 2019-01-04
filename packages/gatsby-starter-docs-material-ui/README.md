@@ -1,7 +1,7 @@
 <div align="center">
-    <img src="https://6star.pw/ios/ios-appicon-76-76.png" alt="6star logo" width="76" style="padding-right: 10px">
-    <img src="https://material-ui.com/static/images/material-ui-logo.svg" alt="Material-UI logo" width="76" style="padding-right: 10px">
-    <img src="https://raw.githubusercontent.com/jsstyles/logo/master/logo.png" alt="JSS logo" width="76" style="padding-right: 10px">
+    <img src="https://6star.pw/ios/ios-appicon-76-76.png" alt="6star logo" width="76" >
+    <img src="https://material-ui.com/static/images/material-ui-logo.svg" alt="Material-UI logo" width="76" style="padding-right: 20px;">
+    <img src="https://raw.githubusercontent.com/jsstyles/logo/master/logo.png" alt="JSS logo" width="76" style="padding-right: 20px;">
 </div>
 
 # Gatsby Documentation Site Starter with Material-UI
