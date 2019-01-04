@@ -5,7 +5,7 @@
 </div>
 
 # Gatsby Documentation Site Starter with Material-UI
-NOTE: This project is not officially associated with Material-UI, Facebook and/or Gatsby in any way. It is just a helpful boilerplate arranged by me.
+NOTE: This project is not officially associated with Material-UI or Gatsby in any way. It is just a helpful boilerplate arranged by me.
 
 A [Gatsby V2](https://github.com/gatsbyjs/gatsby/) Documentation Site Starter using [Material-UI](https://material-ui.com) and [JSS](https://cssinjs.org).
 
