@@ -1,8 +1,11 @@
 <div align="center">
-    <img src="https://6star.pw/ios/ios-appicon-76-76.png" alt="logo" width="76" class="j121">
+    <img src="https://6star.pw/ios/ios-appicon-76-76.png" alt="6star logo" width="76">
+    <img src="https://material-ui.com/static/images/material-ui-logo.svg" alt="Material-UI logo" width="100">
+    <img src="https://raw.githubusercontent.com/jsstyles/logo/master/logo.png" alt="JSS logo" width="100">
 </div>
 
 # Gatsby Documentation Site Starter with Material-UI
+NOTE: This project is not officially associated with Material-UI, Facebook and/or Gatsby in any way. It is just a helpful boilerplate arranged by me.
 
 A [Gatsby V2](https://github.com/gatsbyjs/gatsby/) Documentation Site Starter using [Material-UI](https://material-ui.com) and [JSS](https://cssinjs.org).
 
