@@ -118,7 +118,7 @@ collections:
     label: "****** Doc"
     folder: "content"
     create: true
-    slug: "{{slug}}.md"
+    slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
