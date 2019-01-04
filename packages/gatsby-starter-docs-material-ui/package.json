@@ -1,7 +1,7 @@
 {
   "name": "@m00n/gatsby-starter-docs-material-ui",
   "description": "Gatsby Starter Documentation Site with Material UI",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Adam Moon <moon.6stars@yandex.com>",
   "license": "MIT",
   "dependencies": {
