@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-starter-docs-material-ui@0.1.1...@m00n/gatsby-starter-docs-material-ui@0.2.0) (2019-01-04)
+
+### Bug Fixes
+
+- apple-touch-icon apple-ios-appicon ([ae1a1bc](https://github.com/6stars/gatsby-docs/commit/ae1a1bc))
+- ios logo paths ([36e1c88](https://github.com/6stars/gatsby-docs/commit/36e1c88))
+- ios paths ([b80125a](https://github.com/6stars/gatsby-docs/commit/b80125a))
+
 ## [0.1.1](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-starter-docs-material-ui@0.1.0...@m00n/gatsby-starter-docs-material-ui@0.1.1) (2018-12-19)
 
 **Note:** Version bump only for package @m00n/gatsby-starter-docs-material-ui
