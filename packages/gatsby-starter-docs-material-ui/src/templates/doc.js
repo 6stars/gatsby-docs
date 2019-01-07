@@ -208,6 +208,9 @@ export class DocTemplate extends React.Component {
     const { slug } = this.props.pageContext;
     const docNode = this.props.data.markdownRemark;
     const doc = docNode.frontmatter;
+
+    console.log(this.props.pageContext);
+
     if (!doc.id) {
       doc.id = slug;
     }
@@ -239,14 +242,14 @@ export class DocTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query DocBySlug($slug: String!) {
+  query DocByRoute($route: String!) {
     ...navTree
     site {
       siteMetadata {
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { route: { eq: $route } }) {
       html
       timeToRead
       excerpt
@@ -257,6 +260,7 @@ export const pageQuery = graphql`
         tags
       }
       fields {
+        route
         slug
         date
       }

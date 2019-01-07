@@ -9,7 +9,7 @@ let GatsbyNode = {};
 
 GatsbyNode.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  let slug;
+  let slug, route;
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
@@ -17,6 +17,8 @@ GatsbyNode.onCreateNode = ({ node, actions, getNode }) => {
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
         slug = node.frontmatter.slug;//`/${_.kebabCase(node.frontmatter.slug)}`;
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "route"))
+        route = node.frontmatter.route;//`/${_.kebabCase(node.frontmatter.slug)}`;
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
         const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
         if (!date.isValid)
@@ -30,6 +32,7 @@ GatsbyNode.onCreateNode = ({ node, actions, getNode }) => {
       }
     }
     createNodeField({ node, name: "slug", value: slug });
+    createNodeField({ node, name: "route", value: route });
     postNodes.push(node);
   }
 };
@@ -52,6 +55,7 @@ const createMarkdownPages = async ({actions, graphql}) => {
           edges {
               node {
                   fields {
+                      route
                       slug
                   }
                   frontmatter {
@@ -65,12 +69,13 @@ const createMarkdownPages = async ({actions, graphql}) => {
   }
   `
   );
-  
   for (let page of (result.data.allMarkdownRemark.edges).map(x => x.node)) {
+      console.log(page) 
       createPage({
-          path: page.fields.slug,
+          path: page.fields.route,
           component: docPage,
-          context: {              
+          context: {
+              route: page.fields.route,           
               slug: page.fields.slug,
               title: page.frontmatter.title,
               category: page.frontmatter.category
@@ -93,6 +98,7 @@ GatsbyNode.createPages = async ({ actions, graphql }) => {
     component: homePage,
     context: {
       slug: "/",
+      route: "/",
       title: "Docs Home",      
     }
   });
@@ -127,7 +133,7 @@ GatsbyNode.createPages = async ({ actions, graphql }) => {
             path: path,
             component: tagPage,
             context: {
-              slug: path,
+              route: path,
               title: tag,
               tag
             }
@@ -141,7 +147,7 @@ GatsbyNode.createPages = async ({ actions, graphql }) => {
             path: path,
             component: categoryPage,
             context: {
-              slug: path,
+              route: path,
               title: category,
               category
             }

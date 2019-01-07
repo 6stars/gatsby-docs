@@ -15,10 +15,12 @@ const allDocsPageQuery = `{
     sort: { fields: [fields___date], order: DESC }	
   ) {	
     edges {	
-      node {
+      node {yar
         objectID: id          
-        fields {	
+        fields {
+          route
           slug
+          path
           date
         }	
         excerpt
@@ -92,7 +94,7 @@ module.exports = {
             options: {
               header: '', // the custom header text
               include: [
-                'content/**/*.md' // an include glob to match against
+                'content/*.md' // an include glob to match against
               ],
               mdastUtilTocOptions: {
                 maxDepth: 2

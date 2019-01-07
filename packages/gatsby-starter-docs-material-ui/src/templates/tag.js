@@ -33,7 +33,7 @@ export class TagTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query TagPage($slug: String!, $tag: String) {
+  query TagPage($route: String!, $tag: String) {
     ...navTree
     allMarkdownRemark(
       limit: 1000
@@ -44,6 +44,7 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
+            route
             slug
             date
           }

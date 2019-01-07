@@ -10,7 +10,7 @@ class Index extends React.Component {
   render() {
     const { data } = this.props;
     const docEdges = data.allMarkdownRemark.edges;
-   
+    console.log(data);
     return (
       <PageContext.Provider value={{data}}>
         <Layout location={this.props.location}>
@@ -27,7 +27,7 @@ class Index extends React.Component {
 export default Index;
 
 export const pageQuery = graphql`	
-  query IndexQuery($slug: String) {
+  query IndexQuery($route: String) {
     ...navTree
     allMarkdownRemark(	
       limit: 2000	
@@ -36,7 +36,8 @@ export const pageQuery = graphql`
       edges {	
         node {	
           fields {	
-            slug	
+            slug
+            route
             date	
           }	
           excerpt

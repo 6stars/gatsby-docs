@@ -122,7 +122,7 @@ class AppFrame extends React.Component {
             </IconButton>
             {title !== null && (
               <Typography className={classes.title} variant="h5" color="inherit" noWrap>
-               {data.currentPage.edges.length > 0 && data.currentPage.edges[0].node.context && data.currentPage.edges[0].node.context.title != null ? data.currentPage.edges[0].node.context.title : 'DOCS'}
+               {data.currentPage && data.currentPage.edges.length > 0 && data.currentPage.edges[0].node.context && data.currentPage.edges[0].node.context.title != null ? data.currentPage.edges[0].node.context.title : 'DOCS'}
               </Typography>
             )}
             <div className={classes.grow} />            

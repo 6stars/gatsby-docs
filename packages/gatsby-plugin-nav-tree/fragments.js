@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 
 export const navTreeFragement = graphql`
   fragment navTree on Query {
-    currentPage: allSitePage(filter: {path: {eq:$slug}}) {
+    currentPage: allSitePage(filter: {path: {eq:$route}}) {
         edges {
           node {
             tree
@@ -11,6 +11,7 @@ export const navTreeFragement = graphql`
               title
               category
               slug
+              route
             }
           }
         }

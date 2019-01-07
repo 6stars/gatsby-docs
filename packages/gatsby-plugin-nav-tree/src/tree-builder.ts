@@ -45,7 +45,7 @@ export function buildTreeFromNodes(nodes: Array<GatsbyNode>, selectedPath: strin
         if (page) {
             
             treeItem.title = page.context.title ? page.context.title : '';
-            
+            //console.log(page)
             if(page.fields && page.fields.order) {
                 treeItem.order = page.fields.order;
             } else {
@@ -80,6 +80,7 @@ export function buildTreeFromNodes(nodes: Array<GatsbyNode>, selectedPath: strin
                 return walkTreeNode(child, newParents)
             })
         }
+        //console.log(treeItem);
         return treeItem;
     };
 

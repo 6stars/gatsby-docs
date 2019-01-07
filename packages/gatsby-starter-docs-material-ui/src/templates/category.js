@@ -5,7 +5,6 @@ import DocListing from "../components/DocListing";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 import { PageContext } from './pageContext';
-import withRoot from '../withRoot';
 
 export class CategoryTemplate extends React.Component {
   render() {
@@ -38,7 +37,7 @@ export class CategoryTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query CategoryPage($slug: String!, $category: String) {
+  query CategoryPage($route: String!, $category: String) {
     ...navTree,
     allMarkdownRemark(
       limit: 1000
@@ -49,6 +48,7 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
+            route
             slug
             date
           }

@@ -2,7 +2,8 @@
 title: "Config Settings Glossary"
 category: "config settings"
 date: "11-05-2018"
-slug: "/config/config-settings/glossary"
+route: "/config/config-settings/glossary"
+slug: "config-settings_glossary"
 tags:
     - config-settings
 ---

@@ -2,7 +2,8 @@
 title: "Sample Guide"
 category: "guide"
 date: "11-05-2018"
-slug: "/guides/sample-guide"
+route: "/guides/sample-guide" 
+slug: "guides_sample-guide"
 tags:
     - sample
 ---

@@ -27,7 +27,7 @@ export const setFieldsOnGraphQLNodeType = async({ type, getNodes }: {type: any, 
                         return value;
                     }
                 }),
-                resolve: (node: GatsbyNode) => {
+                resolve: (node: GatsbyNode) => {                    
                     return buildTreeForPath(node.path, getNodes, pluginOptions.ignorePaths);
                 }
             },
