@@ -209,8 +209,6 @@ export class DocTemplate extends React.Component {
     const docNode = this.props.data.markdownRemark;
     const doc = docNode.frontmatter;
 
-    console.log(this.props.pageContext);
-
     if (!doc.id) {
       doc.id = slug;
     }
