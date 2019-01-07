@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DocTemplate from '../../templates/doc';
 import { withStyles } from '@material-ui/core/styles';
+import withRoot from '../../src/withRoot';
 
 const styles = theme => ({
   root: {
@@ -37,4 +38,4 @@ DocPreview.propTypes = {
 
 
 
-export default withStyles(DocPreview, styles);
+export default withRoot(withStyles(DocPreview, styles));

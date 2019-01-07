@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import Layout from "../layout";
 import DocListing from "../components/DocListing";
 import config from "../../data/SiteConfig";
-import withRoot from '../withRoot';
 import { PageContext } from './pageContext';
 
 export class TagTemplate extends React.Component {
