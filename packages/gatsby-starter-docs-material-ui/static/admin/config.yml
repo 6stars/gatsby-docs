@@ -11,7 +11,7 @@ logo_url:  https://6star.pw/logos/logo.png
 collections:
   - name: "doc"
     label: "****** Doc"
-    folder: "content"
+    folder: "packages/gatsby-stater-docs-material-ui/content"
     create: true
     slug: "{{slug}}"
     fields:
