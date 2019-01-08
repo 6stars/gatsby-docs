@@ -42,7 +42,7 @@ export default class HTML extends React.Component {
           <link rel="apple-ios-appicon" sizes="167x167" href="/ios/ios-launchimage-167-167.png" />          
           <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242-2208.png" />
           <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-750-1334.png" />          
-          <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1125-2436.png" />
+          <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242-2208.png" />
           <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="/ios/ios-launchimage-1242-2208.png" />          
           <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-750-1334.png" />          
           <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/ios/ios-launchimage-2048-1536.png" />      
