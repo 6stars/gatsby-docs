@@ -167,6 +167,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
         output: "/sitemap.xml",
         query: `
           {
