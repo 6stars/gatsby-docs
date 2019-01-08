@@ -9,7 +9,7 @@ display_url: https://6star.pw
 logo_url:  https://6star.pw/img/logo.png
 
 collections:
-  - name: "docsgi"
+  - name: "docs"
     label: "****** Doc"
     folder: "packages/gatsby-starter-docs-material-ui/content"
     create: true
