@@ -247,6 +247,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { route: { eq: $route } }) {
       html
+      tableOfContents(pathToSlugField: "fields.route")
       timeToRead
       excerpt
       frontmatter {

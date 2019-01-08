@@ -54,6 +54,7 @@ const createMarkdownPages = async ({actions, graphql}) => {
       allMarkdownRemark {
           edges {
               node {
+                  tableOfContents(pathToSlugField: "fields.route")
                   fields {
                       route
                       slug
@@ -70,7 +71,8 @@ const createMarkdownPages = async ({actions, graphql}) => {
   `
   );
   for (let page of (result.data.allMarkdownRemark.edges).map(x => x.node)) {
-      console.log(page) 
+      
+      //console.log(page);
       createPage({
           path: page.fields.route,
           component: docPage,
