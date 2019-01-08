@@ -9,7 +9,7 @@ import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import Link from 'gatsby-link';
 import AppDrawerNavItem from './AppDrawerNavItem';
-import Logo from '../../static/logos/logo_transparent.png';
+import Logo from '../../static/img/logo_transparent.png';
 
 const styles = theme => {
   

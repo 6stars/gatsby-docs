@@ -6,10 +6,10 @@ media_folder:  "packages/gatsby-starter-docs-material-ui/static/img"
 public_folder: /img
 
 display_url: https://6star.pw
-logo_url:  https://6star.pw/logos/logo.png
+logo_url:  https://6star.pw/img/logo.png
 
 collections:
-  - name: "doc"
+  - name: "docsgi"
     label: "****** Doc"
     folder: "packages/gatsby-starter-docs-material-ui/content"
     create: true

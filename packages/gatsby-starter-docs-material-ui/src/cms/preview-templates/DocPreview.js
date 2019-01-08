@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DocTemplate from '../../templates/doc';
 import { withStyles } from '@material-ui/core/styles';
-import withRoot from '../../src/withRoot';
 
 const styles = theme => ({
   root: {
@@ -19,7 +18,7 @@ const styles = theme => ({
     padding: `0 ${theme.spacing.unit}px`,
   },
 });
-
+ 
 const DocPreview = ({ entry, widgetFor }) => (
   <DocTemplate
     content={widgetFor('body')}
@@ -38,4 +37,4 @@ DocPreview.propTypes = {
 
 
 
-export default withRoot(withStyles(DocPreview, styles));
+export default withStyles(DocPreview, styles);

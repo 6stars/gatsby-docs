@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms'
 
-import DocPreview from './preview-templates/DocPreview'
+import DocPreview from './preview-templates/DocPreviewTemplate'
 
-CMS.registerPreviewTemplate('doc', DocPreview)
+CMS.registerPreviewTemplate('docs', DocPreviewTemplate)
