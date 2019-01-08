@@ -9,11 +9,8 @@ tags:
   - javacript
   - react
 ---
-![](/img/logo_1024.png)
 
-## My Api
-
-Learning Javascript and React
+## Learning Javascript and React
 ==
 
 ## Learn in a Sandbox
