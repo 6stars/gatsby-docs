@@ -27,8 +27,9 @@ const styles = theme => ({
     flex: '1 1 auto',
   },
   title: {
+    fontSize: 16,
     [theme.breakpoints.up('sm')]: {
-      fontSize: 16,
+      fontSize: 24,
     },
     marginLeft: 12,
     flex: '0 1 auto',

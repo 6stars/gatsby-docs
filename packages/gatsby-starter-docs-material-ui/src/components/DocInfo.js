@@ -19,7 +19,7 @@ class DocInfo extends Component {
             to={`/categories/${_.kebabCase(doc.category)}`}
           >
           <Typography color="textSecondary" gutterBottom>
-            In Category {doc.category}
+            In Category <b>{doc.category}</b>
           </Typography>
           </Link>
         </Fragment>
