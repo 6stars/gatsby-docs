@@ -8,7 +8,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
 const allDocsPageQuery = `{
   allMarkdownRemark(	
     limit: 5000	
