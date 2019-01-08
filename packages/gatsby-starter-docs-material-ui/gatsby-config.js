@@ -163,35 +163,11 @@ module.exports = {
     },   
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",   
-    "gatsby-plugin-netlify-cms",
     {
-      resolve: "gatsby-plugin-sitemap",
+      resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-        output: "/sitemap.xml",
-        query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }
-
-            allSitePage(
-              filter: {
-                path: {
-                  regex: "${regexExcludeRobots}"
-                }
-              }
-            ) {
-              edges {
-                node {
-                  path
-                }
-              }
-            }
-        }`
-      }
+      },
     },
     {
       resolve: "gatsby-plugin-manifest",

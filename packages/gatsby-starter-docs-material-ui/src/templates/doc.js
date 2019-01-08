@@ -5,7 +5,6 @@ import Layout from "../layout";
 import DocTags from "../components/DocTags";
 import DocInfo from "../components/DocInfo";
 import config from "../../data/SiteConfig";
-import withRoot from '../withRoot';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import { PageContext } from './pageContext';
@@ -231,7 +230,6 @@ export class DocTemplate extends React.Component {
                 <DocTags tags={doc.tags} />
               </div>
          </div>
-         {/* <AppTableOfContents contents={contents} /> */}
         </Layout>
       </PageContext.Provider>
       
