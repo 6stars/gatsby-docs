@@ -4,6 +4,7 @@ import createPageContext from '../../src/getPageContext';
 import initRedux from '../../src/redux/initRedux';
 import light from '../../src/styles/light';
 import DocPreview from './DocPreview';
+import CSSInjector from './CSSInjector';
 
 // create material Page Context
 let muiPageContext = createPageContext();

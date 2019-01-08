@@ -12,7 +12,7 @@
 
   <script src='/cms.js'></script>
   <script>
-    var PostPreview = createClass({
+    var DocPreview = createClass({
       render: function() {
         var entry = this.props.entry;
         var image = entry.getIn(['data', 'image']);
@@ -30,7 +30,7 @@
       }
     });
 
-    CMS.registerPreviewTemplate("posts", PostPreview);
+    CMS.registerPreviewTemplate("docs", DocPreview);
     CMS.registerPreviewStyle("/admin.css");
     CMS.registerEditorComponent({
       id: "youtube",
