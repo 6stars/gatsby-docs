@@ -1,11 +1,11 @@
 ---
-title: "Config Settings Glossary"
-category: "config settings"
-date: "11-05-2018"
-route: "/config/config-settings/glossary"
-slug: "config-settings_glossary"
+title: Config Settings Glossary
+date: 2019-01-08T06:00:00.000Z
+route: /config/config-settings/glossary
+slug: config-settings_glossary
+category: config settings
 tags:
-    - config-settings
+  - config-settings
 ---
 
 
