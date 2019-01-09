@@ -149,13 +149,7 @@ module.exports = {
       }
     },   
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",   
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -168,7 +162,14 @@ module.exports = {
         display: "standalone",
         icons: iconsConfig.icons
       }
-    },  
+    },
+    'gatsby-plugin-offline',
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
@@ -181,7 +182,6 @@ module.exports = {
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
-    'gatsby-plugin-offline',
     // make sure to put last in the array
   ]
 };
