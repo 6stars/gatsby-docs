@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DocTemplate } from '../../src/templates/doc';
 import format from "date-fns/format";
-
  
 const DocPreview = ({ content, tags, rawDate, title, category }) => {
+  console.log("in docPreview:");
+  console.log(content)
   return (
     <DocTemplate
       content={content}
