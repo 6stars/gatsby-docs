@@ -6,15 +6,16 @@ import initRedux from '../../redux/initRedux';
 import light from '../../styles/light';
 import DocPreview from './DocPreview';
 // create material Page Context
-let muiPageContext = createPageContext();
+// let muiPageContext = createPageContext();
 
-// initial setup for Redux Store
-let store = initRedux( { theme: light } );
+// // initial setup for Redux Store
+// let store = initRedux( { theme: light } );
 
-// withRoot returns Functional Component that raps children passed as props
-let WithRoot = withRoot(props => props.children);
+// // withRoot returns Functional Component that raps children passed as props
+// let WithRoot = withRoot(props => props.children);
 
 const DocPreviewTemplate = ({ entry, widgetFor }) => {
+    console.log(entry)
     return (
         <WithRoot key={Math.random()} muiPageContext={muiPageContext} store={store}>
             <DocPreview
@@ -36,4 +37,4 @@ const DocPreviewTemplate = ({ entry, widgetFor }) => {
   }
    
 
-export default DocPreviewTemplate;
+export default withRoot(DocPreviewTemplate);
