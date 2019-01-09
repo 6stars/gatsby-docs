@@ -4,7 +4,6 @@ import createPageContext from '../../getPageContext';
 import initRedux from '../../redux/initRedux';
 import light from '../../styles/light';
 import DocPreview from './DocPreview';
-
 // create material Page Context
 let muiPageContext = createPageContext();
 
@@ -21,7 +20,7 @@ const DocPreviewTemplate = ({ entry, widgetFor }) => {
                 content={widgetFor('body')}
                 tags={entry.getIn(['data', 'tags'])}
                 title={entry.getIn(['data', 'title'])}
-                date={entry.getIn(['data', 'date'])}
+                rawDate={entry.getIn(['data', 'date'])}
                 category={entry.getIn(['data', 'category'])}
             />
         </WithRoot>

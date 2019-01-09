@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import moment from "moment";
 import _ from "lodash";
 import PropTypes from 'prop-types';
-import config from "../../data/SiteConfig";
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -18,15 +16,15 @@ const styles = theme => ({
 
 class DocInfo extends Component {
   render() {
-    const { date, category, classes } = this.props;
+    const { formattedDate, category, classes } = this.props;
     
     console.log("date:");
-    console.log(date);
+    console.log(formattedDate);
 
     return (
         <div className={classes.root}>
           <Typography color="textSecondary">
-          {`Published on ${moment(date).format(config.dateFormat)}`}
+          {`Published on ${formattedDate}`}
           </Typography>
           <Link
             className="category-link"
@@ -42,7 +40,7 @@ class DocInfo extends Component {
 }
 
 DocInfo.propTypes = {
-  date: PropTypes.string,
+  formattedDate: PropTypes.string,
   category: PropTypes.string,
 }
 

@@ -9,6 +9,7 @@ import config from "../../data/SiteConfig";
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import { PageContext } from './pageContext';
+import format from "date-fns/format";
 
 const styles = theme => ({
   root: {
@@ -195,7 +196,7 @@ const styles = theme => ({
 
 export const DocContent = ({
   content,
-  date,
+  formattedDate,
   tags,
   title,
   category,
@@ -205,7 +206,7 @@ export const DocContent = ({
 
   return (
     <div className={classNames(classes.root, 'markdown-body', className)}>
-        <DocInfo date={date} category={category} />
+        <DocInfo formattedDate={formattedDate} category={category} />
         <div dangerouslySetInnerHTML={{ __html: content }} />
         <div className="doc-meta">
           <DocTags tags={tags} />
@@ -216,7 +217,7 @@ export const DocContent = ({
 
 DocContent.propTypes = {
   content: PropTypes.node.isRequired,
-  date: PropTypes.string,
+  formattedDate: PropTypes.string,
   title: PropTypes.string,
   category: PropTypes.string,
   tags: PropTypes.array,
@@ -263,7 +264,7 @@ export default class Doc extends React.Component {
           </Helmet>
           <DocTemplate
             content={doc.html}
-            date={doc.frontmatter.date}
+            formattedDate={format(doc.frontmatter.rawDate, "MMMM Do YYYY @ h:mm A")}
             tags={doc.frontmatter.tags}
             category={doc.frontmatter.category}
             title={doc.frontmatter.title}
@@ -282,21 +283,22 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { route: { eq: $route } }) {
+    markdownRemark(
+      fields: { route: { eq: $route } }
+      ) {
       html
       tableOfContents(pathToSlugField: "fields.route")
       timeToRead
       excerpt
       frontmatter {
         title
-        date
+        rawDate: date
         category
         tags
       }
       fields {
         route
         slug
-        date
       }
     }
   }
