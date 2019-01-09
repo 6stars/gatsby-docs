@@ -13,7 +13,7 @@ const styles = theme => ({
   root: {
     fontFamily: theme.typography.fontFamily,
     fontWeight: 500,
-    fontSize: 16,
+    fontSize: 14,
     color: theme.palette.text.primary,
     paddingBottom: '20px',
     '& .anchor': {     
@@ -44,7 +44,7 @@ const styles = theme => ({
       // lineHeight: 1.4,
     },
     '& h1': {
-      ...theme.typography.h2,
+      ...theme.typography.h3,
       color: theme.palette.text.secondary,
       fontWeight: theme.typography.fontWeightMedium,
       margin: '8px 0 4px',
@@ -54,18 +54,19 @@ const styles = theme => ({
       margin: '0 0 20px',
     },
     '& h2': {
-      ...theme.typography.h3,
+      borderBottom: '1px solid #eee',
+      ...theme.typography.h4,
       color: theme.palette.text.secondary,
       margin: '16px 0 12px',
     },
     '& h3': {
-      ...theme.typography.h4,
+      ...theme.typography.h5,
       ...theme.typography.headline,
       color: theme.palette.text.secondary,
       margin: '16px 0 12px',
     },
     '& h4': {
-      ...theme.typography.h5,
+      ...theme.typography.h6,
       color: theme.palette.text.secondary,
       margin: '12px 0 8px',
     },

@@ -37,10 +37,10 @@ const styles = theme => ({
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.secondary,
     fontWeight: 500,
-    fontSize: '.8rem',
+    fontSize: '.75rem',
     color: theme.palette.text.primary,
     top: 40,
-    width: 180,
+    width: 200,
     flexShrink: 0,
     order: 2,
     position: 'sticky',
@@ -73,12 +73,8 @@ const styles = theme => ({
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.secondary,
     fontWeight: 500,
-    fontSize: '.9rem', 
+    fontSize: '.85rem', 
     marginTop: theme.spacing.unit * 2,
-  }, 
-  a: {
-    fontSize: 13,
-    padding: `${theme.spacing.unit / 2}px 0`,
   },
 });
 
@@ -155,11 +151,11 @@ class AppTableOfContents extends React.Component {
             </Typography>
             <EventListener target="window" onScroll={this.handleScroll} />
             <div className={classes.content} dangerouslySetInnerHTML={{ __html: contents ? contents : '' }} />
-            <div className="toc-menu">
+            <p className="toc-menu">
               <a className="expand-toggle" href="#">Collapse all</a>
               <a className="back-to-top" href="#">Back to top</a>
               <a className="go-to-bottom" href="#">Go to bottom</a>
-            </div>
+            </p>
         </React.Fragment>
         {/* {itemsServer.length > 0 ? (
           <React.Fragment>

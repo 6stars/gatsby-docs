@@ -11,7 +11,7 @@ const styles = theme => ({
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.secondary,
     fontWeight: 500,
-    fontSize: '.8rem',
+    fontSize: '1rem',
     color: theme.palette.text.primary,
   }
 });

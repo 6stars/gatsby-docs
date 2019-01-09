@@ -45,7 +45,7 @@ const Layout = ({ children, classes, tableOfContents, title }) => (
                   >
                   <html lang="en" />
               </Helmet>
-              <AppTableOfContents contents={tableOfContents} title={data.site.siteMetadata.title}/>
+              <AppTableOfContents contents={tableOfContents} title={title}/>
               <AppContent className={classes.root}>
                 <div className={classes.header}>           
                 </div>
