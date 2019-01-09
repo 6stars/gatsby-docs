@@ -4,13 +4,24 @@ import moment from "moment";
 import _ from "lodash";
 import config from "../../data/SiteConfig";
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  root: {
+    fontFamily: theme.typography.fontFamily,
+    color: theme.palette.text.secondary,
+    fontWeight: 500,
+    fontSize: '.8rem',
+    color: theme.palette.text.primary,
+  }
+});
 
 class DocInfo extends Component {
   render() {
-    const { docNode } = this.props;
+    const { docNode, classes } = this.props;
     const doc = docNode.frontmatter;
     return (
-        <Fragment>
+        <div className={classes.root}>
           <Typography color="textSecondary">
           {`Published on ${moment(docNode.fields.date).format(config.dateFormat)}`}
           </Typography>
@@ -22,9 +33,9 @@ class DocInfo extends Component {
             In Category <b>{doc.category}</b>
           </Typography>
           </Link>
-        </Fragment>
+        </div>
     );
   }
 }
 
-export default DocInfo;
+export default withStyles(styles)(DocInfo);

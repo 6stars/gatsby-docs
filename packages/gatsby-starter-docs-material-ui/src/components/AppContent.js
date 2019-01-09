@@ -9,15 +9,15 @@ const styles = theme => ({
     flex: '1 1 100%',
     maxWidth: '100%',
     margin: '0 auto',
-    paddingLeft: theme.spacing.unit * 2,
-    paddingRight: theme.spacing.unit * 2,
+    paddingLeft: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 1,
     [theme.breakpoints.up('sm')]: {
       paddingLeft: theme.spacing.unit * 4,
       paddingRight: theme.spacing.unit * 4,
       maxWidth: 'calc(100% - 52px)',
     },
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: theme.spacing.unit * 3,
+      paddingLeft: theme.spacing.unit * 8,
       paddingRight: theme.spacing.unit * 7,
       maxWidth: 'calc(100% - 240px - 52px)',
     },

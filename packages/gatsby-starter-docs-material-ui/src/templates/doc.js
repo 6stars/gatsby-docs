@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
-import Layout from "../layout";
+import Layout from "../layout/doc";
 import DocTags from "../components/DocTags";
 import DocInfo from "../components/DocInfo";
 import config from "../../data/SiteConfig";
@@ -16,14 +16,14 @@ const styles = theme => ({
     fontSize: 16,
     color: theme.palette.text.primary,
     paddingBottom: '20px',
-    '& .anchor-link': {
-      marginTop: -96, // Offset for the anchor.
+    '& .anchor': {     
+      marginTop: '-99px', // Offset for the anchor.
       position: 'absolute',
+      visibility: 'hidden',
     },
     '& pre, & pre[class*="language-"]': {
       margin: '12px 0',
-      padding: '12px 18px',
-      // backgroundColor: theme.palette.background.paper,
+      padding: '12px 18px',      
       borderRadius: theme.shape.borderRadius,
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch', // iOS momentum scrolling.
@@ -33,16 +33,18 @@ const styles = theme => ({
       lineHeight: 1.4,
       fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
       padding: '3px 6px',
-      // color: theme.palette.text.primary,
-      // backgroundColor: theme.palette.background.paper,
       fontSize: 12,
     },
     '& p code, & ul code, & pre code': {
       fontSize: 12,
-      lineHeight: 1.4,
+      // lineHeight: 1.4,
+    },
+    '& a': {
+      ...theme.typography.h6,
+      // lineHeight: 1.4,
     },
     '& h1': {
-      ...theme.typography.h4,
+      ...theme.typography.h2,
       color: theme.palette.text.secondary,
       fontWeight: theme.typography.fontWeightMedium,
       margin: '8px 0 4px',
@@ -52,11 +54,12 @@ const styles = theme => ({
       margin: '0 0 20px',
     },
     '& h2': {
-      ...theme.typography.h6,
+      ...theme.typography.h3,
       color: theme.palette.text.secondary,
       margin: '16px 0 12px',
     },
     '& h3': {
+      ...theme.typography.h4,
       ...theme.typography.headline,
       color: theme.palette.text.secondary,
       margin: '16px 0 12px',
@@ -207,7 +210,7 @@ export class DocTemplate extends React.Component {
     const { slug } = this.props.pageContext;
     const docNode = this.props.data.markdownRemark;
     const doc = docNode.frontmatter;
-
+   
     if (!doc.id) {
       doc.id = slug;
     }
@@ -218,7 +221,7 @@ export class DocTemplate extends React.Component {
     
     return (
       <PageContext.Provider value={{data}}>
-        <Layout location={location}>        
+        <Layout location={location} tableOfContents={data.markdownRemark.tableOfContents} title={docNode.frontmatter.title} >        
           <Helmet>
             <title>{`${doc.title} | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}${doc.id}`} />

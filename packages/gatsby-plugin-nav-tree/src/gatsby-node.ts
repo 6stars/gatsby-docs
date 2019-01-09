@@ -54,5 +54,5 @@ export const onPreExtractQueries = async ({
     // Copy the helper fragment used to query the current page and it's tree items.
     const program = store.getState().program;
     await copyFile(path.join(__dirname, "fragments.js"),
-        `${program.directory}/.cache/fragments/page-tree.js`);
+        `${program.directory}/.cache/fragments/nav-tree.js`);
 };

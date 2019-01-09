@@ -1,6 +1,6 @@
 ---
 title: Learning Javascript and React
-date: 2019-01-07T18:58:00.000Z
+date: 01-07-2019
 route: /learn/javascript-react
 slug: javascript-react
 category: learn
@@ -9,9 +9,6 @@ tags:
   - javacript
   - react
 ---
-
-## Learning Javascript and React
-==
 
 ## Learn in a Sandbox
 

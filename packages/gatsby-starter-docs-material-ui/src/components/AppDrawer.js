@@ -163,7 +163,7 @@ AppDrawer.propTypes = {
   mobileOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   onOpen: PropTypes.func.isRequired,
-  currentPage: PropTypes.func.isRequired,
+  currentPage: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(AppDrawer);

@@ -2,43 +2,45 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'docs/src/modules/components/Link';
 import throttle from 'lodash/throttle';
 import EventListener from 'react-event-listener';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { textToHash } from '@material-ui/docs/MarkdownElement/MarkdownElement';
-
-const renderer = new marked.Renderer();
+// import { textToHash } from '@material-ui/docs/MarkdownElement/MarkdownElement';
 
 let itemsServer = null;
-renderer.heading = (text, level) => {
-  if (level === 1 || level > 3) {
-    return;
-  }
+// renderer.heading = (text, level) => {
+//   if (level === 1 || level > 3) {
+//     return;
+//   }
 
-  if (level === 2) {
-    itemsServer.push({
-      text,
-      level,
-      hash: textToHash(text),
-      children: [],
-    });
-  }
+//   if (level === 2) {
+//     itemsServer.push({
+//       text,
+//       level,
+//       hash: textToHash(text),
+//       children: [],
+//     });
+//   }
 
-  if (level === 3) {
-    itemsServer[itemsServer.length - 1].children.push({
-      text,
-      level,
-      hash: textToHash(text),
-    });
-  }
-};
+//   if (level === 3) {
+//     itemsServer[itemsServer.length - 1].children.push({
+//       text,
+//       level,
+//       hash: textToHash(text),
+//     });
+//   }
+// };
 
 const styles = theme => ({
   root: {
-    top: 70,
-    width: 162,
+    fontFamily: theme.typography.fontFamily,
+    color: theme.palette.text.secondary,
+    fontWeight: 500,
+    fontSize: '.8rem',
+    color: theme.palette.text.primary,
+    top: 40,
+    width: 180,
     flexShrink: 0,
     order: 2,
     position: 'sticky',
@@ -46,20 +48,35 @@ const styles = theme => ({
     height: 'calc(100vh - 70px)',
     overflowY: 'auto',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px 0`,
+    paddingLeft: '15px',
     display: 'none',
+    borderLeft: '1px solid rgba(0, 0, 0, 0.12)',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    '& a': {
+      // Style taken from the Link component
+      color: theme.palette.text.secondary,
+      padding: `${theme.spacing.unit / 2}px 0`,
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
+    '& ul': {
+      padding: 0,
+      margin: 0,
+      listStyleType: 'none',
+    }
   },
-  contents: {
+  title: {
+    fontFamily: theme.typography.fontFamily,
+    color: theme.palette.text.secondary,
+    fontWeight: 500,
+    fontSize: '.9rem', 
     marginTop: theme.spacing.unit * 2,
-  },
-  ul: {
-    padding: 0,
-    margin: 0,
-    listStyleType: 'none',
-  },
-  item: {
+  }, 
+  a: {
     fontSize: 13,
     padding: `${theme.spacing.unit / 2}px 0`,
   },
@@ -127,12 +144,24 @@ class AppTableOfContents extends React.Component {
   };
 
   render() {
-    const { classes, toc } = this.props;
+    const { classes , title, contents } = this.props;
     const { active } = this.state;
 
     return (
       <nav className={classes.root}>
-        {itemsServer.length > 0 ? (
+        <React.Fragment>
+            <Typography variant="body2" gutterBottom className={classes.title}>
+              {title}
+            </Typography>
+            <EventListener target="window" onScroll={this.handleScroll} />
+            <div className={classes.content} dangerouslySetInnerHTML={{ __html: contents ? contents : '' }} />
+            <div className="toc-menu">
+              <a className="expand-toggle" href="#">Collapse all</a>
+              <a className="back-to-top" href="#">Back to top</a>
+              <a className="go-to-bottom" href="#">Go to bottom</a>
+            </div>
+        </React.Fragment>
+        {/* {itemsServer.length > 0 ? (
           <React.Fragment>
             <Typography variant="body2" gutterBottom className={classes.contents}>
               Contents
@@ -164,7 +193,7 @@ class AppTableOfContents extends React.Component {
                               <Link {...linkProps} variant="inherit" href={`#${item3.hash}`} />
                             )}
                           >
-                            <span dangerouslySetInnerHTML={{ __html: item3.text }} />
+                            
                           </Typography>
                         </li>
                       ))}
@@ -174,7 +203,7 @@ class AppTableOfContents extends React.Component {
               ))}
             </ul>
           </React.Fragment>
-        ) : null}
+        ) : null} */}
       </nav>
     );
   }
@@ -182,8 +211,8 @@ class AppTableOfContents extends React.Component {
 
 AppTableOfContents.propTypes = {
   classes: PropTypes.object.isRequired,
-  contents: PropTypes.array.isRequired,
-  disableAd: PropTypes.bool.isRequired,
+  contents: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(AppTableOfContents);

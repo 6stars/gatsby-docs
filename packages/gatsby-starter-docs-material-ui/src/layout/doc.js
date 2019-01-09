@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from 'gatsby';
 import AppFrame from '../components/AppFrame';
 import AppContent from '../components/AppContent';
+import AppTableOfContents from '../components/AppTableOfContents';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -22,7 +23,7 @@ const styles = theme => ({
 });
 
 
-const Layout = ({ children, classes }) => (
+const Layout = ({ children, classes, tableOfContents, title }) => (
   <StaticQuery
       query={graphql`
           query SiteTitleQuery {
@@ -36,7 +37,7 @@ const Layout = ({ children, classes }) => (
       render={data => (
             <AppFrame>
               <Helmet
-                  title={data.site.siteMetadata.title}
+                  title={title}
                   meta={[
                       { name: 'description', content: 'Sample' },
                       { name: 'keywords', content: 'sample, something' }
@@ -44,7 +45,7 @@ const Layout = ({ children, classes }) => (
                   >
                   <html lang="en" />
               </Helmet>
-              
+              <AppTableOfContents contents={tableOfContents} title={data.site.siteMetadata.title}/>
               <AppContent className={classes.root}>
                 <div className={classes.header}>           
                 </div>

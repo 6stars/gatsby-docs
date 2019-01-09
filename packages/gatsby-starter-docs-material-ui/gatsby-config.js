@@ -87,21 +87,13 @@ module.exports = {
             options: {
               theme: 'simple'
             }
-          },
-          {
-            resolve: 'gatsby-remark-toc',
-            options: {
-              header: '', // the custom header text
-              include: [
-                'content/*.md' // an include glob to match against
-              ],
-              mdastUtilTocOptions: {
-                maxDepth: 2
-              }
-            }
-          },
+          },          
           {
             resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 1000,
+              height: 400
+            }
           },
           {
             resolve: "gatsby-remark-relative-images"
