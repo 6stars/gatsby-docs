@@ -1,11 +1,11 @@
 ---
-title: "Sample Api"
-category: "api"
-date: "11-05-2018"
-route: "/api/sample-api"
-slug: "api_sample-api"
+title: Sample Api
+date: 2019-01-07T06:00:00.000Z
+route: /api/sample-api
+slug: sample-api
+category: api
 tags:
-    - sample
+  - sample
 ---
 
 
