@@ -50,9 +50,6 @@ tags:
 * ###### [Redux Observable](https://github.com/redux-observable/redux-observable)    {%youtube sF5-V-Szo0c %}
 
 
-
-
-
 ## React Emerging Features & Patterns
 
 ### [React Context API](https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b)

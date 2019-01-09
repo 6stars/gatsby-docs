@@ -1,6 +1,6 @@
 ---
 title: Learn Gatsby
-date: 2019-01-08T15:37:37.617Z
+date: 2019-01-08
 route: /tutorial/gatsby-tutorial
 slug: gatsby-tutorial
 category: tutorial

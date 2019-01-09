@@ -1,6 +1,6 @@
 ---
 title: Sample Api
-date: 2019-01-07T06:00:00.000Z
+date: 2019-01-07
 route: /api/sample-api
 slug: sample-api
 category: api

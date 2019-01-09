@@ -45,7 +45,7 @@ const styles = theme => ({
     order: 2,
     position: 'sticky',
     wordBreak: 'break-word',
-    height: 'calc(100vh - 70px)',
+    height: 'calc(100vh)',
     overflowY: 'auto',
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px 0`,
     paddingLeft: '15px',
