@@ -6,13 +6,13 @@ import initRedux from '../../redux/initRedux';
 import light from '../../styles/light';
 import DocPreview from './DocPreview';
 // create material Page Context
-// let muiPageContext = createPageContext();
+let muiPageContext = createPageContext();
 
 // // initial setup for Redux Store
-// let store = initRedux( { theme: light } );
+let store = initRedux( { theme: light } );
 
 // // withRoot returns Functional Component that raps children passed as props
-// let WithRoot = withRoot(props => props.children);
+let WithRoot = withRoot(props => props.children);
 
 const DocPreviewTemplate = ({ entry, widgetFor }) => {
     console.log(entry)
@@ -37,4 +37,4 @@ const DocPreviewTemplate = ({ entry, widgetFor }) => {
   }
    
 
-export default withRoot(DocPreviewTemplate);
+export default DocPreviewTemplate;
