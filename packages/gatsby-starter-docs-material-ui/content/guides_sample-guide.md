@@ -1,11 +1,11 @@
 ---
-title: "Sample Guide"
-category: "guide"
-date: "11-05-2018"
-route: "/guides/sample-guide" 
-slug: "guides_sample-guide"
+title: Sample Guide
+date: 2019-01-08T06:00:00.000Z
+route: /guides/sample-guide
+slug: sample-guide
+category: guide
 tags:
-    - sample
+  - sample
 ---
 
 <a name="headers"/>
