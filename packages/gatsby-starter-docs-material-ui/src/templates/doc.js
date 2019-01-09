@@ -246,8 +246,8 @@ export default class Doc extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
     const doc = this.props.data.markdownRemark;
-    console.log("in Doc:");
-    console.log(doc)
+    // console.log("in Doc:");
+    // console.log(doc)
    
     if (!doc.frontmatter.id) {
       doc.frontmatter.id = slug;

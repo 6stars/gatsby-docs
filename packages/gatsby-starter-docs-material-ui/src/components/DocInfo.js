@@ -18,8 +18,8 @@ class DocInfo extends Component {
   render() {
     const { formattedDate, category, classes } = this.props;
     
-    console.log("date:");
-    console.log(formattedDate);
+    // console.log("date:");
+    // console.log(formattedDate);
 
     return (
         <div className={classes.root}>

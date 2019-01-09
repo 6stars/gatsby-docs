@@ -50,7 +50,6 @@ class DocListing extends React.Component {
   getDocList() {
     const docList = [];
     this.props.docEdges.forEach(docEdge => {
-      console.log(docEdge.node.fields)
       docList.push({
         path: docEdge.node.fields.route,
         tags: docEdge.node.frontmatter.tags,
