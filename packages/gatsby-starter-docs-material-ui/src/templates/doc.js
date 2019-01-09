@@ -260,7 +260,7 @@ export default class Doc extends React.Component {
       <PageContext.Provider value={{data}}>
         <Layout location={location} tableOfContents={doc.tableOfContents} title={doc.frontmatter.title} >        
           <Helmet>
-            <title>{`${doc.title} | ${config.siteTitle}`}</title>
+            <title>{`${doc.frontmatter.title} | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}${doc.id}`} />
           </Helmet>
           <DocTemplate
