@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withRoot from '../../withRoot';
 import createPageContext from '../../getPageContext';
 import initRedux from '../../redux/initRedux';
