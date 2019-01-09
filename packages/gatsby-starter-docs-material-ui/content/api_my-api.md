@@ -1,6 +1,6 @@
 ---
 title: My Api
-date: 2019-01-01T06:00:00.000Z
+date: "11-05-2018"
 route: /api/my-api
 slug: my-api
 category: api

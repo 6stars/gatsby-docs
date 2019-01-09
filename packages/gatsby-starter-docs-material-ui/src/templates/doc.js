@@ -254,8 +254,6 @@ export default class Doc extends React.Component {
       doc.frontmatter.category_id = config.docDefaultCategoryID;
     }
     const { data, location } = this.props;
-    console.log("location:");
-    console.log(location);
     return (
       <PageContext.Provider value={{data}}>
         <Layout location={location} tableOfContents={doc.tableOfContents} title={doc.frontmatter.title} >        

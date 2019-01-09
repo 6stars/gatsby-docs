@@ -10,7 +10,7 @@ class Index extends React.Component {
   render() {
     const { data } = this.props;
     const docEdges = data.allMarkdownRemark.edges;
-    console.log(data);
+    
     return (
       <PageContext.Provider value={{data}}>
         <Layout location={this.props.location}>
