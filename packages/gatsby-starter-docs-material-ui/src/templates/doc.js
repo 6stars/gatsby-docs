@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout/doc";
@@ -190,7 +191,41 @@ const styles = theme => ({
   },
 });
 
-export class DocTemplate extends React.Component {
+//DocContent
+
+export const DocContent = ({
+  content,
+  date,
+  tags,
+  title,
+  category,
+  classes,
+  className
+}) => {
+
+  return (
+    <div className={classNames(classes.root, 'markdown-body', className)}>
+        <DocInfo date={date} category={category} />
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="doc-meta">
+          <DocTags tags={tags} />
+        </div>
+  </div>
+  )
+}
+
+DocContent.propTypes = {
+  content: PropTypes.node.isRequired,
+  date: PropTypes.string,
+  title: PropTypes.string,
+  category: PropTypes.string,
+  tags: PropTypes.array,
+}
+
+const DocTemplate = withStyles(styles)(DocContent);
+export { DocTemplate };
+
+export default class Doc extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -209,34 +244,34 @@ export class DocTemplate extends React.Component {
 
   render() {
     const { slug } = this.props.pageContext;
-    const docNode = this.props.data.markdownRemark;
-    const doc = docNode.frontmatter;
+    const doc = this.props.data.markdownRemark;
+    //const doc = docNode.frontmatter;
    
-    if (!doc.id) {
-      doc.id = slug;
+    if (!doc.frontmatter.id) {
+      doc.frontmatter.id = slug;
     }
     if (!doc.category_id) {
-      doc.category_id = config.docDefaultCategoryID;
+      doc.frontmatter.category_id = config.docDefaultCategoryID;
     }
-    const { classes, className, data, location } = this.props;
-    
+    const { data, location } = this.props;
+    console.log("location:");
+    console.log(location);
     return (
       <PageContext.Provider value={{data}}>
-        <Layout location={location} tableOfContents={data.markdownRemark.tableOfContents} title={docNode.frontmatter.title} >        
+        <Layout location={location} tableOfContents={doc.tableOfContents} title={doc.frontmatter.title} >        
           <Helmet>
             <title>{`${doc.title} | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}${doc.id}`} />
           </Helmet>
-          <div className={classNames(classes.root, 'markdown-body', className)}>
-              <DocInfo docNode={docNode} />
-              <div dangerouslySetInnerHTML={{ __html: docNode.html }} />
-              <div className="doc-meta">
-                <DocTags tags={doc.tags} />
-              </div>
-         </div>
+          <DocTemplate
+            content={doc.html}
+            date={doc.frontmatter.date}
+            tags={doc.frontmatter.tags}
+            category={doc.frontmatter.category}
+            title={doc.frontmatter.title}
+          />
         </Layout>
       </PageContext.Provider>
-      
     );
   }
 }
@@ -268,5 +303,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default withStyles(styles)(DocTemplate);

@@ -37,14 +37,6 @@ GatsbyNode.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-// GatsbyNode.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
-//   // const { name } = type;
-//   // const { createNodeField } = actions;
-//   // if (name === "MarkdownRemark") {
-//   //   addSiblingNodes(createNodeField);
-//   // }
-// };
-
 const createMarkdownPages = async ({actions, graphql}) => {
   const { createPage } = actions;
   const docPage = path.resolve("src/templates/doc.js");
