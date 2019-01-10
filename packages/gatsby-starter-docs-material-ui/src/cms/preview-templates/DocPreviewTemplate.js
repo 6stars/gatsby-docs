@@ -39,4 +39,4 @@ const DocPreviewTemplate = ({ entry, widgetFor }) => {
   }
    
 
-export default DocPreviewTemplate;git 
+export default DocPreviewTemplate;
