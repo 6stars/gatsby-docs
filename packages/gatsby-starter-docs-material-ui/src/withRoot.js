@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AppWrapper from './layout/AppWrapper';
 import { Provider } from 'react-redux';
 
+
 const withRoot = (Component) => {
   class WithRoot extends React.Component {
 
