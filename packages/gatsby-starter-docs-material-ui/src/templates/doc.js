@@ -265,7 +265,7 @@ export default class Doc extends React.Component {
           </Helmet>
           <DocTemplate
             content={doc.html}
-            formattedDate={format(doc.frontmatter.rawDate, "MMMM Do YYYY @ h:mm A")}
+            formattedDate={format(doc.frontmatter.rawDate, "MMMM Do YYYY")}
             tags={doc.frontmatter.tags}
             category={doc.frontmatter.category}
             title={doc.frontmatter.title}

@@ -11,7 +11,7 @@ const DocPreview = ({ content, tags, rawDate, title, category }) => {
       content={content}
       tags={tags}
       title={title}
-      formattedDate={format(rawDate, "MMMM Do YYYY @ h:mm A")}
+      formattedDate={format(rawDate, "MMMM Do YYYY")}
       category={category}
     />
   );
