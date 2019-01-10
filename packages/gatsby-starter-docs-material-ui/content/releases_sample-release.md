@@ -1,11 +1,11 @@
 ---
-title: "Release Notes Sample"
-category: "Release Notes"
-date: "11-01-2018"
-route: "/releases/release-notes-sample"
-slug: "releases_release-notes-sample"
+title: Release Notes Sample
+date: 2019-01-02T06:00:00.000Z
+route: /releases/release-notes-sample
+slug: releases_release-notes-sample
+category: Release Notes
 tags:
-    - sample
+  - sample
 ---
 
 Release Notes Sample
