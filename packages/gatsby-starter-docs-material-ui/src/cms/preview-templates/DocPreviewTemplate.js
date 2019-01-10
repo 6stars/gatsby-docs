@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withRoot from '../../withRoot';
 import createPageContext from '../../getPageContext';
 import initRedux from '../../redux/initRedux';
 import light from '../../styles/light';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
-import { setPrismTheme } from '../styles/prism';
 import DocPreview from './DocPreview';
 // create material Page Context
 let muiPageContext = createPageContext();
