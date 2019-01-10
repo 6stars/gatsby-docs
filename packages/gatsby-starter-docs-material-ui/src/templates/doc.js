@@ -14,7 +14,6 @@ import ReactMarkdown from "react-markdown";
 
 const styles = theme => ({
   root: {
-    fontFamily: theme.typography.fontFamily,
     fontWeight: 500,
     fontSize: 14,
     color: theme.palette.text.primary,
@@ -200,31 +199,31 @@ class DocContent extends React.Component {
     }
 
     render() {
-    const { content,
-      bodyIsMarkdown,
-      formattedDate,
-      tags,
-      title,
-      category,
-      classes,
-      className
-    } = this.props;
-    
-    console.log(this.props);
-    
-    return (
-      <Fragment>
-         <DocInfo formattedDate={formattedDate} category={category} />
-          {bodyIsMarkdown ? (
-            <ReactMarkdown className={classNames(classes.root, 'markdown-body', className)} source={content} />
-          ) : (
-          <div className={classNames(classes.root, 'markdown-body', className)} dangerouslySetInnerHTML={{ __html: content }} />
-          )}  
-          <div className="doc-meta">
-            <DocTags tags={tags} />
-          </div>
-      </Fragment>
-    )
+      const { content,
+        bodyIsMarkdown,
+        formattedDate,
+        tags,
+        title,
+        category,
+        classes,
+        className
+      } = this.props;
+      
+      console.log(this.props);
+      
+      return (
+        <Fragment>
+          <DocInfo formattedDate={formattedDate} category={category} />
+            {bodyIsMarkdown ? (
+              <ReactMarkdown className={classNames(classes.root, 'markdown-body', className ? className : '')} source={content} />
+            ) : (
+            <div className={classNames(classes.root, 'markdown-body', className)} dangerouslySetInnerHTML={{ __html: content }} />
+            )}  
+            <div className="doc-meta">
+              <DocTags tags={tags} />
+            </div>
+        </Fragment>
+      )
   }
 }
 
