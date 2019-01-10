@@ -1,6 +1,6 @@
 ---
 title: Learning Javascript and React
-date: "11-05-2018"
+date: 2019-01-08T06:00:00.000Z
 route: /learn/javascript-react
 slug: javascript-react
 category: learn
