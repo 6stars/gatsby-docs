@@ -2,8 +2,9 @@ import React from "react"
 
 class CSSInjector extends React.Component {
   render() {
-    const iframe = document.querySelector(".nc-previewPane-frame")
+    const iframe = document.getElementsByTagName('iframe')[0]
     const iframeHeadElem = iframe.contentDocument.head;
+    iframeHeadElem.innerHTML += this.props.css;
 
     return React.forwardRef((props, ref) => (
       <div
