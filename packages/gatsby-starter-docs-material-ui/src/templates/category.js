@@ -41,7 +41,6 @@ export const pageQuery = graphql`
     ...navTree,
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
