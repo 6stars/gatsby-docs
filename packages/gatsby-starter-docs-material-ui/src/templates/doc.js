@@ -195,35 +195,37 @@ const styles = theme => ({
 
 //DocContent
 class DocContent extends React.Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+      super(props);
+    }
+
+    render() {
+    const { content,
+      bodyIsMarkdown,
+      formattedDate,
+      tags,
+      title,
+      category,
+      classes,
+      className
+    } = this.props;
+    
+    console.log(this.props);
+    
+    return (
+      <div className={classNames(classes.root, 'markdown-body', className)}>
+          <DocInfo formattedDate={formattedDate} category={category} />
+          {bodyIsMarkdown ? (
+            <ReactMarkdown className="pastMeetups-description" source={content} />
+          ) : (
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+          )}  
+          <div className="doc-meta">
+            <DocTags tags={tags} />
+          </div>
+    </div>
+    )
   }
-  render() {
-   const { content,
-    bodyIsMarkdown,
-    formattedDate,
-    tags,
-    title,
-    category,
-    classes,
-    className
-  };
-  
-  console.log(this.props);
-  
-  return (
-    <div className={classNames(classes.root, 'markdown-body', className)}>
-        <DocInfo formattedDate={formattedDate} category={category} />
-        {bodyIsMarkdown ? (
-          <ReactMarkdown className="pastMeetups-description" source={content} />
-        ) : (
-         <div dangerouslySetInnerHTML={{ __html: content }} />
-        )}  
-        <div className="doc-meta">
-          <DocTags tags={tags} />
-        </div>
-  </div>
-  )
 }
 
 DocContent.propTypes = {
