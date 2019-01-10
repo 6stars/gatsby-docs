@@ -15,7 +15,7 @@ let store = initRedux( { theme: light } );
 let WithRoot = withRoot(props => props.children);
 
 const DocPreviewTemplate = ({ entry, widgetFor }) => {
-    console.log(entry)
+    console.log(widgetFor('body'))
     return (
         <WithRoot key={Math.random()} muiPageContext={muiPageContext} store={store}>
             <DocPreview
