@@ -14,7 +14,7 @@ let store = initRedux( { theme: light } );
 // // withRoot returns Functional Component that raps children passed as props
 let WithRoot = withRoot(props => props.children);
 
-const DocPreviewTemplate = ({ entry, widgetFor }) => {
+const DocPreviewTemplate = ({ entry }) => {
     console.log(entry.getIn(['data', 'tags']))
     console.log(entry.getIn(['data', 'title']))
     console.log(entry.getIn(['data', 'date']))

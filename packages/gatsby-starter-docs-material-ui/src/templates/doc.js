@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import { PageContext } from './pageContext';
 import format from "date-fns/format";
+import ReactMarkdown from "react-markdown";
 
 const styles = theme => ({
   root: {
@@ -196,6 +197,7 @@ const styles = theme => ({
 
 export const DocContent = ({
   content,
+  bodyIsMarkdown,
   formattedDate,
   tags,
   title,
@@ -207,7 +209,11 @@ export const DocContent = ({
   return (
     <div className={classNames(classes.root, 'markdown-body', className)}>
         <DocInfo formattedDate={formattedDate} category={category} />
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        {bodyIsMarkdown ? (
+          <ReactMarkdown className="pastMeetups-description" source={content} />
+        ) : (
+         <div dangerouslySetInnerHTML={{ __html: content }} />
+        )}  
         <div className="doc-meta">
           <DocTags tags={tags} />
         </div>
@@ -221,6 +227,7 @@ DocContent.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
   tags: PropTypes.array,
+  bodyIsMarkdown: PropTypes.bool,
 }
 
 const DocTemplate = withStyles(styles)(DocContent);
@@ -246,8 +253,6 @@ export default class Doc extends React.Component {
   render() {
     const { slug } = this.props.pageContext;
     const doc = this.props.data.markdownRemark;
-    // console.log("in Doc:");
-    // console.log(doc)
    
     if (!doc.frontmatter.id) {
       doc.frontmatter.id = slug;
@@ -265,6 +270,7 @@ export default class Doc extends React.Component {
           </Helmet>
           <DocTemplate
             content={doc.html}
+            isBodyMarkdown={false}
             formattedDate={format(doc.frontmatter.rawDate, "MMMM Do YYYY")}
             tags={doc.frontmatter.tags}
             category={doc.frontmatter.category}

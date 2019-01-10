@@ -4,11 +4,11 @@ import { DocTemplate } from '../../templates/doc';
 import format from "date-fns/format";
  
 const DocPreview = ({ content, tags, rawDate, title, category }) => {
-  console.log("in docPreview:");
-  console.log(content)
+  
   return (
     <DocTemplate
       content={content}
+      isBodyMarkdown={true}
       tags={tags}
       title={title}
       formattedDate={format(rawDate, "MMMM Do YYYY")}
