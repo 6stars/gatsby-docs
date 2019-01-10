@@ -210,8 +210,6 @@ class DocContent extends React.Component {
         className
       } = this.props;
       
-      console.log(this.props);
-      
       if(isBodyMarkdown){
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
