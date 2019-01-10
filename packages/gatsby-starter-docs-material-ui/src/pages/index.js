@@ -37,7 +37,6 @@ export const pageQuery = graphql`
           fields {	
             slug
             route
-            date	
           }	
           excerpt
           frontmatter {	
