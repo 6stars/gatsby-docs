@@ -211,19 +211,29 @@ class DocContent extends React.Component {
       
       console.log(this.props);
       
-      return (
-        <Fragment>
-          <DocInfo formattedDate={formattedDate} category={category} />
-            {bodyIsMarkdown ? (
-              <ReactMarkdown className={classNames(classes.root, 'markdown-body', className ? className : '')} source={content} />
-            ) : (
-            <div className={classNames(classes.root, 'markdown-body', className)} dangerouslySetInnerHTML={{ __html: content }} />
-            )}  
-            <div className="doc-meta">
-              <DocTags tags={tags} />
-            </div>
-        </Fragment>
-      )
+      if(bodyIsMarkdown){
+        return (
+          <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
+              <ReactMarkdown source={content} />
+          </div>
+        );
+      } 
+      else {
+        return (
+          <Fragment>
+            <DocInfo formattedDate={formattedDate} category={category} />
+              {bodyIsMarkdown ? (
+                <ReactMarkdown className={classNames(classes.root, 'markdown-body', className ? className : '')} source={content} />
+              ) : (
+              <div className={classNames(classes.root, 'markdown-body', className)} dangerouslySetInnerHTML={{ __html: content }} />
+              )}  
+              <div className="doc-meta">
+                <DocTags tags={tags} />
+              </div>
+          </Fragment>
+        );
+      }
+      
   }
 }
 
