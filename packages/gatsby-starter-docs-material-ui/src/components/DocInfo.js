@@ -17,10 +17,7 @@ const styles = theme => ({
 class DocInfo extends Component {
   render() {
     const { formattedDate, category, classes } = this.props;
-    
-    // console.log("date:");
-    // console.log(formattedDate);
-
+   
     return (
         <div className={classes.root}>
           <Typography color="textSecondary">

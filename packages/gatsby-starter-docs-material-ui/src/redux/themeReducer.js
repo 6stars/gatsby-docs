@@ -14,8 +14,7 @@ function themeReducer(state = initialState, action) {
   let newState = state;
 
   if (mapping[action.type]) {
-    //console.log(action.type);
-    //console.log(action);
+    
     newState = mapping[action.type](state, action);
   }
 

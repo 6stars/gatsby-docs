@@ -29,15 +29,13 @@ export function createPageContext() {
 }
 
 export function updatePageContext(uiTheme) {
-  //console.log("updatePageContext:");
-  //console.log(uiTheme);
-  
+   
   const pageContext = {
     ...global.__MUI_PAGE_CONTEXT__,
     theme: getTheme(uiTheme),
   };
   global.__MUI_PAGE_CONTEXT__ = pageContext;
-  //console.log(global.__MUI_PAGE_CONTEXT__);
+  
   return pageContext;
 }
 
@@ -52,6 +50,6 @@ export default function getPageContext() {
   if (!global.__MUI_PAGE_CONTEXT__) {
     global.__MUI_PAGE_CONTEXT__ = createPageContext();
   }
-  //console.log(global.__MUI_PAGE_CONTEXT__);
+ 
   return global.__MUI_PAGE_CONTEXT__;
 }

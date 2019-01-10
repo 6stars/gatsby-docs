@@ -205,7 +205,7 @@ export const DocContent = ({
   classes,
   className
 }) => {
-
+   console.log(this.props);
   return (
     <div className={classNames(classes.root, 'markdown-body', className)}>
         <DocInfo formattedDate={formattedDate} category={category} />

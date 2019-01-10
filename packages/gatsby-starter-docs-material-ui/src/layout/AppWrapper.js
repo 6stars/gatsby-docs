@@ -22,8 +22,6 @@ if (process.browser && !global.__INSERTION_POINT__) {
 }
 
 function uiThemeSideEffect(uiTheme) {
-  //console.log("uiThemeSideEffect:");
-  //console.log(uiTheme);
   setPrismTheme(uiTheme.paletteType);  
 }
 
@@ -43,11 +41,7 @@ class AppWrapper extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    //console.log("preveState:");
-    //console.log(prevState);
-    //console.log("nextProps:");
-    //console.log(nextProps);
-    if (typeof prevState.muiPageContext === 'undefined') {
+      if (typeof prevState.muiPageContext === 'undefined') {
       return {
         prevProps: nextProps,
         muiPageContext: nextProps.muiPageContext,
@@ -72,8 +66,7 @@ class AppWrapper extends React.Component {
   render() {
     const { children } = this.props;
     const { muiPageContext } = this.state;
-    //console.log("AppWrapper:")
-    //console.log(muiPageContext.theme)
+    
     return (
       <JssProvider
         jss={muiPageContext.jss}

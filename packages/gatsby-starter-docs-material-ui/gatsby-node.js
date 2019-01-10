@@ -64,7 +64,6 @@ const createMarkdownPages = async ({actions, graphql}) => {
   );
   for (let page of (result.data.allMarkdownRemark.edges).map(x => x.node)) {
       
-      //console.log(page);
       createPage({
           path: page.fields.route,
           component: docPage,
@@ -102,8 +101,7 @@ GatsbyNode.createPages = async ({ actions, graphql }) => {
   let result = await createMarkdownPages({actions, graphql});
         if (result.errors) {
           /* eslint no-console: "off" */
-          //console.log(result.errors);
-          //reject(result.errors);
+          reject(result.errors);
         }
 
         const tagSet = new Set();

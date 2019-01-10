@@ -15,10 +15,7 @@ let store = initRedux( { theme: light } );
 let WithRoot = withRoot(props => props.children);
 
 const DocPreviewTemplate = ({ entry }) => {
-    console.log(entry.getIn(['data', 'tags']))
-    console.log(entry.getIn(['data', 'title']))
-    console.log(entry.getIn(['data', 'date']))
-    return (
+      return (
         <WithRoot key={Math.random()} muiPageContext={muiPageContext} store={store}>
             <DocPreview
                 content={entry.getIn(["data", "body"])}

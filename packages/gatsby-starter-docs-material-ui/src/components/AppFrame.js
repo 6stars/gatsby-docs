@@ -90,8 +90,7 @@ class AppFrame extends React.Component {
 
   render() {
     const { children, classes, uiTheme } = this.props;
-    //console.log("AppFrame:")
-    //console.log(uiTheme)
+    
     const title = '';
     let disablePermanent = false;
     let navIconClassName = '';
