@@ -200,7 +200,7 @@ class DocContent extends React.Component {
 
     render() {
       const { content,
-        bodyIsMarkdown,
+        isBodyMarkdown,
         formattedDate,
         tags,
         title,
@@ -211,7 +211,7 @@ class DocContent extends React.Component {
       
       console.log(this.props);
       
-      if(bodyIsMarkdown){
+      if(isBodyMarkdown){
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
               <ReactMarkdown source={content} />
@@ -220,17 +220,13 @@ class DocContent extends React.Component {
       } 
       else {
         return (
-          <Fragment>
-            <DocInfo formattedDate={formattedDate} category={category} />
-              {bodyIsMarkdown ? (
-                <ReactMarkdown className={classNames(classes.root, 'markdown-body', className ? className : '')} source={content} />
-              ) : (
-              <div className={classNames(classes.root, 'markdown-body', className)} dangerouslySetInnerHTML={{ __html: content }} />
-              )}  
-              <div className="doc-meta">
-                <DocTags tags={tags} />
-              </div>
-          </Fragment>
+          <div className={classNames(classes.root, 'markdown-body', className)}>
+            <DocInfo docNode={docNode} />
+            <div dangerouslySetInnerHTML={{ __html: docNode.html }} />
+            <div className="doc-meta">
+            <DocTags tags={doc.tags} />
+          </div>
+</div>
         );
       }
       
