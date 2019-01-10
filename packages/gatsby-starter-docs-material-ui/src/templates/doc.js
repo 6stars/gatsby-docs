@@ -194,18 +194,23 @@ const styles = theme => ({
 });
 
 //DocContent
-
-export const DocContent = ({
-  content,
-  bodyIsMarkdown,
-  formattedDate,
-  tags,
-  title,
-  category,
-  classes,
-  className
-}) => {
-   console.log(this.props);
+class DocContent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+   const { content,
+    bodyIsMarkdown,
+    formattedDate,
+    tags,
+    title,
+    category,
+    classes,
+    className
+  };
+  
+  console.log(this.props);
+  
   return (
     <div className={classNames(classes.root, 'markdown-body', className)}>
         <DocInfo formattedDate={formattedDate} category={category} />
