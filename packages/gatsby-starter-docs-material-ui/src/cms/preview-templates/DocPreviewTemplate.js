@@ -19,7 +19,7 @@ const DocPreviewTemplate = ({ entry, widgetFor }) => {
     return (
         <WithRoot key={Math.random()} muiPageContext={muiPageContext} store={store}>
             <DocPreview
-                content={widgetFor('body')}
+                content={widgetFor('body').props.value}
                 tags={entry.getIn(['data', 'tags'])}
                 title={entry.getIn(['data', 'title'])}
                 rawDate={entry.getIn(['data', 'date'])}
