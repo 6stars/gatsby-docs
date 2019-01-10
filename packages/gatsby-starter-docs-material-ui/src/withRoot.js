@@ -17,8 +17,7 @@ const withRoot = (Component) => {
     render( ) {
       const { store } = this.props;
       // MuiThemeProvider makes the theme available down the React tree thanks to React context.
-      console.log("withRoot:");
-      console.log(this.props);
+     
       return (
         <Provider store={store}>
           <AppWrapper {...this.props}>
