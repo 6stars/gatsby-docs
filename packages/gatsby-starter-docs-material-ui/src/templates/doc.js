@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from 'prop-types';
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
@@ -213,17 +213,17 @@ class DocContent extends React.Component {
     console.log(this.props);
     
     return (
-      <div className={classNames(classes.root, 'markdown-body', className)}>
-          <DocInfo formattedDate={formattedDate} category={category} />
+      <Fragment>
+         <DocInfo formattedDate={formattedDate} category={category} />
           {bodyIsMarkdown ? (
-            <ReactMarkdown className="pastMeetups-description" source={content} />
+            <ReactMarkdown className={classNames(classes.root, 'markdown-body', className)} source={content} />
           ) : (
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <div className={classNames(classes.root, 'markdown-body', className)} dangerouslySetInnerHTML={{ __html: content }} />
           )}  
           <div className="doc-meta">
             <DocTags tags={tags} />
           </div>
-    </div>
+      </Fragment>
     )
   }
 }
