@@ -268,7 +268,7 @@ class DocContent extends React.Component {
                       onClick={this.handleTogglePaletteType}
                       aria-label="Toggle light/dark theme"
                     >
-                      {uiTheme.paletteType === 'light' ? <LightbulbFullIcon /> : <LightbulbOutlineIcon /> }
+                      {<LightbulbFullIcon />}
                     </IconButton>
                   </Tooltip>    
                 </Toolbar>
