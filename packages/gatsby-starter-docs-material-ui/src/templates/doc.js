@@ -190,6 +190,20 @@ const styles = theme => ({
       maxWidth: '100%',
     },
   },
+  appBar: {
+    transition: theme.transitions.create('width'),
+    '@media print': {
+      position: 'absolute',
+    },
+  },
+  appBarHome: {
+    boxShadow: 'none',
+  },
+  appBarShift: {
+    [theme.breakpoints.up('lg')]: {
+      width: 'calc(100% - 240px)',
+    },
+  },
 });
 
 //DocContent
@@ -213,7 +227,36 @@ class DocContent extends React.Component {
       if(isBodyMarkdown){
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
+              <AppBar className={appBarClassName}>
+                <Toolbar>
+                  <IconButton
+                    color="inherit"
+                    aria-label="Open drawer"
+                    onClick={this.handleDrawerOpen}
+                    className={navIconClassName}
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                  {title !== null && (
+                    <Typography className={classes.title} variant="h5" color="inherit" noWrap>{title}</Typography>
+                  )}
+                  <div className={classes.grow} />  
+                  <Tooltip title="Toggle light/dark theme" enterDelay={300}>
+                    <IconButton
+                      color="inherit"
+                      onClick={this.handleTogglePaletteType}
+                      aria-label="Toggle light/dark theme"
+                    >
+                      {uiTheme.paletteType === 'light' ? <LightbulbFullIcon /> : <LightbulbOutlineIcon /> }
+                    </IconButton>
+                  </Tooltip>    
+                </Toolbar>
+              </AppBar>
+              <DocInfo formattedDate={formattedDate} category={category} />
               <ReactMarkdown source={content} className='markdown-body' escapeHtml={false}/>
+              <div className="doc-meta">
+                <DocTags tags={tags} />
+              </div>
           </div>
         );
       } 
