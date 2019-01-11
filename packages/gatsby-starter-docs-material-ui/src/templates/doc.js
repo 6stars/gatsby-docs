@@ -231,8 +231,22 @@ class DocContent extends React.Component {
         classes,
         className
       } = this.props;
+
+
       
       if(isBodyMarkdown){
+        let navIconClassName = '';
+        let appBarClassName = classes.appBar;
+
+        if (title === null) {
+          // home route, don't shift app bar or dock drawer
+          disablePermanent = true;
+          appBarClassName += ` ${classes.appBarHome}`;
+        } else {
+          navIconClassName = classes.navIconHide;
+          appBarClassName += ` ${classes.appBarShift}`;
+        }
+
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
               <AppBar className={appBarClassName}>
@@ -240,7 +254,6 @@ class DocContent extends React.Component {
                   <IconButton
                     color="inherit"
                     aria-label="Open drawer"
-                    onClick={this.handleDrawerOpen}
                     className={navIconClassName}
                   >
                     <MenuIcon />
