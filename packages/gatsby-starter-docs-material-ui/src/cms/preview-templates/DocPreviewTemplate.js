@@ -33,17 +33,24 @@ const DocPreviewTemplate = ({ entry }) => {
 
       const iframe = document.getElementsByTagName('iframe')[0]
       const iframeHeadElem = iframe.contentDocument.head;
-      console.log(iframeHeadElem.innerHTML);
+      //console.log(iframeHeadElem.innerHTML);
       iframeHeadElem.innerHTML += css;
       return (
-            <CSSInjector css={css}>
-              <DocPreview content={entry.getIn(["data", "body"])}
+        <JssProvider
+            jss={muiPageContext.jss}
+            registry={muiPageContext.sheetsRegistry}
+            generateClassName={muiPageContext.generateClassName}
+            >      
+            <MuiThemeProvider theme={muiPageContext.theme} sheetsManager={muiPageContext.sheetsManager}>
+            <CssBaseline />          
+            <DocPreview content={entry.getIn(["data", "body"])}
                 tags={entry.getIn(['data', 'tags'])}
                 title={entry.getIn(['data', 'title'])}
                 rawDate={entry.getIn(['data', 'date'])}
                 category={entry.getIn(['data', 'category'])}
-                />
-            </CSSInjector>
+            />
+            </MuiThemeProvider>
+        </JssProvider>
       );
   }
 
