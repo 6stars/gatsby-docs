@@ -6,7 +6,6 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 import DocPreview from './DocPreview';
-import prism from 'prismjs';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-diff';
 import 'prismjs/components/prism-javascript';
@@ -45,7 +44,7 @@ const DocPreviewTemplate = ({ entry }) => {
       linkPrismThemeNode = document.createElement('link');
       linkPrismThemeNode.setAttribute('type', 'text/css');
       linkPrismThemeNode.setAttribute('rel', 'stylesheet');
-      linkPrismThemeNode.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-dark.min.css');
+      linkPrismThemeNode.setAttribute('href', 'https://unpkg.com/prism-themes@1.0.1/themes/prism-vs.css');
       iframeHeadElem.appendChild(linkPrismThemeNode);
 
       return (

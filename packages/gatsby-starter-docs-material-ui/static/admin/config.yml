@@ -16,7 +16,7 @@ slug:
   clean_accents: true
   sanitize_replacement: "-"
 display_url: https://6star.pw
-logo_url:  https://6star.pw/img/logo_transparent.png
+logo_url:  https://6star.pw/img/logo.png
 collections:
   - name: "docs"
     label: "****** Doc"

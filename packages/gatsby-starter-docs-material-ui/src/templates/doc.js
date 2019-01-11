@@ -12,9 +12,6 @@ import { PageContext } from './pageContext';
 import format from "date-fns/format";
 import ReactMarkdown from "react-markdown";
 import Typography from '@material-ui/core/Typography';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 
 const styles = theme => ({
   root: {
@@ -194,20 +191,6 @@ const styles = theme => ({
       maxWidth: '100%',
     },
   },
-  appBar: {
-    transition: theme.transitions.create('width'),
-    '@media print': {
-      position: 'absolute',
-    },
-  },
-  appBarHome: {
-    boxShadow: 'none',
-  },
-  appBarShift: {
-    [theme.breakpoints.up('lg')]: {
-      width: 'calc(100% - 240px)',
-    },
-  },
 });
 
 //DocContent
@@ -231,28 +214,11 @@ class DocContent extends React.Component {
 
       
       if(isBodyMarkdown){
-        let navIconClassName = '';
-        let appBarClassName = classes.appBar;
-
-        if (title === null) {
-          // home route, don't shift app bar or dock drawer
-          disablePermanent = true;
-          appBarClassName += ` ${classes.appBarHome}`;
-        } else {
-          navIconClassName = classes.navIconHide;
-          appBarClassName += ` ${classes.appBarShift}`;
-        }
+       
 
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
-              <AppBar className={appBarClassName}>
-                <Toolbar>
-                  {title !== null && (
-                    <Typography className={classes.title} variant="h5" color="inherit" noWrap>{title}</Typography>
-                  )}
-                  <div className={classes.grow} />
-                </Toolbar>
-              </AppBar>
+              <Typography className={classes.title} variant="h4" color="inherit" noWrap>{title}</Typography>
               <DocInfo formattedDate={formattedDate} category={category} />
               <ReactMarkdown source={content} className='markdown-body' escapeHtml={false}/>
               <div className="doc-meta">
