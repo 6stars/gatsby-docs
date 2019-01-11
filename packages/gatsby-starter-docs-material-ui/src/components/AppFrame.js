@@ -7,7 +7,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-// import CssBaseline from '@material-ui/core/CssBaseline';
 import MenuIcon from '@material-ui/icons/Menu';
 import LightbulbOutlineIcon from '../svgIcons/LightbulbOutline';
 import LightbulbFullIcon from '../svgIcons/LightbulbFull';

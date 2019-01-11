@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
@@ -11,6 +11,14 @@ import classNames from 'classnames';
 import { PageContext } from './pageContext';
 import format from "date-fns/format";
 import ReactMarkdown from "react-markdown";
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+import MenuIcon from '@material-ui/icons/Menu';
+import LightbulbOutlineIcon from '../svgIcons/LightbulbOutline';
+import LightbulbFullIcon from '../svgIcons/LightbulbFull';
 
 const styles = theme => ({
   root: {
