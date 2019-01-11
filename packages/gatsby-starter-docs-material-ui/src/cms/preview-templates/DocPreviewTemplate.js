@@ -13,9 +13,6 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-typescript';
-import darkTheme from 'prismjs/themes/prism-okaidia.css';
-
-
 
 let muiPageContext = createPageContext();
 
@@ -49,7 +46,7 @@ const DocPreviewTemplate = ({ entry }) => {
       linkPrismThemeNode.setAttribute('type', 'text/css');
       linkPrismThemeNode.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-dark.min.css');
       iframeHeadElem.appendChild(linkPrismThemeNode);
-      
+
       return (
         <JssProvider
             jss={muiPageContext.jss}
@@ -78,5 +75,3 @@ const DocPreviewTemplate = ({ entry }) => {
    
 
 export default DocPreviewTemplate;
-
-export default prism;
