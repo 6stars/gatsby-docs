@@ -44,7 +44,7 @@ const DocPreviewTemplate = ({ entry }) => {
       let linkPrismThemeNode;
       linkPrismThemeNode = document.createElement('link');
       linkPrismThemeNode.setAttribute('type', 'text/css');
-      linkPrismThemeNode.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-dark.min.css');
+      linkPrismThemeNode.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-dark.min.css');
       iframeHeadElem.appendChild(linkPrismThemeNode);
 
       return (
