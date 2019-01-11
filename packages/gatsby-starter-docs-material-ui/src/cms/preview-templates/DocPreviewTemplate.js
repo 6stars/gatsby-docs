@@ -13,13 +13,13 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-typescript';
-import lightTheme from 'prism-themes/themes/prism-vs.css';
+import darkTheme from 'prismjs/themes/prism-okaidia.css';
 
 let styleNode;
-console.log(lightTheme)
+console.log(darkTheme)
 styleNode = document.createElement('style');
 styleNode.setAttribute('data-prism', 'true');
-styleNode.textContent = lightTheme;
+styleNode.textContent = darkTheme;
 
 let muiPageContext = createPageContext();
 
@@ -76,3 +76,5 @@ const DocPreviewTemplate = ({ entry }) => {
    
 
 export default DocPreviewTemplate;
+
+export default prism;
