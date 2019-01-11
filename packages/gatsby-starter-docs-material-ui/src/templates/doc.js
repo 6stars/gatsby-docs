@@ -15,10 +15,6 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-import MenuIcon from '@material-ui/icons/Menu';
-import LightbulbOutlineIcon from '../svgIcons/LightbulbOutline';
-import LightbulbFullIcon from '../svgIcons/LightbulbFull';
 
 const styles = theme => ({
   root: {
@@ -251,26 +247,10 @@ class DocContent extends React.Component {
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
               <AppBar className={appBarClassName}>
                 <Toolbar>
-                  <IconButton
-                    color="inherit"
-                    aria-label="Open drawer"
-                    className={navIconClassName}
-                  >
-                    <MenuIcon />
-                  </IconButton>
                   {title !== null && (
                     <Typography className={classes.title} variant="h5" color="inherit" noWrap>{title}</Typography>
                   )}
-                  <div className={classes.grow} />  
-                  <Tooltip title="Toggle light/dark theme" enterDelay={300}>
-                    <IconButton
-                      color="inherit"
-                      onClick={this.handleTogglePaletteType}
-                      aria-label="Toggle light/dark theme"
-                    >
-                      {<LightbulbFullIcon />}
-                    </IconButton>
-                  </Tooltip>    
+                  <div className={classes.grow} />
                 </Toolbar>
               </AppBar>
               <DocInfo formattedDate={formattedDate} category={category} />

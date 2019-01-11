@@ -39,11 +39,12 @@ const DocPreviewTemplate = ({ entry }) => {
 
       const iframe = document.getElementsByTagName('iframe')[0]
       const iframeHeadElem = iframe.contentDocument.head;
-      iframeHeadElem.innerHTML += css;
+      iframeHeadElem.innerHTML = css;
 
       let linkPrismThemeNode;
       linkPrismThemeNode = document.createElement('link');
       linkPrismThemeNode.setAttribute('type', 'text/css');
+      linkPrismThemeNode.setAttribute('rel', 'stylesheet');
       linkPrismThemeNode.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-dark.min.css');
       iframeHeadElem.appendChild(linkPrismThemeNode);
 
