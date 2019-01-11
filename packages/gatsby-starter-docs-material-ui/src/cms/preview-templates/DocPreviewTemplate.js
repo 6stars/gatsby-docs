@@ -16,7 +16,7 @@ import 'prismjs/components/prism-typescript';
 import lightTheme from 'prism-themes/themes/prism-vs.css';
 
 let styleNode;
-
+console.log(lightTheme)
 styleNode = document.createElement('style');
 styleNode.setAttribute('data-prism', 'true');
 styleNode.textContent = lightTheme;

@@ -14,6 +14,7 @@ import ReactMarkdown from "react-markdown";
 
 const styles = theme => ({
   root: {
+    fontFamily: theme.typography.fontFamily,
     fontWeight: 500,
     fontSize: 14,
     color: theme.palette.text.primary,
@@ -21,7 +22,6 @@ const styles = theme => ({
     '& .anchor': {     
       marginTop: '-99px', // Offset for the anchor.
       position: 'absolute',
-      visibility: 'hidden',
     },
     '& pre, & pre[class*="language-"]': {
       margin: '12px 0',
@@ -213,7 +213,7 @@ class DocContent extends React.Component {
       if(isBodyMarkdown){
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
-              <ReactMarkdown source={content} />
+              <ReactMarkdown source={content} className='markdown-body' escapeHtml={false}/>
           </div>
         );
       } 
