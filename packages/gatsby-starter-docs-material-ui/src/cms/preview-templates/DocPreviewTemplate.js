@@ -1,32 +1,39 @@
 import React from 'react';
-import {renderToString} from 'react-dom/server'
-import PropTypes from 'prop-types';
-import createPageContext from '../../getPageContext';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import JssProvider from 'react-jss/lib/JssProvider';
-import DocPreview from './DocPreview';
-import CSSInjector from './CssInjector';
+import withRoot from '../../withRoot';
+import getPageContext from '../../getPageContext';
+import initRedux from '../../redux/initRedux';
+import light from '../../styles/light';
 
-let muiPageContext = createPageContext();
+// create material Page Context
+let muiPageContext = getPageContext();
+
+  // initial setup for Redux Store with light theme Color Scheme set as default
+let store = initRedux( { theme: light } );
+
+// withRoot returns Functional Component that raps children passed as props
+let WithRoot = withRoot(props => props.children);
+  
 
 const DocPreviewTemplate = ({ entry }) => {
       renderToString(
-        <JssProvider
-            jss={muiPageContext.jss}
-            registry={muiPageContext.sheetsRegistry}
-            generateClassName={muiPageContext.generateClassName}
-            >      
-            <MuiThemeProvider theme={muiPageContext.theme} sheetsManager={muiPageContext.sheetsManager}>
-            <CssBaseline />          
-            <DocPreview content={entry.getIn(["data", "body"])}
-                tags={entry.getIn(['data', 'tags'])}
-                title={entry.getIn(['data', 'title'])}
-                rawDate={entry.getIn(['data', 'date'])}
-                category={entry.getIn(['data', 'category'])}
-            />
-            </MuiThemeProvider>
-        </JssProvider>
+        <WithRoot key={Math.random()} muiPageContext={muiPageContext} store={store}>
+          <DocPreview content={entry.getIn(["data", "body"])}
+            tags={entry.getIn(['data', 'tags'])}
+            title={entry.getIn(['data', 'title'])}
+            rawDate={entry.getIn(['data', 'date'])}
+            category={entry.getIn(['data', 'category'])}
+          />
+        </WithRoot>
+        // <JssProvider
+        //     jss={muiPageContext.jss}
+        //     registry={muiPageContext.sheetsRegistry}
+        //     generateClassName={muiPageContext.generateClassName}
+        //     >      
+        //     <MuiThemeProvider theme={muiPageContext.theme} sheetsManager={muiPageContext.sheetsManager}>
+        //     <CssBaseline />          
+            
+        //     </MuiThemeProvider>
+        // </JssProvider>
       )
 
       const css = `<style>${muiPageContext.sheetsRegistry.toString()}</style>`;
@@ -36,21 +43,29 @@ const DocPreviewTemplate = ({ entry }) => {
       //console.log(iframeHeadElem.innerHTML);
       iframeHeadElem.innerHTML += css;
       return (
-        <JssProvider
-            jss={muiPageContext.jss}
-            registry={muiPageContext.sheetsRegistry}
-            generateClassName={muiPageContext.generateClassName}
-            >      
-            <MuiThemeProvider theme={muiPageContext.theme} sheetsManager={muiPageContext.sheetsManager}>
-            <CssBaseline />          
-            <DocPreview content={entry.getIn(["data", "body"])}
-                tags={entry.getIn(['data', 'tags'])}
-                title={entry.getIn(['data', 'title'])}
-                rawDate={entry.getIn(['data', 'date'])}
-                category={entry.getIn(['data', 'category'])}
-            />
-            </MuiThemeProvider>
-        </JssProvider>
+        <WithRoot key={Math.random()} muiPageContext={muiPageContext} store={store}>
+          <DocPreview content={entry.getIn(["data", "body"])}
+            tags={entry.getIn(['data', 'tags'])}
+            title={entry.getIn(['data', 'title'])}
+            rawDate={entry.getIn(['data', 'date'])}
+            category={entry.getIn(['data', 'category'])}
+          />
+        </WithRoot>
+        // <JssProvider
+        //     jss={muiPageContext.jss}
+        //     registry={muiPageContext.sheetsRegistry}
+        //     generateClassName={muiPageContext.generateClassName}
+        //     >      
+        //     <MuiThemeProvider theme={muiPageContext.theme} sheetsManager={muiPageContext.sheetsManager}>
+        //     <CssBaseline />          
+        //     <DocPreview content={entry.getIn(["data", "body"])}
+        //         tags={entry.getIn(['data', 'tags'])}
+        //         title={entry.getIn(['data', 'title'])}
+        //         rawDate={entry.getIn(['data', 'date'])}
+        //         category={entry.getIn(['data', 'category'])}
+        //     />
+        //     </MuiThemeProvider>
+        // </JssProvider>
       );
   }
 
