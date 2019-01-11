@@ -31,9 +31,10 @@ const DocPreviewTemplate = ({ entry }) => {
 
       const css = `<style>${muiPageContext.sheetsRegistry.toString()}</style>`;
 
-      // const iframe = document.getElementsByTagName('iframe')[0]
-      // const iframeHeadElem = iframe.contentDocument.head;
-      // iframeHeadElem.innerHTML += css;
+      const iframe = document.getElementsByTagName('iframe')[0]
+      const iframeHeadElem = iframe.contentDocument.head;
+      console.log(iframeHeadElem.innerHTML);
+      iframeHeadElem.innerHTML += css;
       return (
             <CSSInjector css={css}>
               <DocPreview content={entry.getIn(["data", "body"])}

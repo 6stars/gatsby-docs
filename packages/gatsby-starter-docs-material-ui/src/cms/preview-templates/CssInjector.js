@@ -1,8 +1,9 @@
 import React from "react"
 
 const CSSInjector = React.forwardRef((props, ref) => {
-        ref.ownerDocument.head.innerHTML += props.css
-        console.log(ref.ownerDocument.head.innerHTML);
+        //ref.ownerDocument.head.innerHTML += props.css
+        console.log(ref);
+        console.log(props)
         return (
             <React.Fragment>
                 {React.Children.only(props.children)}
