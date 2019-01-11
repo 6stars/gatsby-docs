@@ -10,17 +10,6 @@ import { setPrismTheme } from '../styles/prism';
 import { updatePageContext } from '../getPageContext';
 
 
-// Inject the insertion-point-jss after docssearch
-if (process.browser && !global.__INSERTION_POINT__) {
-  global.__INSERTION_POINT__ = true;
-  const styleNode = document.createComment('insertion-point-jss');
-  const docsearchStylesSheet = document.querySelector('#insertion-point-jss');
-
-  if (document.head && docsearchStylesSheet) {
-    document.head.insertBefore(styleNode, docsearchStylesSheet.nextSibling);
-  }
-}
-
 function uiThemeSideEffect(uiTheme) {
   setPrismTheme(uiTheme.paletteType);  
 }
