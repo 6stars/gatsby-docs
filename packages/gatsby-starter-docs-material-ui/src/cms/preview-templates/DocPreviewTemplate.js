@@ -42,9 +42,8 @@ const DocPreviewTemplate = ({ entry }) => {
     if(!document.getElementById('jssInsertionPoint')){
         const noscriptElem = document.createElement('noscript');
         noscriptElem.id=jssInsertionPoint;
+        iframeHeadElem.appendChild(noscriptElem);
     }
-     
-    iframeHeadElem.appendChild(noscriptElem);
 
     let linkPrismThemeNode;
     linkPrismThemeNode = document.createElement('link');
