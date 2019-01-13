@@ -66,7 +66,7 @@ tags:
 ##### [Sneak Peek](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html)
 ##### [Understand React "Suspense"](https://medium.com/@baphemot/understanding-react-suspense-1c73b4b0b1e6)
 
-###### Dan Abramov: Beyond React 16 | JSConf Iceland 2018 {%youtube nLF0n9SACd4 %}
+###### Dan Abramov: Beyond React 16 | JSConf Iceland 2018 `youtube:https://www.youtube.com/embed/nLF0n9SACd4`
 ###### Andrew Clark: React Suspense `youtube:https://www.youtube.com/embed/z-6JC0_cOns`
 
 ## React Native
