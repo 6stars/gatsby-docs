@@ -39,7 +39,6 @@ const DocPreviewTemplate = ({ entry }) => {
     const jssInsertionPoint = 'jss-insertion-point';
     const iframe = document.getElementsByTagName('iframe')[0];
     const iframeHeadElem = iframe.contentDocument.head;
-    const noscriptElem = document.createElement('noscript');
     let noscriptElem = document.getElementById('jssInsertionPoint');
 
     if(!noscriptElem){
