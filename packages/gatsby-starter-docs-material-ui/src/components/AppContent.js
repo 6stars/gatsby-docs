@@ -9,8 +9,8 @@ const styles = theme => ({
     flex: '1 1 100%',
     maxWidth: '100%',
     margin: '0 auto',
-    paddingLeft: theme.spacing.unit * 3,
-    paddingRight: theme.spacing.unit * 1,
+    paddingLeft: theme.spacing.unit * 2,
+    paddingRight: theme.spacing.unit * 2,
     [theme.breakpoints.up('sm')]: {
       paddingLeft: theme.spacing.unit * 2,
       paddingRight: theme.spacing.unit * 2,
