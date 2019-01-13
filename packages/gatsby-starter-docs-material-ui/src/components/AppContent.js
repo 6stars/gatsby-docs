@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {
-    paddingTop: 75,
+    paddingTop: 80,
     flex: '1 1 100%',
     maxWidth: '100%',
     margin: '0 auto',
@@ -17,9 +17,9 @@ const styles = theme => ({
       maxWidth: 'calc(100% - 52px)',
     },
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: theme.spacing.unit * 8,
-      paddingRight: theme.spacing.unit * 7,
-      maxWidth: 'calc(100% - 240px - 52px)',
+      paddingLeft: theme.spacing.unit * 5,
+      paddingRight: theme.spacing.unit * 5,
+      maxWidth: 'calc(100% - 240px - 200px)',
     },
   },
 });

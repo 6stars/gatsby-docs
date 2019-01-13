@@ -8,7 +8,7 @@ tags:
   - sample
 ---
 
-<a name="headers"/>
+<a name="headers" class="anchor-link" />
 
 ## Headers
 
@@ -44,7 +44,7 @@ Alt-H1
 Alt-H2
 ------
 
-<a name="emphasis"/>
+<a name="emphasis" class="anchor-link" />
 
 ## Emphasis
 
@@ -67,7 +67,7 @@ Combined emphasis with **asterisks and _underscores_**.
 Strikethrough uses two tildes. ~~Scratch this.~~
 
 
-<a name="lists"/>
+<a name="lists" class="anchor-link" />
 
 ## Lists
 

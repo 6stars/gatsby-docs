@@ -21,7 +21,7 @@ const styles = theme => ({
     color: theme.palette.text.primary,
     paddingBottom: '20px',
     '& .anchor': {     
-      marginTop: '-99px', // Offset for the anchor.
+      marginTop: '-199px', // Offset for the anchor.
       position: 'absolute',
     },
     '& pre, & pre[class*="language-"]': {
@@ -83,12 +83,12 @@ const styles = theme => ({
         // Remove scroll on small screens.
         wordBreak: 'break-word',
       },
-      '& .anchor-link-style': {
+      '& .anchor': {
         opacity: 0,
         // To prevent the link to get the focus.
         display: 'none',
       },
-      '&:hover .anchor-link-style': {
+      '&:hover .anchor': {
         display: 'inline-block',
         opacity: 1,
         padding: '0 8px',
