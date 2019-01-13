@@ -13,10 +13,10 @@ const jss = create({
 });
 
 
-export function createPageContext() {
+export function createPageContext(customJss) {
 
   return {
-    jss,
+    jss: customJss ? customJss : jss,
     theme: defaultTheme,
     // This is needed in order to deduplicate the injection of CSS in the page.
     sheetsManager: new Map(),

@@ -16,13 +16,17 @@ const styles = theme => ({
 
 class DocInfo extends Component {
   render() {
-    const { formattedDate, category, classes } = this.props;
+    const { formattedDate, category, classes, isPreview } = this.props;
    
     return (
         <div className={classes.root}>
           <Typography color="textSecondary">
           {`Published on ${formattedDate}`}
           </Typography>
+          { isPreview ? 
+             <Typography color="textSecondary" gutterBottom>
+              In Category <b>{category}</b>
+            </Typography> :
           <Link
             className="category-link"
             to={`/categories/${_.kebabCase(category)}`}
@@ -31,6 +35,7 @@ class DocInfo extends Component {
             In Category <b>{category}</b>
           </Typography>
           </Link>
+          }
         </div>
     );
   }

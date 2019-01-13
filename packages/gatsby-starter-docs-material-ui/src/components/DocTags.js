@@ -5,11 +5,13 @@ import Chip from '@material-ui/core/Chip';
 
 class PostTags extends Component {
   render() {
-    const { tags } = this.props;
+    const { tags, isPreview } = this.props;
     return (
       <div className="post-tag-container">
         {tags &&
-          tags.map(tag => (
+          tags.map(tag => {
+            isPreview ? 
+            <Chip label={tag} className="post-preview-tags" /> : 
             <Link
               key={tag}
               style={{ textDecoration: "none" }}
@@ -17,7 +19,8 @@ class PostTags extends Component {
             >
               <Chip label={tag} className="post-preview-tags" />
             </Link>
-          ))}
+          }
+          )}
       </div>
     );
   }

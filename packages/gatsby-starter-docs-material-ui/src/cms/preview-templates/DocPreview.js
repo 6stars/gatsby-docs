@@ -8,7 +8,7 @@ const DocPreview = ({ content, tags, rawDate, title, category }) => {
   return (
     <DocTemplate
       content={content}
-      isBodyMarkdown={true}
+      isPreview={true}
       tags={tags}
       title={title}
       formattedDate={format(rawDate, "MMMM Do YYYY")}
@@ -19,7 +19,7 @@ const DocPreview = ({ content, tags, rawDate, title, category }) => {
 
 DocPreview.propTypes = {
   content: PropTypes.node.isRequired,
-  rawDate: PropTypes.string,
+  rawDate: PropTypes.instanceOf(Date),
   title: PropTypes.string,
   category: PropTypes.string,
   tags: PropTypes.array,

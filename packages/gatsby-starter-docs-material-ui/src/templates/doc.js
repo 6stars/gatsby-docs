@@ -40,11 +40,11 @@ const styles = theme => ({
     },
     '& p code, & ul code, & pre code': {
       fontSize: 12,
-      // lineHeight: 1.4,
+      lineHeight: 1.4,
     },
     '& a': {
       ...theme.typography.h6,
-      // lineHeight: 1.4,
+      lineHeight: 1.4,
     },
     '& h1': {
       ...theme.typography.h3,
@@ -202,7 +202,7 @@ class DocContent extends React.Component {
     render() {
       const { 
         content,
-        isBodyMarkdown,
+        isPreview,
         formattedDate,
         tags,
         title,
@@ -210,19 +210,15 @@ class DocContent extends React.Component {
         classes,
         className
       } = this.props;
-
-
       
-      if(isBodyMarkdown){
-       
-
+      if(isPreview){
         return (
           <div className={classNames(classes.root, 'markdown-body', className ? className : '')}>
               <Typography className={classes.title} variant="h4" color="inherit" noWrap>{title}</Typography>
-              <DocInfo formattedDate={formattedDate} category={category} />
+              <DocInfo formattedDate={formattedDate} category={category} isPreview={isPreview} />
               <ReactMarkdown source={content} className='markdown-body' escapeHtml={false}/>
               <div className="doc-meta">
-                <DocTags tags={tags} />
+                <DocTags tags={tags} isPreview={isPreview} />
               </div>
           </div>
         );
@@ -248,7 +244,7 @@ DocContent.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
   tags: PropTypes.array,
-  bodyIsMarkdown: PropTypes.bool,
+  isPreview: PropTypes.bool,
 }
 
 const DocTemplate = withStyles(styles)(DocContent);
