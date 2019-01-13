@@ -45,9 +45,14 @@ tags:
 ### Redux Middlewares
 
 ![](https://i.imgur.com/HVskLcj.gif)
-* ###### [Article: Redux 4 Ways](https://medium.com/react-native-training/redux-4-ways-95a130da0cdc)* ###### [Redux Thunk](https://github.com/gaearon/redux-thunk)* ###### [Redux Promise](https://github.com/pburtchaell/redux-promise-middleware)    * [with Async Await](https://github.com/pburtchaell/redux-promise-middleware/blob/master/docs/guides/async-await.md)* ###### [Redux Saga](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
+* ###### [Article: Redux 4 Ways](https://medium.com/react-native-training/redux-4-ways-95a130da0cdc)
+* ###### [Redux Thunk](https://github.com/gaearon/redux-thunk)
+* ###### [Redux Promise](https://github.com/pburtchaell/redux-promise-middleware)
+* [with Async Await](https://github.com/pburtchaell/redux-promise-middleware/blob/master/docs/guides/async-await.md)
+* ###### [Redux Saga](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
 ![](https://resizer.yalantis.com/w770/uploads/ckeditor/pictures/2602/content_002.jpg)
-* ###### [Redux Observable](https://github.com/redux-observable/redux-observable)    {%youtube sF5-V-Szo0c %}
+* ###### [Redux Observable](https://github.com/redux-observable/redux-observable)
+{%youtube sF5-V-Szo0c %}
 
 
 ## React Emerging Features & Patterns
@@ -61,7 +66,7 @@ tags:
 ##### [Sneak Peek](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html)
 ##### [Understand React "Suspense"](https://medium.com/@baphemot/understanding-react-suspense-1c73b4b0b1e6)
 
-###### Dan Abramov: Beyond React 16 | JSConf Iceland 2018 {%youtube nLF0n9SACd4 %}
+###### Dan Abramov: Beyond React 16 | JSConf Iceland 2018 `youtube:https://www.youtube.com/embed/nLF0n9SACd4`
 ###### Andrew Clark: React Suspense `youtube:https://www.youtube.com/embed/z-6JC0_cOns`
 
 ## React Native
