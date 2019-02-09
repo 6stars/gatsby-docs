@@ -111,5 +111,6 @@
     "plugins": [
       "remark-preset-lint-recommended"
     ]
-  }
+  },
+  "gitHead": "0ad805fe334385f87f479542434b7bc0157c9123"
 }
