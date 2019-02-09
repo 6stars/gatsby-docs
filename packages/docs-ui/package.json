@@ -1,0 +1,106 @@
+{
+  "name": "@m00n/gatsby-docs-ui",
+  "version": "1.1.0",
+  "author": "Adam Moon <adam@amoon.space>",
+  "private": true,
+  "publishConfig": {
+    "registry": "https://www.myget.org/F/defi-ui/npm/"
+  },
+  "module": "src/index.js",
+  "directories": "src",
+  "description": "defi core js modules",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6stars/gatsby-docs.git"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development babel --config-file ../../.babelrc.js ./src -d ./lib --ignore *.css,test.js,story.js --source-maps inline --watch",
+    "prebuild": "rimraf lib",
+    "build:es2015": "cross-env NODE_ENV=production babel --config-file ../../.babelrc.js ./src --out-dir ./lib --ignore *.test.js",
+    "build:es2015modules": "cross-env NODE_ENV=production BABEL_ENV=modules babel --config-file ../../.babelrc.js ./src/index.js --out-file ./lib/index.es.js",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ../../.babelrc.js ./src --out-dir ./lib/es --ignore *.test.js",
+    "build:umd": "cross-env BABEL_ENV=production-umd rollup -c scripts/rollup.config.js",
+    "build:copy-files": "babel-node --config-file .babelrc.js ./scripts/copy-files.js",
+    "build": "yarn build:es2015 && yarn build:es2015modules && yarn build:es",
+    "story": "start-storybook -p 9001 -c .storybook",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "test": "node ../../scripts/test.js --env=jsdom --coverage",
+    "build-storybook": "build-storybook",
+    "surge": "surge ./storybook-static --domain defi-storybook.surge.sh",
+    "deploy": "yarn build-storybook && yarn surge"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "setupFiles": [
+      "<rootDir>../../config/polyfills.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/(build|docs|node_modules)/"
+    ],
+    "testEnvironment": "jsdom",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx)$",
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>../config/jest/FileStub.js",
+      "^.+\\.css$": "<rootDir>../config/jest/CSSStub.js",
+      "^@m00n/(.*)": "<rootDir>/node_modules/@m00n/$1/dist"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "author": "Adam Moon",
+  "dependencies": {
+    "@material-ui/core": "3.9.0",
+    "@material-ui/docs": "3.0.0-alpha.8",
+    "@material-ui/icons": "3.0.2",
+    "@material-ui/styles": "3.0.0-alpha.7",
+    "core-js": "2.5.7",
+    "date-fns": "1.30.1",
+    "downshift": "^3.1.5",
+    "fg-loadcss": "^2.0.1",
+    "immutable": "^3.7.6",
+    "jss": "9.8.7",
+    "jss-rtl": "^0.2.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "prism-themes": "1.0.1",
+    "prismjs": "^1.15.0",
+    "prop-types": "15.5.10",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-event-listener": "0.6.5",
+    "react-helmet": "^5.2.0",
+    "react-instantsearch": "5.3.2",
+    "react-jss": "^8.6.1",
+    "react-markdown": "4.0.3",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "url-join": "^4.0.0",
+    "whatwg-fetch": "2.0.3"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "4.1.7",
+    "@storybook/addon-knobs": "4.1.7",
+    "@storybook/addon-links": "4.1.7",
+    "@storybook/addons": "4.1.7",
+    "@storybook/react": "4.1.7",
+    "cross-env": "5.2.0",
+    "eslint-plugin-react": "^7.4.0",
+    "glob-loader": "^0.3.0",
+    "react-test-renderer": "^16.7.0",
+    "react-testing-library": "^5.4.4",
+    "rimraf": "2.6.3"
+  }
+}

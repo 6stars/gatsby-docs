@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  # name: test-repo  
+  branch: master
+publish_mode: editorial_workflow
+squash_merges: true
+commit_messages:
+  create: Create {{collection}} “{{slug}}”
+  update: Update {{collection}} “{{slug}}”
+  delete: Delete {{collection}} “{{slug}}”
+  uploadMedia: Upload “{{path}}”
+  deleteMedia: Delete “{{path}}”
+media_folder:  "packages/docs-a/static/upload"
+public_folder: /upload
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+logo_url:  /upload/logo.png
+collections:
+  - name: "docs"
+    label: 6star A Docs
+    label_singular: 6star A Doc
+    description: 6star A Docs
+    folder: "packages/docs-a/content"
+    create: true
+    slug: "{{category}}_{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Route", name: "route", widget: "string"}
+      - {label: "Cover Image", name: "cover", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}

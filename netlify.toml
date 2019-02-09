@@ -1,7 +1,27 @@
-[build]
-  publish = "/packages/gatsby-starter-docs-material-ui/public"
-  command = "yarn build"
 [build.environment]
   YARN_VERSION = "1.12.3"
   NODE_VERSION = "10.13.0"
 
+[[redirects]]
+  from = "/"
+  to = "/docs/"
+  status = 301
+  forced = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/:splat"
+  status = 200
+  forced = false
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/docs/admin/:splat"
+  status = 301
+  forced = true
+
+[[redirects]]
+  from = "/docs/admin/*"
+  to = "/admin/:splat"
+  status = 200
+  forced = false

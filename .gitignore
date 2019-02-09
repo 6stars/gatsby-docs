@@ -45,6 +45,8 @@ jspm_packages
 # Build Files
 /**/**/public/
 /**/**/.cache/
+/**/**/lib/
+/**/**/build/
 
 # Gatsby context
 .gatsby-context.js
