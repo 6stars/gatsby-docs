@@ -8,7 +8,7 @@ module.exports = {
   siteRss: '/rss.xml', // Path to the RSS file.
   pathPrefix: '/docs', // Prefixes all links.
   siteGATrackingID: '', // Tracking code ID for google analytics.
-  docDefaultCategoryID: 'gotcha', // Default category for docs.
+  docDefaultCategoryID: 'guide', // Default category for docs.
   dateFromFormat: 'MM-DD-YYYY', // Date format used in the frontmatter.
   dateFormat: 'MM/DD/YYYY', // Date format for display.
   userName: 'Defi User', // Username to display in the author segment.

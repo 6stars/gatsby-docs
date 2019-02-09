@@ -1,21 +1,17 @@
 {
   "name": "@m00n/docs-a",
   "description": "6star Documentation Site A",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": "Adam Moon <adam@amoon.space>",
-  "private": true,
-  "publishConfig": {
-    "registry": "https://www.myget.org/F/defi-ui/npm/"
-  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DefiSolutions/Defi-Ui.git"
+    "url": "git+https://github.com/6stars/gatsby-docs.git"
   },
   "dependencies": {
     "@babel/core": "7.2.2",
     "@m00n/gatsby-docs-ui": "*",
-    "@m00n/gatsby-plugin-nav-tree": "^0.3.0",
+    "@m00n/gatsby-plugin-nav-tree": "latest",
     "@material-ui/core": "3.7.0",
     "@material-ui/docs": "3.0.0-alpha.8",
     "@material-ui/icons": "3.0.1",
