@@ -19,7 +19,7 @@
     "test:watch": "jest --watch",
     "test:integration": "jest --config=integration-tests/jest.config.js",
     "version": "prettier --write \"**/CHANGELOG.md\"",
-    "bs": "lerna bootstrap && yarn build:docs-ui",
+    "bs": "lerna bootstrap && yarn build:ui",
     "dev:a": "lerna exec --scope @m00n/docs-a --parallel -- yarn dev",
     "dev:b": "lerna exec --scope @m00n/docs-b --parallel -- yarn dev",
     "build": "lerna exec --scope @m00n/docs-* -- yarn prepare",

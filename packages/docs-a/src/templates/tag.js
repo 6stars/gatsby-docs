@@ -1,15 +1,15 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { DocListing, PageContext } from "@m00n/docs-ui";
-import Layout from '../layout';
-import { graphql } from 'gatsby';
-import config from "../../data/SiteConfig";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { DocListing, PageContext } from '@m00n/gatsby-docs-ui'
+import Layout from '../layout'
+import { graphql } from 'gatsby'
+import config from '../../data/SiteConfig'
 
 export class TagTemplate extends React.Component {
   render() {
-    const { tag, config } = this.props.pageContext;
-    const { data } = this.props;
-    const docEdges = data.allMarkdownRemark.edges;
+    const { tag, config } = this.props.pageContext
+    const { data } = this.props
+    const docEdges = data.allMarkdownRemark.edges
 
     return (
       <PageContext.Provider value={{ data, config }}>
@@ -26,7 +26,7 @@ export class TagTemplate extends React.Component {
           </div>
         </Layout>
       </PageContext.Provider>
-    );
+    )
   }
 }
 
@@ -46,18 +46,18 @@ export const pageQuery = graphql`
           }
           excerpt
           timeToRead
-          frontmatter {	
-            title	
+          frontmatter {
+            title
             description
             tags
             category
             rawDate: date
             cover
-          }	
+          }
         }
       }
     }
   }
-`;
+`
 
-export default TagTemplate;
+export default TagTemplate

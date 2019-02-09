@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "7.2.2",
-    "@m00n/gatsby-docs-ui": "*",
+    "@m00n/gatsby-docs-ui": "latest",
     "@m00n/gatsby-plugin-nav-tree": "latest",
     "@material-ui/core": "3.7.0",
     "@material-ui/docs": "3.0.0-alpha.8",

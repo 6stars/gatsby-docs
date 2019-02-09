@@ -1,8 +1,8 @@
-import React from 'react';
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from 'gatsby';
-import { AppFrame, AppContent } from '@m00n/docs-ui';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+import { AppFrame, AppContent } from '@m00n/gatsby-docs-ui'
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
   root: {
@@ -13,44 +13,49 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit * 2,
     padding: `0 ${theme.spacing.unit}px`,
   },
-});
+})
 
-
-const DocLayout = ({ children, classes, tableOfContents, title, timeToRead }) => (
-  
+const DocLayout = ({
+  children,
+  classes,
+  tableOfContents,
+  title,
+  timeToRead,
+}) => (
   <StaticQuery
     query={graphql`
-          query SiteTitleQuery {
-              site {
-                  siteMetadata {
-                      title
-                  }
-              }
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
           }
-      `}
-    render={ ({data}) => {
-      
+        }
+      }
+    `}
+    render={({ data }) => {
       return (
-        <AppFrame tableOfContents={tableOfContents} title={title} timeToRead={timeToRead}>
+        <AppFrame
+          tableOfContents={tableOfContents}
+          title={title}
+          timeToRead={timeToRead}
+        >
           <Helmet
             title={title}
             meta={[
               { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' }
+              { name: 'keywords', content: 'sample, something' },
             ]}
           >
             <html lang="en" />
           </Helmet>
 
           <AppContent className={classes.root}>
-            <div>
-              {children}
-            </div>
+            <div>{children}</div>
           </AppContent>
         </AppFrame>
       )
     }}
   />
-);
+)
 
-export default withStyles(styles)(DocLayout);
+export default withStyles(styles)(DocLayout)

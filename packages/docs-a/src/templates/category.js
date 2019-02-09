@@ -1,14 +1,14 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import { DocListing, PageContext } from "@m00n/docs-ui";
-import Layout from '../layout';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import { DocListing, PageContext } from '@m00n/gatsby-docs-ui'
+import Layout from '../layout'
 
 export class CategoryTemplate extends React.Component {
   render() {
-    const { category, config } = this.props.pageContext;
-    const { data } = this.props;
-    const docEdges = data.allMarkdownRemark.edges;
+    const { category, config } = this.props.pageContext
+    const { data } = this.props
+    const docEdges = data.allMarkdownRemark.edges
     return (
       <PageContext.Provider value={{ data, config }}>
         <Layout
@@ -29,14 +29,13 @@ export class CategoryTemplate extends React.Component {
           </div>
         </Layout>
       </PageContext.Provider>
-
-    );
+    )
   }
 }
 
 export const pageQuery = graphql`
   query CategoryPage($route: String!, $category: String) {
-    ...navTree,
+    ...navTree
     allMarkdownRemark(
       limit: 1000
       filter: { frontmatter: { category: { eq: $category } } }
@@ -50,18 +49,18 @@ export const pageQuery = graphql`
           }
           excerpt
           timeToRead
-          frontmatter {	
-            title	
+          frontmatter {
+            title
             description
             tags
             category
             rawDate: date
             cover
-          }	
+          }
         }
       }
     }
   }
-`;
+`
 
-export default CategoryTemplate;
+export default CategoryTemplate
