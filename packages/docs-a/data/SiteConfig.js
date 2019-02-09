@@ -6,7 +6,7 @@ module.exports = {
   siteLogo: '/upload/logo.png', // Logo used for SEO and manifest.
   siteUrl: 'https://docs-b.netlify.com', // Domain of your website without pathPrefix.
   siteRss: '/rss.xml', // Path to the RSS file.
-  pathPrefix: '', // Prefixes all links.
+  pathPrefix: '/docs', // Prefixes all links.
   siteGATrackingID: '', // Tracking code ID for google analytics.
   docDefaultCategoryID: 'guide', // Default category for docs.
   dateFromFormat: 'MM-DD-YYYY', // Date format used in the frontmatter.
