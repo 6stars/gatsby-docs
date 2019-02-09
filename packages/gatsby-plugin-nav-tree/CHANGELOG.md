@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-plugin-nav-tree@0.3.0...@m00n/gatsby-plugin-nav-tree@0.3.1) (2019-02-09)
+
+### Features
+
+- docs-a,docs-b using shared [@m00n](https://github.com/m00n)/gatsby-doc-ui components ([19ba865](https://github.com/6stars/gatsby-docs/commit/19ba865))
+
 # [0.3.0](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-plugin-nav-tree@0.2.0...@m00n/gatsby-plugin-nav-tree@0.3.0) (2019-01-14)
 
 ### Bug Fixes

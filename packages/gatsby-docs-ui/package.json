@@ -1,14 +1,7 @@
 {
   "name": "@m00n/gatsby-docs-ui",
-  "version": "1.1.0",
-  "author": "Adam Moon <adam@amoon.space>",
-  "private": true,
-  "publishConfig": {
-    "registry": "https://www.myget.org/F/defi-ui/npm/"
-  },
-  "module": "src/index.js",
-  "directories": "src",
-  "description": "defi core js modules",
+  "version": "1.1.1",
+  "author": "Adam Moon",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -59,7 +52,6 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "author": "Adam Moon",
   "dependencies": {
     "@material-ui/core": "3.9.0",
     "@material-ui/docs": "3.0.0-alpha.8",
