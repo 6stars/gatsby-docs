@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/core": "7.2.2",
     "@m00n/gatsby-docs-ui": "*",
-    "@m00n/gatsby-plugin-nav-tree": "*",
+    "@m00n/gatsby-plugin-nav-tree": "0.3.0",
     "@material-ui/core": "3.7.0",
     "@material-ui/docs": "3.0.0-alpha.8",
     "@material-ui/icons": "3.0.1",
@@ -100,7 +100,7 @@
     "dev": "npm run develop",
     "serve": "gatsby serve",
     "build": "gatsby build --prefix-paths",
-    "prepare": "cross-env NODE_ENV=production npm run build",
+    "prepare": "cross-env NODE_ENV=production && yarn build",
     "clean": "rm -rf public && rm -rf .cache",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/",
