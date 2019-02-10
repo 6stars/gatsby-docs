@@ -11,6 +11,6 @@ module.exports = {
   docDefaultCategoryID: 'guide', // Default category for docs.
   dateFromFormat: 'MM-DD-YYYY', // Date format used in the frontmatter.
   dateFormat: 'MM/DD/YYYY', // Date format for display.
-  userName: 'Defi User', // Username to display in the author segment.
+  userName: '****** User', // Username to display in the author segment.
   copyright: 'Copyright © 2019. ******', // Copyright string for the footer of the website and RSS feed.
 };
