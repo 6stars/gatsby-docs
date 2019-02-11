@@ -52,6 +52,17 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
+    // {
+    //   resolve: 'gatsby-plugin-module-resolver',
+    //   options: {
+    //     root: './', // <- will be used as a root dir
+    //     alias: {
+    //       '@m00n/gatsby-docs-ui': '../packages/gatsby-docs-ui/src',
+    //       '@m00n/gatsby-plugin-nav-tree':
+    //         '../packages/gatsby-plugin-nav-tree/src',
+    //     },
+    //   },
+    // },
     {
       resolve: '@m00n/gatsby-plugin-nav-tree',
       options: {
@@ -62,17 +73,6 @@ module.exports = {
           '/offline-plugin-app-shell-fallback',
           '/dev-404-page',
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-module-resolver',
-      options: {
-        root: './src', // <- will be used as a root dir
-        alias: {
-          '@m00n/gatsby-docs-ui': '../../packages/gatsby-docs-ui/src',
-          '@m00n/gatsby-plugin-nav-tree':
-            '../../packages/gatsby-plugin-nav-tree/src',
-        },
       },
     },
     'gatsby-plugin-react-helmet',
