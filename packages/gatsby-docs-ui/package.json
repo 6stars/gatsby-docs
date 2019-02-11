@@ -3,6 +3,8 @@
   "version": "1.1.1",
   "author": "Adam Moon",
   "license": "MIT",
+  "module": "src/index.js",
+  "directories": "src",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/6stars/gatsby-docs.git"
@@ -20,7 +22,6 @@
     "prepare": "cross-env NODE_ENV=production npm run build",
     "test": "node ../../scripts/test.js --env=jsdom --coverage",
     "build-storybook": "build-storybook",
-    "surge": "surge ./storybook-static --domain defi-storybook.surge.sh",
     "deploy": "yarn build-storybook && yarn surge"
   },
   "eslintConfig": {
