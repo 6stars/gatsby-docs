@@ -93,5 +93,6 @@
     "react-test-renderer": "^16.7.0",
     "react-testing-library": "^5.4.4",
     "rimraf": "2.6.3"
-  }
+  },
+  "gitHead": "233be84fe0a98b2a40e8f39291e9ed7e2820beea"
 }

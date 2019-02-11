@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/core": "7.2.2",
     "@m00n/gatsby-docs-ui": "^1.1.2",
-    "@m00n/gatsby-plugin-nav-tree": "latest",
+    "@m00n/gatsby-plugin-nav-tree": "^0.3.2",
     "@material-ui/core": "3.7.0",
     "@material-ui/docs": "3.0.0-alpha.8",
     "@material-ui/icons": "3.0.1",
@@ -112,5 +112,5 @@
       "remark-preset-lint-recommended"
     ]
   },
-  "gitHead": "0ad805fe334385f87f479542434b7bc0157c9123"
+  "gitHead": "233be84fe0a98b2a40e8f39291e9ed7e2820beea"
 }
