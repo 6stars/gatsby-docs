@@ -1,20 +1,22 @@
-{  
+{
   "command": {
     "create": {
       "license": "MIT"
     },
     "publish": {
-      "allowBranch": "master",
+      "allowBranch": "master-a",
       "bump": "patch",
       "conventionalCommits": true,
       "message": "chore(release): Publish",
-      "ignoreChanges": ["CHANGELOG.md"]
+      "ignoreChanges": [
+        "CHANGELOG.md"
+      ]
     }
   },
-  "loglevel": "success",  
+  "loglevel": "success",
   "npmClient": "yarn",
   "version": "independent",
-  "registry": "https://registry.npmjs.org/",  
+  "registry": "https://registry.npmjs.org/",
   "changelog": {
     "repo": "6stars/gatsby-docs",
     "labels": {
@@ -26,6 +28,6 @@
       "tag: internal": ":house: Internal"
     },
     "cacheDir": ".changelog"
-  },   
+  },
   "useWorkspaces": true
 }
