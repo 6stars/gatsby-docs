@@ -9,7 +9,7 @@ require('dotenv').config({
 })
 
 const allDocsPageQuery = `{
-  allMarkdownRemark(	
+  allMarkdownRemark(	  
     limit: 5000	
     sort: { fields: [fields___date], order: DESC }	
   ) {	
