@@ -64,6 +64,17 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-module-resolver',
+      options: {
+        root: './src', // <- will be used as a root dir
+        alias: {
+          '@m00n/gatsby-docs-ui': '../../packages/gatsby-docs-ui/src',
+          '@m00n/gatsby-plugin-nav-tree':
+            '../../packages/gatsby-plugin-nav-tree/src',
+        },
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     {
