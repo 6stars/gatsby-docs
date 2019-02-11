@@ -47,7 +47,9 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             alias: {
-              '@m00n/gatsby-docs-ui': './packages/docs-ui/src',
+              '@m00n/gatsby-docs-ui': './packages/gatsby-docs-ui/src',
+              '@m00n/gatsby-plugin-nav-tree':
+                './packages/gatsby-plugin-nav-tree/src',
             },
           },
         ],
@@ -77,7 +79,9 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             alias: {
-              '@m00n/gatsby-docs-ui': './packages/docs-ui/src',
+              '@m00n/gatsby-docs-ui': './packages/gatsby-docs-ui/src',
+              '@m00n/gatsby-plugin-nav-tree':
+                './packages/gatsby-plugin-nav-tree/src',
             },
           },
         ],
@@ -114,7 +118,9 @@ module.exports = {
           {
             root: ['./'],
             alias: {
-              '@m00n/gatsby-docs-ui': './src',
+              '@m00n/gatsby-docs-ui': './packages/gatsby-docs-ui/src',
+              '@m00n/gatsby-plugin-nav-tree':
+                './packages/gatsby-plugin-nav-tree/src',
             },
           },
         ],
