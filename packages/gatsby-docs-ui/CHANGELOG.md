@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-docs-ui@1.4.3...@m00n/gatsby-docs-ui@1.5.0) (2019-02-12)
+
+**Note:** Version bump only for package @m00n/gatsby-docs-ui
+
 ## [1.4.3](https://github.com/6stars/gatsby-docs/compare/@m00n/gatsby-docs-ui@1.4.2...@m00n/gatsby-docs-ui@1.4.3) (2019-02-12)
 
 **Note:** Version bump only for package @m00n/gatsby-docs-ui
