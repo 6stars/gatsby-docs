@@ -1,7 +1,7 @@
 {
   "name": "@m00n/gatsby-docs-ui",
   "description": "React Component Library for Gatsby Documentation Site using material-ui",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Adam Moon <adam@amoon.space>",
   "license": "MIT",
   "module": "src/index.js",
