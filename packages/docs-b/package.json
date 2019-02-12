@@ -1,7 +1,7 @@
 {
   "name": "@m00n/docs-b",
   "description": "6star Documentation Site B",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "author": "Adam Moon <adam@amoon.space>",
   "license": "MIT",
   "private": true,
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@babel/core": "7.2.2",
-    "@m00n/gatsby-docs-ui": "^1.4.1",
+    "@m00n/gatsby-docs-ui": "^1.4.2",
     "@m00n/gatsby-plugin-nav-tree": "^0.6.0",
     "@material-ui/core": "3.7.0",
     "@material-ui/docs": "3.0.0-alpha.8",
