@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/6stars/gatsby-docs/compare/@m00n/docs-b@1.0.6...@m00n/docs-b@1.1.0) (2019-02-12)
+
+**Note:** Version bump only for package @m00n/docs-b
+
 ## [1.0.6](https://github.com/6stars/gatsby-docs/compare/@m00n/docs-b@1.0.5...@m00n/docs-b@1.0.6) (2019-02-12)
 
 **Note:** Version bump only for package @m00n/docs-b
