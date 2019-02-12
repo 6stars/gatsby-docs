@@ -4,8 +4,6 @@
   "version": "1.5.0",
   "author": "Adam Moon <adam@amoon.space>",
   "license": "MIT",
-  "module": "src/index.js",
-  "directories": "src",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/6stars/gatsby-docs.git"
@@ -95,5 +93,5 @@
     "react-testing-library": "^5.4.4",
     "rimraf": "2.6.3"
   },
-  "gitHead": "26315f474f2d97040547ec43dc38dfe574e16c7d"
+  "gitHead": "976d425eac1f7034c6b32ae3673f7dbe20750461"
 }
