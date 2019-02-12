@@ -4,6 +4,7 @@
   "version": "1.1.0",
   "author": "Adam Moon <adam@amoon.space>",
   "license": "MIT",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/6stars/gatsby-docs.git"
@@ -112,5 +113,5 @@
       "remark-preset-lint-recommended"
     ]
   },
-  "gitHead": "22f036aab946fc8d150678379b1492454e3ab5e7"
+  "gitHead": "4e19d7eefaff34e07a0901adef6f17c60862c584"
 }
