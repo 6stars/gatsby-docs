@@ -6,7 +6,7 @@
     "pub": "lerna publish --dist-tag=latest --conventional-commits --yes",
     "pub-minor": "lerna publish --dist-tag=latest --bump minor",
     "pub-patch": "lerna publish --dist-tag=latest --bump patch",
-    "pub-cc": "lerna publish --dist-tag=latest --conventional-commits",
+    "pub-cc": "lerna publish --access public --dist-tag=latest --conventional-commits",
     "pub-canary": "lerna publish --canary --yes",
     "pub-next": "lerna publish --dist-tag=next --bump prerelease",
     "bootstrap": "npm-run-all -s check-versions lerna-prepare",
