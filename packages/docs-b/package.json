@@ -1,7 +1,7 @@
 {
   "name": "@m00n/docs-b",
   "description": "6star Documentation Site B",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Adam Moon <adam@amoon.space>",
   "license": "MIT",
   "repository": {
@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@babel/core": "7.2.2",
-    "@m00n/gatsby-docs-ui": "^1.1.5",
-    "@m00n/gatsby-plugin-nav-tree": "^0.3.5",
+    "@m00n/gatsby-docs-ui": "^1.1.6",
+    "@m00n/gatsby-plugin-nav-tree": "^0.3.6",
     "@material-ui/core": "3.7.0",
     "@material-ui/docs": "3.0.0-alpha.8",
     "@material-ui/icons": "3.0.1",
