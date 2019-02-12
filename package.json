@@ -1,4 +1,6 @@
 {
+  "name": "gatsby-docs",
+  "private": true,
   "scripts": {
     "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
     "pub": "lerna publish --dist-tag=latest --conventional-commits --yes",

@@ -21,5 +21,5 @@
         "prepare": "cross-env NODE_ENV=production yarn build",
         "dev": "tsc -p ./tsconfig.json -d -w"
     },
-    "gitHead": "4c0e26ccbae54ffebfcfddbb7c62091da8b957cc"
+    "gitHead": "c133b0867b02ff5b38f1c4afe41c0657f9dca8ec"
 }

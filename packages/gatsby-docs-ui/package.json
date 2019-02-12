@@ -1,5 +1,5 @@
 {
-  "name": "@m00n/gatsby-docs-ui",
+  "name": "gatsby-docs-ui",
   "description": "React Component Library for Gatsby Documentation Site using material-ui",
   "version": "1.3.1",
   "author": "Adam Moon <adam@amoon.space>",
@@ -95,5 +95,5 @@
     "react-testing-library": "^5.4.4",
     "rimraf": "2.6.3"
   },
-  "gitHead": "4c0e26ccbae54ffebfcfddbb7c62091da8b957cc"
+  "gitHead": "c133b0867b02ff5b38f1c4afe41c0657f9dca8ec"
 }
