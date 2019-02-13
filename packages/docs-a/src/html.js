@@ -48,11 +48,6 @@ export default class HTML extends React.Component {
             href="/ios/ios-appicon-180-180.png"
           />
           <link
-            rel="apple-ios-appicon"
-            sizes="167x167"
-            href="/ios/ios-launchimage-167-167.png"
-          />
-          <link
             rel="apple-touch-startup-image"
             media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
             href="/ios/ios-launchimage-1242-2208.png"
@@ -107,14 +102,14 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script
+          {/* <script
             async
             src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"
           />
           <script
             type="text/javascript"
             src="https://cdn.jsdelivr.net/algoliasearch/3.10.2/algoliasearch.min.js"
-          />
+          /> */}
           <noscript>
             <div>
               <p>Please enable javascript to access ****** DOCS</p>
