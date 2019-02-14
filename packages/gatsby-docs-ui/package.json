@@ -1,10 +1,11 @@
 {
   "name": "@m00n/gatsby-docs-ui",
-  "version": "1.1.3",
+  "description": "React Component Library for Gatsby Documentation Site using material-ui",
+  "version": "1.6.1",
   "author": "Adam Moon <adam@amoon.space>",
   "license": "MIT",
-  "module": "src/index.js",
-  "directories": "src",
+  "module": "lib/index.js",
+  "directories": "lib",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/6stars/gatsby-docs.git"
@@ -94,5 +95,5 @@
     "react-testing-library": "^5.4.4",
     "rimraf": "2.6.3"
   },
-  "gitHead": "233be84fe0a98b2a40e8f39291e9ed7e2820beea"
+  "gitHead": "976d425eac1f7034c6b32ae3673f7dbe20750461"
 }

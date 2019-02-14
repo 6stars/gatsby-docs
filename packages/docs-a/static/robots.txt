@@ -2,4 +2,4 @@ User-agent: *
 Disallow: */tags/
 Disallow: */categories/
 
-sitemap: https://6star.pw/sitemap.xml
+sitemap: https://6star.pw/docs/sitemap.xml

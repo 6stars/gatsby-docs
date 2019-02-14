@@ -1,10 +1,12 @@
 {
+  "name": "gatsby-docs",
+  "private": true,
   "scripts": {
     "dev": "lerna exec --scope @m00n/* --parallel -- yarn dev",
     "pub": "lerna publish --dist-tag=latest --conventional-commits --yes",
     "pub-minor": "lerna publish --dist-tag=latest --bump minor",
     "pub-patch": "lerna publish --dist-tag=latest --bump patch",
-    "pub-cc": "lerna publish --dist-tag=latest --conventional-commits",
+    "pub-cc": "lerna publish public --dist-tag=latest --conventional-commits",
     "pub-canary": "lerna publish --canary --yes",
     "pub-next": "lerna publish --dist-tag=next --bump prerelease",
     "bootstrap": "npm-run-all -s check-versions lerna-prepare",
@@ -29,7 +31,7 @@
     "build:plugin": "lerna exec --scope @m00n/gatsby-plugin-nav-tree -- yarn prepare",
     "kill": "taskkill /im node.exe /F",
     "clean": "lerna clean",
-    "purge": "rimraf node_modules /**/node_modules packages/**/node_modules && rimraf yarn.lock /**/yarn.lock packages/**/yarn.lock && rimraf *-error.log /**/*-error.log packages/**/*-error.log && rimraf *-debug.log /**/*-debug.log packages/**/*-debug.log && rimraf package-lock.json /**/package-lock.json packages/**/package-lock.json"
+    "purge": "rm node_modules /**/node_modules packages/**/node_modules && rm yarn.lock /**/yarn.lock packages/**/yarn.lock && rm *-error.log /**/*-error.log packages/**/*-error.log && rm *-debug.log /**/*-debug.log packages/**/*-debug.log && rm package-lock.json /**/package-lock.json packages/**/package-lock.json"
   },
   "devDependencies": {
     "lerna": "3.4.3",
@@ -80,7 +82,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "private": true,
   "workspaces": [
     "packages/*"
   ]

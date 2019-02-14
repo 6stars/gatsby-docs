@@ -16,12 +16,12 @@ slug:
   encoding: "ascii"
   clean_accents: true
   sanitize_replacement: "-"
-logo_url:  /upload/logo.png
+logo_url:  /upload/logo_cms.png
 collections:
   - name: "docs"
-    label: 6star A Docs
-    label_singular: 6star A Doc
-    description: 6star A Docs
+    label: "****** Docs"
+    label_singular: "****** Doc"
+    description: "****** Docs"
     folder: "packages/docs-a/content"
     create: true
     slug: "{{category}}_{{slug}}"

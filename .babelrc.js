@@ -75,16 +75,6 @@ module.exports = {
       plugins: [
         'transform-react-constant-elements',
         'transform-dev-warning',
-        [
-          'babel-plugin-module-resolver',
-          {
-            alias: {
-              '@m00n/gatsby-docs-ui': './packages/gatsby-docs-ui/src',
-              '@m00n/gatsby-plugin-nav-tree':
-                './packages/gatsby-plugin-nav-tree/src',
-            },
-          },
-        ],
         ['react-remove-properties', { properties: ['data-6star-test'] }],
         [
           'transform-react-remove-prop-types',

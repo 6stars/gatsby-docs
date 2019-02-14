@@ -1,6 +1,7 @@
 const config = require('./data/SiteConfig')
 const iconsConfig = require('./static/icons.json')
 const urljoin = require('url-join')
+const path = require('path')
 
 const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/
 
@@ -52,17 +53,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
-    // {
-    //   resolve: 'gatsby-plugin-module-resolver',
-    //   options: {
-    //     root: './', // <- will be used as a root dir
-    //     alias: {
-    //       '@m00n/gatsby-docs-ui': '../packages/gatsby-docs-ui/src',
-    //       '@m00n/gatsby-plugin-nav-tree':
-    //         '../packages/gatsby-plugin-nav-tree/src',
-    //     },
-    //   },
-    // },
     {
       resolve: '@m00n/gatsby-plugin-nav-tree',
       options: {
@@ -98,7 +88,7 @@ module.exports = {
             resolve: 'gatsby-remark-embed-youtube',
             options: {
               width: 1000,
-              height: 400,
+              height: 500,
             },
           },
           {
@@ -154,18 +144,26 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `static`, `upload`),
+      },
+    },
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: config.pathPrefix,
+        start_url: config.pathPrefix + '/',
         background_color: '#334058',
         theme_color: '#6ec5ff',
         display: 'standalone',
+        // icon: `static/img/logo.png`, // This path is relative to the root of the site.
         icons: iconsConfig.icons,
       },
     },
@@ -176,18 +174,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-netlify`,
-    //   options: {
-    //     headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
-    //     allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-    //     mergeSecurityHeaders: true, // boolean to turn off the default security headers
-    //     mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
-    //     mergeCachingHeaders: true, // boolean to turn off the default caching headers
-    //     transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-    //     generateMatchPathRewrites: false, // boolean to turn off automatic creation of redirect rules for client only paths
-    //   },
-    // },
+
     // make sure to put last in the array
   ],
 }
