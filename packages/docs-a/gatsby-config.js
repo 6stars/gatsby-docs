@@ -143,8 +143,15 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `static`, `upload`),
+      },
+    },
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -155,7 +162,7 @@ module.exports = {
         background_color: '#334058',
         theme_color: '#6ec5ff',
         display: 'standalone',
-        icon: `static/upload/logo.png`, // This path is relative to the root of the site.
+        icon: `static/img/logo.png`, // This path is relative to the root of the site.
         icons: iconsConfig.icons,
       },
     },
