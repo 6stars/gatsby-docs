@@ -21,7 +21,7 @@ collections:
   - name: "docs"
     label: "****** Docs"
     label_singular: "****** Doc"
-    description: "****** Docs" Docs"
+    description: "****** Docs"
     folder: "packages/docs-a/content"
     create: true
     slug: "{{category}}_{{slug}}"
