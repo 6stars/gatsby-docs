@@ -1,6 +1,7 @@
 const config = require('./data/SiteConfig')
 const iconsConfig = require('./static/icons.json')
 const urljoin = require('url-join')
+const path = require('path')
 
 const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/
 
