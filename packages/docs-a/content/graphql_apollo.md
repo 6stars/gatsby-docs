@@ -1,6 +1,6 @@
 ---
 title: GraphQL - Apollo
-cover: /upload/apollo.jpg
+cover: Apollo Engine
 description: Apollo Engine
 date: 2019-01-08T06:00:00.000Z
 route: /graphql/apollo

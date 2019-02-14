@@ -9,10 +9,14 @@ const styles = theme => ({
     flexGrow: 1,
     fontWeight: 500,
   },
-  paper: {
-    height: 140,
-    width: 400,
+  docList: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    maxHeight: 'auto',
   },
+
   '& h1': {
     ...theme.typography.h4,
     color: theme.palette.text.secondary,
@@ -75,14 +79,12 @@ class DocListing extends React.Component {
         <Grid item xs={12}>
           <Grid
             container
-            className={classes.demo}
+            className={classes.docList}
             justify="center"
             spacing={Number(spacing)}
           >
             {docList.map(doc => (
-              <Grid key={doc.title} item>
-                <DocSummary key={doc.title} docInfo={doc} />
-              </Grid>
+              <DocSummary key={doc.title} docInfo={doc} />
             ))}
           </Grid>
         </Grid>
