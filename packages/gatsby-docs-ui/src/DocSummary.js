@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
-import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
 import CardMedia from '@material-ui/core/CardMedia'
 import Collapse from '@material-ui/core/Collapse'
@@ -12,21 +11,19 @@ import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
-import Launch from '@material-ui/icons/Launch'
 import { Link } from 'gatsby'
-import moment from 'moment'
 import DocTags from './DocTags'
-import DocInfo from './DocInfo'
 import EditIcon from '@material-ui/icons/Edit'
 import Tooltip from '@material-ui/core/Tooltip'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const styles = theme => ({
   card: {
-    width: 400,
+    width: 410,
+    margin: 4,
   },
   media: {
-    height: 0,
+    minHeight: 200,
     paddingTop: '56.25%', // 16:9
     objectFit: 'cover',
   },
@@ -52,7 +49,15 @@ const styles = theme => ({
   coverTitle: {
     backgroundColor: theme.palette.primary.dark,
     color: '#fff',
-    padding: '20px 15px 10px 15px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    textAlign: 'center',
+    margin: '0',
+    minHeight: '230px',
+    alignItems: 'center',
   },
 })
 
@@ -102,12 +107,16 @@ class DocSummary extends Component {
       cover,
       excerpt,
     } = docInfo
-    // const { mobile } = this.state;
+    const { mobile } = this.state
     // const expand = mobile;
     /* eslint no-undef: "off" */
-    // const coverHeight = mobile ? 162 : 225;
+    const coverHeight = mobile ? 162 : 225
     const ADMIN_EDIT_PAGE_URL = '/admin/#/collections/docs/entries/'
-    const coverIsImg = cover.endsWith('.jpg') || cover.endsWith('.png')
+    const coverIsImg =
+      cover.endsWith('.gif') ||
+      cover.endsWith('.jpeg') ||
+      cover.endsWith('.jpg') ||
+      cover.endsWith('.png')
     return (
       <Card className={classes.card}>
         <CardHeader

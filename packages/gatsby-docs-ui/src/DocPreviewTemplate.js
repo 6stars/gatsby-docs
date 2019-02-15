@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { createPageContext } from '@m00n/gatsby-docs-ui'
+import { createPageContext } from './getPageContext'
 import { MuiThemeProvider, jssPreset } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import JssProvider from 'react-jss/lib/JssProvider'
