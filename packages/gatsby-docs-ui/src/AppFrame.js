@@ -41,7 +41,7 @@ const styles = theme => ({
     },
   },
   img: {
-    width: 170,
+    width: 207,
     marginTop: 7,
   },
   appBar: {
