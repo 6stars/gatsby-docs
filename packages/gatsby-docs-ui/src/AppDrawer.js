@@ -30,7 +30,7 @@ const styles = theme => {
       },
     },
     img: {
-      width: 207,
+      width: 170,
       marginTop: 7,
     },
     // https://github.com/philipwalton/flexbugs#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items
