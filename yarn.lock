@@ -2431,6 +2431,15 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
+"@m00n/gatsby-plugin-nav-tree@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@m00n/gatsby-plugin-nav-tree/-/gatsby-plugin-nav-tree-0.6.0.tgz#bceae53cc19cac3c7ff330ac7e75185ded31c5aa"
+  integrity sha512-RQTJHncRfnIpj3Gz1IKNAd3RbjaD8RyqCOOjYn1ZX2fsxZ5da4gufo7/Ld4mxACNjgQPCsF/HP47RG/vgEaUXA==
+  dependencies:
+    cross-env "^5.1.4"
+    treeify-paths "1.0.1"
+    typescript "3.1.6"
+
 "@material-ui/core@3.9.3":
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-3.9.3.tgz#d378c1f4beb18df9a534ca7258c2c33fb8e0e51f"
@@ -3127,15 +3136,7 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.8.6":
-  version "16.8.6"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.6.tgz#fa1de3fe56cc9b6afeddc73d093d7f30fd5e31cc"
-  integrity sha512-bN9qDjEMltmHrl0PZRI4IF2AbB7V5UlRfG+OOduckVnRQ4VzXVSzy/1eLAh778IEqhTnW0mmgL9yShfinNverA==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@^16.8.12", "@types/react@^16.8.6":
+"@types/react@16.8.18", "@types/react@^16.8.12", "@types/react@^16.8.6":
   version "16.8.18"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.18.tgz#fe66fb748b0b6ca9709d38b87b2d1356d960a511"
   integrity sha512-lUXdKzRqWR4FebR5tGHkLCqnvQJS4fdXKCBrNGGbglqZg2gpU+J82pMONevQODUotATs9fc9k66bx3/St8vReg==
@@ -20361,6 +20362,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.6.tgz#b6543a83cfc8c2befb3f4c8fba6896f5b0c9be68"
+  integrity sha512-tDMYfVtvpb96msS1lDX9MEdHrW4yOuZ4Kdc4Him9oU796XldPYF/t2+uKoX0BBa0hXXwDlqYQbXY5Rzjzc5hBA==
 
 typescript@3.4.5:
   version "3.4.5"

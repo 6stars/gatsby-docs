@@ -4,7 +4,7 @@
         "module": "commonjs",
         "sourceMap": true,
         "jsx": "react",
-        "outDir": "./",
+        "outDir": "./lib",
     },
     "include": [
         "src/*"

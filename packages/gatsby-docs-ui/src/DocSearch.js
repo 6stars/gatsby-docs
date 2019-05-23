@@ -20,15 +20,6 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 
-// Graphql query used to retrieve the serialized search index.
-export const query = graphql`
-  query SearchIndexExampleQuery {
-    siteSearchIndex {
-      index
-    }
-  }
-`
-
 const styles = theme => ({
   root: {
     flex: 'grow',

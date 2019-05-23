@@ -1,9 +1,13 @@
 {
     "name": "@m00n/gatsby-plugin-nav-tree",
     "description": "Gatsby Plugin to Auto Generate Nested Page Tree for Left Nav",
-    "version": "0.6.0",
+    "version": "1.0.0",
     "author": "Adam Moon <adam@amoon.space>",
     "license": "MIT",
+    "directories": {
+        "lib": "./lib"
+    },
+    "module": "lib/index.js",
     "dependencies": {
         "cross-env": "^5.1.4",
         "treeify-paths": "1.0.1",
