@@ -47,7 +47,8 @@ tags:
 
 ![](https://raw.githubusercontent.com/ReactTraining/react-workshop/master/slides/Redux.gif)
 
-### [Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux)### [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux)
+- [Getting Started with Redux](https://egghead.io/courses/getting-started-with-redux)
+- [Building React Applications with Idiomatic Redux](https://egghead.io/courses/building-react-applications-with-idiomatic-redux)
 
 ### Redux Middlewares
 
@@ -58,7 +59,7 @@ tags:
 - ###### [Redux Promise](https://github.com/pburtchaell/redux-promise-middleware)
 - [with Async Await](https://github.com/pburtchaell/redux-promise-middleware/blob/master/docs/guides/async-await.md)
 - ###### [Redux Saga](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
-  ![](https://resizer.yalantis.com/w770/uploads/ckeditor/pictures/2602/content_002.jpg)
+  ![Redux](https://scotch-res.cloudinary.com/image/upload/dpr_1,w_800,q_auto:good,f_auto/media/3430/k22QF9Qe6v2bMfrsZoNQ_Project%20Workflow%20-%20Media%20Library.png)
 - ###### [Redux Observable](https://github.com/redux-observable/redux-observable)
   `youtube:https://www.youtube.com/embed/sF5-V-Szo0c`
 

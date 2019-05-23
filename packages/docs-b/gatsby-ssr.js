@@ -48,7 +48,7 @@ export const onRenderBody = ({ setHeadComponents, pathname }) => {
         dangerouslySetInnerHTML={{ __html: css }}
       />,
       <link src="https://fonts.googleapis.com/icon?family=Material+Icons" />,
-      <link src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />,
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js" />,
     ])
 
     // delate pathname from sheetRegistryMap, we already processed it be rendered in page for pathname

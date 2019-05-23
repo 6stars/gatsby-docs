@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { object } from 'prop-types'
 import Auth from './utils/auth'
 
@@ -12,8 +13,10 @@ export default function(ComposedComponent) {
     }
 
     async componentWillMount() {
+      debugger
       if (REQUIRE_AUTH && process.browser) {
         // Verify all permissions and fields
+        console.log('in Require Auth')
         let authorized = Auth.verifyIsDefiUser()
         if (!authorized) {
           window.location.replace(PATH_DASHBOARD)
@@ -38,9 +41,10 @@ export default function(ComposedComponent) {
     }
 
     render() {
+      console.log(this.props)
       return <ComposedComponent {...this.props} />
     }
   }
 
-  return Authentication
+  return connect()(Authentication)
 }

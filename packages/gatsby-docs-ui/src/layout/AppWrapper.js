@@ -21,10 +21,12 @@ class AppWrapper extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.uiTheme)
     uiThemeSideEffect(this.props.uiTheme)
   }
 
   componentDidUpdate() {
+    console.log(this.props.uiTheme)
     uiThemeSideEffect(this.props.uiTheme)
   }
 

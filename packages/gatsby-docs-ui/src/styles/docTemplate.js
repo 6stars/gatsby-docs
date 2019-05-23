@@ -1,8 +1,6 @@
 const styles = theme => ({
   root: {
     fontFamily: theme.typography.fontFamily,
-    fontWeight: 500,
-    fontSize: 14,
     color: theme.palette.text.primary,
     paddingBottom: '20px',
     '& .anchor': {
@@ -14,7 +12,14 @@ const styles = theme => ({
       padding: '12px 18px',
       borderRadius: theme.shape.borderRadius,
       overflow: 'auto',
+      width: 'fit-content',
       WebkitOverflowScrolling: 'touch', // iOS momentum scrolling.
+      backgroundColor: '#000',
+      color: '#fff',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 10,
+        lineHeight: 1.2,
+      },
     },
     '& code': {
       display: 'inline-block',
@@ -22,17 +27,26 @@ const styles = theme => ({
       fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
       padding: '3px 6px',
       fontSize: 12,
+
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 10,
+        lineHeight: 1.2,
+      },
     },
     '& p code, & ul code, & pre code': {
       fontSize: 12,
       lineHeight: 1.4,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 10,
+        lineHeight: 1.2,
+      },
     },
     '& a': {
       ...theme.typography.h6,
       lineHeight: 1.4,
     },
     '& h1': {
-      ...theme.typography.h4,
+      ...theme.typography.h3,
       color: theme.palette.text.secondary,
       fontWeight: theme.typography.fontWeightMedium,
       margin: '8px 0 4px',
@@ -43,12 +57,16 @@ const styles = theme => ({
     },
     '& h2': {
       borderBottom: '1px solid #eee',
-      ...theme.typography.h5,
+      ...theme.typography.h4,
       color: theme.palette.text.secondary,
-      margin: '16px 0 12px',
+      margin: '24px 0 12px',
+      [theme.breakpoints.down('sm')]: {
+        margin: '16px 0 12px',
+        ...theme.typography.h5,
+      },
     },
     '& h3': {
-      ...theme.typography.h6,
+      ...theme.typography.h5,
       ...theme.typography.headline,
       color: theme.palette.text.secondary,
       margin: '16px 0 12px',
@@ -175,6 +193,40 @@ const styles = theme => ({
     '& img': {
       maxWidth: '100%',
     },
+    '& svg': {
+      overflow: 'auto',
+      color: '#fff',
+    },
+    '& svg.mermaid': {
+      overflow: 'auto',
+      color: '#fff',
+      backgroundColor: 'transparent !important',
+    },
+    // '& g > title': {
+    //   fill: '#fff',
+    // },
+    // '& g > text': {
+    //   fill: '#fff',
+    // },
+    // '& g > ellipse': {
+    //   fill: '#000',
+    //   stroke: '#fff !important',
+    // },
+    // '& path': {
+    //   stroke: '#fff !important',
+    //   color: '#fff !important',
+    //   fill: '#000 !important',
+    // },
+    // '& polygon': {
+    //   stroke: '#fff !important',
+    //   color: '#fff !important',
+    //   fill: '#000 !important',
+    // },
+    // '& polyline': {
+    //   stroke: '#fff !important',
+    //   color: '#fff !important',
+    //   fill: '#000 !important',
+    // },
   },
 })
 

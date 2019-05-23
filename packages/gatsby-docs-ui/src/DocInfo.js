@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import compose from 'recompose/compose'
 import { Link } from 'gatsby'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
@@ -7,6 +8,7 @@ import { withStyles } from '@material-ui/core/styles'
 import EditIcon from '@material-ui/icons/Edit'
 import IconButton from '@material-ui/core/IconButton'
 import Tooltip from '@material-ui/core/Tooltip'
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 
 const styles = theme => ({
   root: {
@@ -34,11 +36,13 @@ class DocInfo extends Component {
   render() {
     const {
       formattedDate,
+      title,
       category,
       classes,
       isPreview,
       timeToRead,
       slug,
+      width,
     } = this.props
 
     const ADMIN_EDIT_PAGE_URL = '/admin/#/collections/docs/entries/'
@@ -46,6 +50,15 @@ class DocInfo extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.docInfo}>
+          <Typography
+            className={classes.title}
+            variant="h4"
+            color="inherit"
+            style={{ display: isWidthUp('sm', width) ? 'none' : 'flex' }}
+            noWrap
+          >
+            {title}
+          </Typography>
           <Typography color="textSecondary">
             {`Published on ${formattedDate} - ${timeToRead} min read`}
           </Typography>
@@ -85,4 +98,7 @@ DocInfo.propTypes = {
   category: PropTypes.string,
 }
 
-export default withStyles(styles)(DocInfo)
+export default compose(
+  withWidth(),
+  withStyles(styles)
+)(DocInfo)

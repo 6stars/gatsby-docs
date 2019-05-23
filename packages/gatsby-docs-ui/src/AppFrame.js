@@ -11,13 +11,12 @@ import MenuIcon from '@material-ui/icons/Menu'
 import LightbulbOutlineIcon from './svgIcons/LightbulbOutline'
 import LightbulbFullIcon from './svgIcons/LightbulbFull'
 import AppDrawer from './AppDrawer'
-import AppSearch from './AppSearch'
+import DocSearch from './DocSearch'
 import { connect } from 'react-redux'
 import actionTypes from './redux/actionTypes'
 import PageContext from './templates/pageContext'
 import AppTableOfContents from './AppTableOfContents'
-
-const DEFAULT_PAGE_TITLE = '6star DOCS'
+import Hidden from '@material-ui/core/Hidden'
 
 const styles = theme => ({
   root: {
@@ -41,7 +40,7 @@ const styles = theme => ({
     },
   },
   img: {
-    width: 207,
+    width: 170,
     marginTop: 7,
   },
   appBar: {
@@ -94,7 +93,7 @@ class AppFrame extends React.Component {
   }
 
   render() {
-    const { children, classes, uiTheme } = this.props
+    const { children, classes, uiTheme, siteSearchIndex } = this.props
     const title = ''
     let disablePermanent = false
     let navIconClassName = ''
@@ -124,23 +123,25 @@ class AppFrame extends React.Component {
                   >
                     <MenuIcon />
                   </IconButton>
-                  {title !== null && (
-                    <Typography
-                      className={classes.title}
-                      variant="h5"
-                      color="inherit"
-                      noWrap
-                    >
-                      {data.currentPage &&
-                      data.currentPage.edges.length > 0 &&
-                      data.currentPage.edges[0].node.context &&
-                      data.currentPage.edges[0].node.context.title != null
-                        ? data.currentPage.edges[0].node.context.title
-                        : DEFAULT_PAGE_TITLE}
-                    </Typography>
-                  )}
+                  <Hidden xsDown>
+                    {title !== null && (
+                      <Typography
+                        className={classes.title}
+                        variant="h5"
+                        color="inherit"
+                        noWrap
+                      >
+                        {data.currentPage &&
+                        data.currentPage.edges.length > 0 &&
+                        data.currentPage.edges[0].node.context &&
+                        data.currentPage.edges[0].node.context.title != null
+                          ? data.currentPage.edges[0].node.context.title
+                          : config.siteTitle}
+                      </Typography>
+                    )}
+                  </Hidden>
                   <div className={classes.grow} />
-                  <AppSearch />
+                  <DocSearch searchIndex={siteSearchIndex.index} />
                   <Tooltip title="Toggle light/dark theme" enterDelay={300}>
                     <IconButton
                       color="inherit"
@@ -168,6 +169,7 @@ class AppFrame extends React.Component {
                     : null
                 }
                 siteLogo={config.siteLogo}
+                pathPrefix={config.pathPrefix}
               />
               {this.props.tableOfContents ? (
                 <AppTableOfContents

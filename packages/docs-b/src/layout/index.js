@@ -30,10 +30,13 @@ const Layout = ({ children, classes }) => {
               title
             }
           }
+          siteSearchIndex {
+            index
+          }
         }
       `}
       render={data => (
-        <AppFrame>
+        <AppFrame siteSearchIndex={data.siteSearchIndex}>
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[

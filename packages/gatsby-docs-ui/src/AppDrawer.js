@@ -123,10 +123,18 @@ function AppDrawer(props) {
     onOpen,
     currentPage,
     siteLogo,
+    pathPrefix,
   } = props
 
   const renderLogo = () => {
-    return <img src={siteLogo} alt="logo" width="170" className={classes.img} />
+    return (
+      <img
+        src={`${pathPrefix}${siteLogo}`}
+        alt="logo"
+        width="170"
+        className={classes.img}
+      />
+    )
   }
   const drawer = (
     <div className={classes.nav}>

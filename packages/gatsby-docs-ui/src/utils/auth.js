@@ -34,7 +34,7 @@ let Auth = {
       })
   },
 
-  verifyIsDefiUser() {
+  verifyUsernameHasPrefix(prefix) {
     // Get our data
     let token = new Token()
     let currentExpiration = token.getExpiration()
@@ -65,7 +65,7 @@ let Auth = {
       Location.redirect(PATH_LOGIN_EXPIRED)
     }
 
-    return currentProfile.UserName.startsWith('defi-')
+    return currentProfile.UserName.startsWith(prefix)
   },
 }
 
