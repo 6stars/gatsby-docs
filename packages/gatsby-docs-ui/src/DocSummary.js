@@ -16,6 +16,7 @@ import DocTags from './DocTags'
 import EditIcon from '@material-ui/icons/Edit'
 import Tooltip from '@material-ui/core/Tooltip'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import PageContext from './templates/pageContext'
 
 const styles = theme => ({
   card: {
@@ -58,6 +59,7 @@ const styles = theme => ({
     margin: '0',
     minHeight: '230px',
     alignItems: 'center',
+    padding: '0 30px',
   },
 })
 
@@ -108,79 +110,93 @@ class DocSummary extends Component {
       excerpt,
     } = docInfo
     const { mobile } = this.state
+
     // const expand = mobile;
     /* eslint no-undef: "off" */
-    const coverHeight = mobile ? 162 : 225
+    const coverHeight = mobile ? 162 : 215
     const ADMIN_EDIT_PAGE_URL = '/admin/#/collections/docs/entries/'
     const coverIsImg =
       cover.endsWith('.gif') ||
       cover.endsWith('.jpeg') ||
       cover.endsWith('.jpg') ||
       cover.endsWith('.png')
+
     return (
-      <Card className={classes.card}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              {title.substring(0, 1)}
-            </Avatar>
-          }
-          action={
-            <Tooltip title="Edit this Doc" placement="top">
-              <IconButton
-                href={`${ADMIN_EDIT_PAGE_URL}${slug}`}
-                target="_blank"
-                aria-label="EditDoc"
-              >
-                <EditIcon />
-              </IconButton>
-            </Tooltip>
-          }
-          title={title.toUpperCase()}
-          subheader={`${formattedDate} - ${timeToRead} min read`}
-        />
-        {coverIsImg && (
-          <CardMedia className={classes.media} image={cover} title={title} />
-        )}
-        {!coverIsImg && (
-          <div className={classes.coverTitle}>
-            <Typography
-              component="h2"
-              variant="h3"
-              color="secondary"
-              gutterBottom={true}
-            >
-              {cover}
-            </Typography>
-          </div>
-        )}
-        <CardContent>
-          <Typography component="p">{description}</Typography>
-        </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
-          <Link style={{ textDecoration: 'none' }} to={path}>
-            <Button size="small" color="primary">
-              Read
-            </Button>
-          </Link>
-          <DocTags tags={tags} />
-          <IconButton
-            className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expanded,
-            })}
-            onClick={this.handleExpandClick}
-            aria-expanded={this.state.expanded}
-            aria-label="Show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography component="p">{excerpt}</Typography>
-          </CardContent>
-        </Collapse>
-      </Card>
+      <PageContext.Consumer>
+        {({ config }) => {
+          return (
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar aria-label="Document" className={classes.avatar}>
+                    {title.substring(0, 1)}
+                  </Avatar>
+                }
+                action={
+                  <Tooltip title="Edit this Doc" placement="top">
+                    <IconButton
+                      href={`${ADMIN_EDIT_PAGE_URL}${slug}`}
+                      target="_blank"
+                      aria-label="EditDoc"
+                    >
+                      <EditIcon />
+                    </IconButton>
+                  </Tooltip>
+                }
+                title={title.toUpperCase()}
+                subheader={`${formattedDate} - ${timeToRead} min read`}
+              />
+              <Link style={{ textDecoration: 'none' }} to={path}>
+                {coverIsImg && (
+                  <CardMedia
+                    className={classes.media}
+                    image={`${config.pathPrefix}${cover}`}
+                    title={title}
+                  />
+                )}
+                {!coverIsImg && (
+                  <div className={classes.coverTitle}>
+                    <Typography
+                      component="h2"
+                      variant="h4"
+                      color="secondary"
+                      gutterBottom={true}
+                    >
+                      {cover}
+                    </Typography>
+                  </div>
+                )}
+                <CardContent>
+                  <Typography component="p">{description}</Typography>
+                </CardContent>
+              </Link>
+              <CardActions className={classes.actions} disableActionSpacing>
+                <Link style={{ textDecoration: 'none' }} to={path}>
+                  <Button size="small" color="primary">
+                    Read
+                  </Button>
+                </Link>
+                <DocTags tags={tags} />
+                <IconButton
+                  className={classnames(classes.expand, {
+                    [classes.expandOpen]: this.state.expanded,
+                  })}
+                  onClick={this.handleExpandClick}
+                  aria-expanded={this.state.expanded}
+                  aria-label="Show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography component="p">{excerpt}</Typography>
+                </CardContent>
+              </Collapse>
+            </Card>
+          )
+        }}
+      </PageContext.Consumer>
     )
   }
 }

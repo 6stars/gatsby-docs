@@ -67,6 +67,7 @@ class DocContent extends React.Component {
       return (
         <div className={classNames(classes.root, 'markdown-body', className)}>
           <DocInfo
+            title={title}
             formattedDate={formattedDate}
             timeToRead={timeToRead}
             category={category}

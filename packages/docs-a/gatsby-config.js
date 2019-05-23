@@ -1,7 +1,6 @@
 const config = require('./data/SiteConfig')
 const iconsConfig = require('./static/icons.json')
 const urljoin = require('url-join')
-const path = require('path')
 
 const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/
 
@@ -41,7 +40,7 @@ const queries = [
     query: allDocsPageQuery,
     transformer: ({ data }) =>
       data.allMarkdownRemark.edges.map(({ node }) => node), // optional
-    indexName: 'docs-', // overrides main index name, optional
+    indexName: 'defi-docs', // overrides main index name, optional
   },
 ]
 
@@ -49,7 +48,7 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    title: config.siteTitle,
+    title: 'defi LOS DOCS',
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -78,17 +77,20 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-remark-graphviz',
           {
-            resolve: `gatsby-remark-sequence`,
+            resolve: 'gatsby-remark-graph',
             options: {
-              theme: 'simple',
+              // this is the language in your code-block that triggers mermaid parsing
+              language: 'mermaid', // default
+              theme: 'default', // could also be dark, forest, or neutral
             },
           },
           {
             resolve: 'gatsby-remark-embed-youtube',
             options: {
               width: 1000,
-              height: 500,
+              height: 400,
             },
           },
           {
@@ -144,55 +146,52 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: path.join(__dirname, `static`, `upload`),
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: config.siteGATrackingID,
-      },
-    },
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: config.pathPrefix + '/',
+        start_url: config.pathPrefix,
         background_color: '#334058',
         theme_color: '#6ec5ff',
         display: 'standalone',
-        // icon: `static/img/logo.png`, // This path is relative to the root of the site.
         icons: iconsConfig.icons,
       },
     },
     {
-      resolve: `gatsby-plugin-netlify`,
+      resolve: '@gatsby-contrib/gatsby-plugin-elasticlunr-search',
       options: {
-        headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
-        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
-        mergeSecurityHeaders: true, // boolean to turn off the default security headers
-        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
-        mergeCachingHeaders: true, // boolean to turn off the default caching headers
-        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
-        generateMatchPathRewrites: false, // boolean to turn off automatic creation of redirect rules for client only paths
+        // Fields to index
+        fields: ['title', 'category', 'tags', 'description', 'route'],
+        // How to resolve each field`s value for a supported node type
+        resolvers: {
+          // For any node of type MarkdownRemark, list how to resolve the fields` values
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            category: node => node.frontmatter.category,
+            route: node => node.fields.route,
+            description: node => node.frontmatter.description,
+          },
+        },
       },
     },
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/index.js`,
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        generateMatchPathRewrites: false, // boolean to turn off automatic creation of redirect rules for client only paths
+      },
+    },
     // make sure to put last in the array
   ],
 }

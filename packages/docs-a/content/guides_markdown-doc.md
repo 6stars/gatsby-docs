@@ -1,13 +1,13 @@
 ---
-title: Sample Guide A
-cover: /upload/contemplative-reptile.jpg
+title: Guide to Doc Markdown Syntax and Features
+cover: /upload/big-wave.jpg
 description: A Sample Guide for Markdown Syntax to Create Docs
-date: 2019-01-07T06:00:00.000Z
-route: /guides/sample-guide
-slug: guides_sample-guide
-category: guide
+date: 2019-01-02T06:00:00.000Z
+route: /guides/markdown-doc
+slug: guides_markdown-doc
+category: guides
 tags:
-  - sample
+  - markdown
 ---
 
 <a name="headers" class="anchor-link" />
@@ -251,11 +251,11 @@ The outer pipes (|) are optional, and you don't need to make the raw Markdown li
 
 Colons can be used to align columns.
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
 
@@ -377,3 +377,194 @@ This line is only separated by a single newline, so it's a separate line in the 
 ```
 
 `youtube:https://www.youtube.com/embed/2Xc9gXyf2G4`
+
+<a name="diagrams"/>
+
+## Diagrams with Mermaid
+
+> Mermaid - a simple markdown-like script language for generating charts from text via javascript
+>
+> [Mermaid Docs](https://mermaidjs.github.io/)
+
+### Sequence Diagrams
+
+<pre lang="no-highlight"><code>```mermaid
+sequenceDiagram
+    Alice->John: Hello John, how are you?
+    Note over Alice,John: A typical interaction
+```
+</code></pre>
+
+```mermaid
+sequenceDiagram
+    Alice->John: Hello John, how are you?
+    Note over Alice,John: A typical interaction
+```
+
+### Flowcharts Left/Right
+
+<pre lang="no-highlight"><code>```mermaid
+graph LR
+    A[Square Rect] -- Link text --> B((Circle))
+    A --> C(Round Rect)
+    B --> D{Rhombus}
+    C --> D
+```
+</code></pre>
+
+```mermaid
+graph LR
+    A[Square Rect] -- Link text --> B((Circle))
+    A --> C(Round Rect)
+    B --> D{Rhombus}
+    C --> D
+```
+
+### Flowcharts Top/Down
+
+<pre lang="no-highlight"><code>```mermaid
+graph TD
+    Start --> Stop
+```
+</code></pre>
+
+```mermaid
+graph TD
+    Start --> Stop
+```
+
+### Gantt Charts
+
+<pre lang="no-highlight"><code>```mermaid
+gantt
+       dateFormat  YYYY-MM-DD
+       title Adding GANTT diagram functionality to mermaid
+
+       section A section
+       Completed task            :done,    des1, 2014-01-06,2014-01-08
+       Active task               :active,  des2, 2014-01-09, 3d
+       Future task               :         des3, after des2, 5d
+       Future task2              :         des4, after des3, 5d
+
+       section Critical tasks
+       Completed task in the critical line :crit, done, 2014-01-06,24h
+       Implement parser and jison          :crit, done, after des1, 2d
+       Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
+```
+</code></pre>
+
+```mermaid
+gantt
+       dateFormat  YYYY-MM-DD
+       title Adding GANTT diagram functionality to mermaid
+
+       section A section
+       Completed task            :done,    des1, 2014-01-06,2014-01-08
+       Active task               :active,  des2, 2014-01-09, 3d
+       Future task               :         des3, after des2, 5d
+       Future task2              :         des4, after des3, 5d
+
+       section Critical tasks
+       Completed task in the critical line :crit, done, 2014-01-06,24h
+       Implement parser and jison          :crit, done, after des1, 2d
+       Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
+```
+
+## Graphs with viz.js and graphviz
+
+> graphviz - Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks
+>
+> [graphviz](http://www.graphviz.org/)
+>
+> viz.js - A hack to put Graphviz on the web
+>
+> [viz.js](http://viz-js.com/)
+
+###
+
+<pre lang="no-highlight"><code>```dot
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3;
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+```
+</code></pre>
+
+```dot
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3;
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+```

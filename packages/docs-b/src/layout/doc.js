@@ -30,31 +30,33 @@ const DocLayout = ({
             title
           }
         }
+        siteSearchIndex {
+          index
+        }
       }
     `}
-    render={({ data }) => {
-      return (
-        <AppFrame
-          tableOfContents={tableOfContents}
+    render={data => (
+      <AppFrame
+        tableOfContents={tableOfContents}
+        title={title}
+        timeToRead={timeToRead}
+        siteSearchIndex={data.siteSearchIndex}
+      >
+        <Helmet
           title={title}
-          timeToRead={timeToRead}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
         >
-          <Helmet
-            title={title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          >
-            <html lang="en" />
-          </Helmet>
+          <html lang="en" />
+        </Helmet>
 
-          <AppContent className={classes.root}>
-            <div>{children}</div>
-          </AppContent>
-        </AppFrame>
-      )
-    }}
+        <AppContent className={classes.root}>
+          <div>{children}</div>
+        </AppContent>
+      </AppFrame>
+    )}
   />
 )
 
