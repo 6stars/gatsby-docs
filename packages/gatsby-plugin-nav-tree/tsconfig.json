@@ -5,6 +5,7 @@
         "sourceMap": true,
         "jsx": "react",
         "outDir": "./lib",
+        "suppressExcessPropertyErrors": true
     },
     "include": [
         "src/*"
