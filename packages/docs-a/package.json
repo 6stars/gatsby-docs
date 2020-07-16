@@ -58,7 +58,7 @@
     "immutable": "3.7.6",
     "jss": "9.8.7",
     "jss-rtl": "0.2.3",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "moment": "2.22.2",
     "netlify-cms": "2.9.1",
     "prism-themes": "1.0.1",
